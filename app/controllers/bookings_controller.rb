@@ -7,10 +7,17 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_param)
-    @booking.carer_id = Carer.find(params[:carer_id])
-    @booking.patient_id = current_user.id
+
+    if @current_user.role == false
+      @booking.patient_id = @current_user.id
+      @booking.carer_id = params[:booking][:carer_id]
+    else
+      @booking.carer_id = @current_user.id
+      @booking.patient_id = params[:booking][:patient_id]
+    end
+
     @booking.call_confirm = # call confirm variable
-    @booking.parient_confirmed = # parient confirm variable
+    @booking.patient_confirmed = # parient confirm variable
     @booking.carer_confirmed = # carer confirm variable
 
     if @booking.save
@@ -42,7 +49,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_param
-    params.require(:booking).permit(:start_date, :end_date, :carer_id, :patient_id, :call_confirm, :parient_confirmed, :carer_confirmed)
+    params.require(:booking).permit(:start_date, :end_date, :carer_id, :patient_id, :call_confirm, :patient_confirmed, :carer_confirmed)
   end
 
   def set_booking

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/edit'
+  get 'users/update'
   get 'review/new'
   get 'review/create'
   get 'review/update'
