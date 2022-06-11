@@ -7,12 +7,9 @@ class User < ApplicationRecord
   has_many :carers
   has_many :patients
 
-    # thanks to Cloudinary
-    # has_one_attached :photo
-
-    # Added validations
-    validates :last_name, presence: true, uniqueness: true
-    validates :first_name, presence: true, uniqueness: true
-    validates :phone_number, presence: true
-
+  # Added validations
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :phone_number, presence: true, uniqueness: true
+  validates :role, presence: true, inclusion: { in: [true, false] }
 end
