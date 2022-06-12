@@ -107,13 +107,12 @@ GEM
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
       railties (>= 3.2)
-    email_validator (2.2.3)
-      activemodel
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.5)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -277,8 +276,8 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
-  email_validator
   font-awesome-sass (~> 5.6.1)
+  geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
