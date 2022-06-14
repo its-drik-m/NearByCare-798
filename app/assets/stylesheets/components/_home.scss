@@ -1,0 +1,36 @@
+//gradient animation
+body {
+	background: linear-gradient(-45deg, #ffffcc, #e5e9ed, #90ced3);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  }
+
+
+
+// transparent gradient over gradient background
+.white-gradient {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
+
+  height: 90vh;
+  width: 90vw;
+  border-radius: 32px;
+  margin-top: 16px;
+}
