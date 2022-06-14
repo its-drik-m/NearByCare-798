@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :carers
   has_many :patients
-
+  accepts_nested_attributes_for :carers, :patients
   enum role: %i[patient carer]
 
   after_initialize :set_default_role, if: :new_record?

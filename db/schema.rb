@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 2022_06_11_134751) do
     t.string "last_name"
     t.string "first_name"
     t.integer "phone_number"
-    t.boolean "role"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
