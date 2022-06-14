@@ -23,40 +23,8 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
-  <div class="role-form-inputs">
-    <div class="role-form-actions">
-     <%= f.button :submit, "I am Carer" %>
-     <%= f.button :submit, "I am looking for a carer" %>
-  </div>
-
-  <div class="d-none carer-form-inputs">
-    <%= f.input :region,
-                required: true,
-                as: :check_boxes,
-                collection: Carer::REGION %>
-    <%= f.input :specialty,
-                required: true,
-                as: :check_boxes,
-                collection: Carer::SPECIALTY %>
-  </div>
-  <div class="role-form-inputs">
-    <div class="role-form-actions">
-     <%= f.button :submit, "Submit" %>
-  </div>
-
-  </div>  <div class="d-none patient-form-inputs">
-    <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "new-address" }%>
-    <%= f.input :health_conditions,
-                required: true,
-                as: :check_boxes,
-                collection: Patient::CONDITIONS%>
-  </div>
-  <div class="role-form-inputs">
-    <div class="role-form-actions">
-     <%= f.button :submit, "Submit" %>
+  <div class="form-actions">
+    <%= f.button :submit, "Submit" %>
   </div>
 <% end %>
 

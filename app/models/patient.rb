@@ -1,8 +1,8 @@
-class Patient < User
+class Patient < ApplicationRecord
   CONDITIONS = ["Terminal illnesses", "Brain surgery", "Hip and knee replacements", "Complex fractures",
                 "Neurological disorders", "Diabetes", "Back injury", "Spinal cord injury", "Alzheimer",
                 "Dialysis", "Chronic illness", "Accident Injury Recovery", "Sports Injury Treatment"]
-  belongs_to :user
+  has_one :user
   has_many :carers
   has_many :reviews, through: :bookings
 
