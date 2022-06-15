@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/edit'
-  get 'users/update'
-  
   resources :booking do
     resources :review
   end
@@ -9,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'testing', to: 'pages#test'
+  resources :carers, only: :index
 
   # resources :users, only: %i[edit update] do
   #  resources :patients, only: %i[edit update show] do
