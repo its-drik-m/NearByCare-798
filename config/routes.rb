@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   # get 'users/edit'
   # get 'users/update'
-
   # resources :booking do
   #   resources :review
   # end
