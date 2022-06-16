@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users #, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   get 'testing', to: 'pages#test'
+  resources :carers, only: :index
 
   resources :users, only: %i[edit update]
 

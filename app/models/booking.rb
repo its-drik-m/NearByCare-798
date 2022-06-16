@@ -6,6 +6,13 @@ class Booking < ApplicationRecord
   validate :date_cannot_be_in_the_past
   validate :start_must_be_before_end_time
 
+  # All bookings will be ordered by their start_time by default
+  default_scope -> { order(:start_time) }
+
+  def date
+    "#{date.strfdate('%I:%M %p')} - #{date.strfdate('%I:%M %p')}"
+  end
+
   def date_cannot_be_in_the_past
     if start_date.present? && start_date < Date.today
       errors.add(:start_date, "can't be in the past")
