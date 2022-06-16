@@ -1,20 +1,92 @@
 <body>
 <div class="grid">
-    <container>
+  <div class="responsive-grid">
         <div class= home-main-icon>
-          <img src="/assets/icon-login.svg" class="home-page-icon" alt="login" style="width:25%;">
-        <div class="signin-button-icon">
-          <%# all button goes here %>
-        </div>
+          <img src="/assets/icon-login.svg" class="home-page-login-icon" alt="login">
+            <div class="signin-button-icon">
+              <%= link_to root_path do %>
+              <%= image_tag "/assets/sign-up.svg", class: "sign-up-button", alt:"#" %>
+              <% end %>
 
+              <%= link_to root_path do %>
+              <%= image_tag "/assets/log-in.svg", class: "log-in-button", alt:"#" %>
+              <% end %>
+            </div>
+        </div>
+    <div class="container">
+
+      <div class="about">
         <div class="intro">
-          <img src="/assets/nearby-care-logo.svg" class="home-page-icon" alt="login">
-            <p style="color:grey"><strong>Stay in your comfort zone</strong></p>
+          <img src="/assets/nearby-care-logo.svg" class="home-page-icon" alt="logo">
+            <h3 style="color:#999999"><strong>Stay in your comfort zone</strong></h3>
             <p style="color:grey">Home is the best place for a loved one living with a disability. With the right care, they are able to continue their daily activities and live the highest possible quality of life in the comfort of their home.</p>
         </div>
 
+        <div class="caring">
+          <img src="/assets/icon-book-carer.svg" class="home-page-icon" alt="caring">
+            <h3 style="color:#999999"><strong>Caring for a Parent</strong></h3>
+            <p style="color:grey">It may have started slowly… Mom couldn’t find her keys or got lost driving. Maybe she left the stove on or fell getting out of her chair. But, you now realize that she needs help with those activities that she has always done, otherwise, she may no longer be safe on her own.  You need to get the best care to help with those daily activities. That’s where Nearby Care comes in with a range of senior care services so your loved one can remain at home having the control and ability to thrive independently.</p>
         </div>
-    </container>
+
+        <div class="services">
+          <h3 id="services-text" style="color:#999999"><strong>Our services</strong></h3>
+          <p style="color:grey">We offer the kind of care and support that makes it possible to thrive at any age. Cherishing people, and their need for independence, is at the very heart of Cherished Companions.</p>
+
+            <div class="all-services-icon">
+              <div class="alzheimer">
+              <img src="/assets/icon-alzheimer.svg" class="services-icon" alt="alzheimer">
+              <p style="color:grey"><strong>Alzheimer’s</strong></p>
+              </div>
+
+              <div class="assisted">
+              <img src="/assets/icon-assisted.svg" class="services-icon" alt="assisted">
+              <p style="color:grey"><strong>Assisted Living</strong></p>
+              </div>
+
+              <div class="disabilities">
+              <img src="/assets/icon-login.svg" class="services-icon" alt="disabilities">
+              <p style="color:grey"><strong>Disabilities</strong></p>
+              </div>
+
+              <div class="injury">
+              <img src="/assets/icon-injury.svg" class="services-icon" alt="injury">
+              <p style="color:grey"><strong>Injury & Falls</strong></p>
+              </div>
+
+              <div class="neuromuscular">
+              <img src="/assets/icon-neuromuscular.svg" class="services-icon" alt="neuromuscular">
+              <p style="color:grey"><strong>Neuromuscular</strong></p>
+              </div>
+
+              <div class="rehab">
+              <img src="/assets/icon-rehab.svg" class="services-icon" alt="rehab">
+              <p style="color:grey"><strong>Rehab</strong></p>
+              </div>
+            </div>
+        </div>
+
+        <div class="day-night">
+            <img src="/assets/icon-24-7.svg" class="home-page-icon" alt="day-night">
+            <h3 style="color:#999999"><strong>Day and night Care</strong></h3>
+            <p style="color:grey">A caregiver provides care during the day and/or evening based on the needs of the client. The caregiver and the amount of hours are matched to the needs of each client.</p>
+        </div>
+
+        <div class="service-area">
+            <img src="/assets/icon-mauritius.svg" class="home-page-icon" alt="service-area">
+            <h3 style="color:#999999"><strong>Service Area</strong></h3>
+            <p style="color:grey">We provide award-winning home care services throughout the island.</p>
+        </div>
+
+        <div class="caregiver">
+            <img src="/assets/icon-become-carer.svg" class="home-page-icon" alt="caregiver">
+            <h3 style="color:#999999"><strong>Become a caregiver</strong></h3>
+            <p style="color:grey">If you’re seeking a Caregiver position and have a heart of compassion, Cherished Companions Home Care is the premier company to work for. Providing care is considered a high calling at Cherished Companions Home Care. We seek those individuals who see their work as a mission and not just a job. We offer an outstanding compensation package to those individuals who meet our rigorous standards to become a Cherished Companion.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </div>
 
 
