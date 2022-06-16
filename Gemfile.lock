@@ -112,6 +112,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -225,6 +226,8 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     spring (4.0.0)
     sprockets (4.0.3)
       concurrent-ruby (~> 1.0)
@@ -279,6 +282,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
+  geocoder
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -291,6 +295,7 @@ DEPENDENCIES
   redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  simple_calendar (~> 2.4)
   simple_form!
   spring
   turbolinks (~> 5)
@@ -303,4 +308,4 @@ RUBY VERSION
    ruby 3.0.3p157
 
 BUNDLED WITH
-   2.3.14
+   2.3.5
