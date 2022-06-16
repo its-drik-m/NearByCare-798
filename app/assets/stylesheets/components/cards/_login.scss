@@ -8,12 +8,14 @@
 }
 
 .form-group {
-  background-color: rgb(167, 168, 232);
+  // background-color: #a7a5ad;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.75) 100%);
   margin-bottom: 1rem;
   padding: 20px 30px;
   margin-top: 50px;
-  border-radius: 4px;
-  box-shadow: 2px 4px 8px;
+  border-radius: 20px;
+  box-shadow: 0.1px 0.1px 2px 0px;;
 
   .h2 {
     font-size: 40px;
@@ -23,11 +25,23 @@
   }
 }
 .btn-submit{
-  border-radius: 4px;
-  box-shadow: 2px 4px 8px;
+  background-color: $vivid-yellow;
+  color: $moderate-cyan;
+  border-radius: 40px;
+  box-shadow: 0.1px 0.1px 2px 0px;;
   font-size: 20px;
   font-weight: bold;
   padding: 5px 20px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
+.logo-sm{
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.position{
+  margin-left: 33%;}

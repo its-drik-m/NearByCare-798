@@ -2,7 +2,10 @@
   <div class="row register-card">
     <div class="col-xs-12 col-sm-4 col-dm-offset-4">
       <div class="form-group">
-        <h2>Log in</h2>
+        <div class="position">
+            <%= image_tag "icon-login.svg", class:"logo-sm" %>
+            <h2>Log in</h2>
+        </div>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
