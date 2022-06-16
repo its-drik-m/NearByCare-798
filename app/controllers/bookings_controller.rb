@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     end
 
     @booking.call_confirm = # call confirm variable
-    @booking.patient_confirmed = # parient confirm variable
+    @booking.patient_confirmed = # patient confirm variable
     @booking.carer_confirmed = # carer confirm variable
 
     if @booking.save
