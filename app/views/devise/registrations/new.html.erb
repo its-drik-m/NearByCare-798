@@ -1,8 +1,8 @@
-<%= render "devise/shared/links" %>
 <div class="container">
   <div class="row register-card">
     <div class="col-xs-12 col-sm-4 col-dm-offset-4">
       <div class="form-group">
+
         <h2>Sign up</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -27,11 +27,6 @@
             <%= f.input :password_confirmation,
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
-                <%# <%= f.select :role do%>
-                  <%# <option value="">Purpose ?</option>
-                  <option value="patient">Request for assistance</option>
-                  <option value="carer">Provide assistance</option>
-                <%end%>
           </div>
 
           <div class="row">
@@ -52,8 +47,8 @@
           </div>
         <% end %>
 
-        <%= render "devise/shared/links" %>
       </div>
+        <p>If you already have an account, please <%= render "devise/shared/links" %></p>
     </div>
   </div>
 </div>
