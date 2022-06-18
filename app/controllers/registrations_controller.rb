@@ -1,13 +1,9 @@
-# class RegistrationsController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
+  # redirecting to role selection after signup
 
-#   private
+  private
 
-#   def sign_up_params
-#     params.require(:user).permit(:last_name, :first_name, :phone_number)
-#   end
-#   protected
-
-#   def after_sign_up_path_for(resource)
-#     'edit_user_path' # Or :prefix_to_your_route
-#   end
-# end
+  def after_sign_up_path_for(resources)
+    edit_user_path(current_user.id)
+  end
+end

@@ -23,7 +23,7 @@ email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
     email: email[1],
     password: pw,
     phone_number: 57234567,
-    role: true
+    role: 1
   )
 
   User.create!(
@@ -32,7 +32,7 @@ email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
     email: email.last,
     password: pw,
     phone_number: 55237858,
-    role: true
+    role: 0
   )
 
   User.create!(
@@ -41,7 +41,7 @@ email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
     email: email.first,
     password: pw,
     phone_number: 53234589,
-    role: true
+    role: 1
   )
 
   puts "Created #{User.count} users !"

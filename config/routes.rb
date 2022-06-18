@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users #, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
+  resources :users, only: %i[edit update]
   get 'testing', to: 'pages#test'
   resources :carers, only: :index
-
-  resources :users, only: %i[edit update]
+  # get '/users' => "users#edit", :as => :user_root
 
   # get 'users/edit'
   # get 'users/update'
