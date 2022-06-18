@@ -1,4 +1,4 @@
-class ReviewController < ApplicationController
+class ReviewsController < ApplicationController
   before_action :set_review, only: %i[create show index destroy]
 
   def new
@@ -35,4 +35,5 @@ class ReviewController < ApplicationController
   def set_review
     @review = Review.find(params[:id])
   end
+
 end
