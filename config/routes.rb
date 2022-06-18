@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: %i[edit update]
   get 'testing', to: 'pages#test'
-  resources :carers, only: :index
-  # get '/users' => "users#edit", :as => :user_root
-
+  resources :carers, only: %i[index edit update show]
+  resources :patients, only: %i[edit update show]
   # get 'users/edit'
   # get 'users/update'
   # resources :booking do
