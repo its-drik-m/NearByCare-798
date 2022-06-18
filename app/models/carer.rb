@@ -1,5 +1,5 @@
 class Carer < ApplicationRecord
-  REGION = %I[North South East West Center]
+  REGION = %W[North South East West Center]
   SPECIALTY = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
                "Assistance during treatments", " Assistance and providing care",
                "Accomodative care", "Injury recovery treatment"]
