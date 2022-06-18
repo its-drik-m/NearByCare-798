@@ -1,0 +1,9 @@
+<div class="form-container">
+  <div class="simple-form">
+      <%= simple_form_for(@patient) do |f| %>
+        <%= f.input :address %>
+        <%= f.input :health_condition %>
+        <%= f.button :submit , class: "btn btn-custom " %>
+      <% end %>
+  </div>
+</div>
