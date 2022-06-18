@@ -2,6 +2,7 @@
   <div class="row register-card">
     <div class="col-xs-12 col-sm-4 col-dm-offset-4">
       <div class="form-group">
+        <%= image_tag "icon-login.svg", class:"logo-sm" %>
         <h2>Log in</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,7 +18,7 @@
           </div>
 
           <div class="row">
-            <div class="btn btn-submit">
+            <div class="btn btn-submit-yellow">
               <div class="form-actions">
                 <%= f.button :submit, "Log in" %>
               </div>
