@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 2022_06_14_154925) do
     t.string "last_name"
     t.string "first_name"
     t.integer "phone_number"
-    t.integer "role"
+    t.boolean "role"
     t.string "carer"
     t.string "patient"
     t.index ["email"], name: "index_users_on_email", unique: true
