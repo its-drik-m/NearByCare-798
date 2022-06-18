@@ -43,7 +43,6 @@ email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
     phone_number: 53234589,
     role: 1
   )
-
   puts "Created #{User.count} users !"
 
   user_id_first = User.first.id
