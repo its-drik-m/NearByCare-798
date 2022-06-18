@@ -1,11 +1,10 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
   devise_for :users # , controllers: { registrations: "registrations" }
   root to: 'pages#home'
-  get 'testing', to: 'pages#test'
-  resources :carers, only: :index
-
   resources :users, only: %i[edit update]
-
+  get 'testing', to: 'pages#test'
+  resources :carers, only: %i[index edit update show]
+  resources :patients, only: %i[edit update show]
   # get 'users/edit'
   # get 'users/update'
   # resources :booking do
