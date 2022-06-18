@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     end
 
     @booking.call_confirm = # call confirm variable
-    @booking.patient_confirmed = # parient confirm variable
+    @booking.patient_confirmed = # patient confirm variable
     @booking.carer_confirmed = # carer confirm variable
 
     if @booking.save
@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @booking.update(booking_param)
+    if @booking.update(booking_params)
       redirect_to @booking
     else
       render 'edit'
@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def booking_param
+  def booking_params
     params.require(:booking).permit(:start_date, :end_date, :carer_id, :patient_id, :call_confirm, :patient_confirmed, :carer_confirmed)
   end
 
