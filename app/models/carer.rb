@@ -1,5 +1,5 @@
 class Carer < ApplicationRecord
-  REGION = %W[North South East West Center]
+  REGION = %w[North South East West Center]
   SPECIALTY = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
                "Assistance during treatments", " Assistance and providing care",
                "Accomodative care", "Injury recovery treatment"]
@@ -9,6 +9,6 @@ class Carer < ApplicationRecord
   # thanks to Cloudinary
   has_one_attached :photo
 
-  validates :region, presence: true, inclusion: { in: Carer::REGION }
-  validates :specialty, presence: true, inclusion: { in: Carer::SPECIALTY }
+  validates :region, presence: true, inclusion: { in: REGION }
+  validates :specialty, presence: true, inclusion: { in: SPECIALTY }
 end
