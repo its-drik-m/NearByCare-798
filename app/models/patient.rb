@@ -7,5 +7,5 @@ class Patient < ApplicationRecord
   has_many :reviews, through: :bookings
 
   validates :address, presence: true
-  validates :health_conditions, presence: true, inclusion: { in: Patient::CONDITIONS }
+  validates :health_conditions, presence: true, inclusion: { in: CONDITIONS }
 end

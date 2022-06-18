@@ -12,9 +12,10 @@ Carer.destroy_all
 
 puts "Database cleaned !"
 pw = 123456
-region = ["North", "South", "East", "West", "Center"]
-specialty = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care", "Assistance during treatments",
-             "Assistance and providing care", "Accomodative care", "Injury recovery treatment"]
+region = %w[North South East West Center]
+specialty = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
+             "Assistance during treatments", " Assistance and providing care",
+             "Accomodative care", "Injury recovery treatment"]
 email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
 
   User.create!(
