@@ -12,9 +12,15 @@
 }
 
 .container-fluid {
-  width: 90vw;
+  width: 93vw;
 }
 
 .nav-link {
   color: white;
+}
+
+@media screen and (min-width: 700px) {
+  .container-fluid{
+    width: 78vw;
+  }
 }
