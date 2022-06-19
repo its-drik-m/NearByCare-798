@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   get 'testing', to: 'pages#test'
-  resources :users, only: %i[edit update] do
-    resources :carers, except: :destroy
-    resources :patients, except: %i[destroy index]
-  end
+  resources :users, only: %i[edit update]
+  resources :carers, except: :destroy
+  resources :patients, except: %i[destroy index]
   # resources :booking do
   #   resources :review
   # end
@@ -19,5 +18,4 @@ Rails.application.routes.draw do
   #   resources :reviews, only: %i[new create index show destroy]
   # end
   # end
-
 end

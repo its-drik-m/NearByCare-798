@@ -10,9 +10,10 @@ class CarersController < ApplicationController
 
   def create
     @carer = Carer.new(carer_params)
+    # @carer.user = current_user
     @carer.user.role = 1
     if @carer.save
-      redirect_to user_carer_path(@carer)
+      redirect_to carer_path(@carer)
     else
       render :new
     end
@@ -26,7 +27,7 @@ class CarersController < ApplicationController
 
   def update
     if @carer.update(carer_params)
-      redirect_to user_carer_path(@carer)
+      redirect_to carer_path(@carer)
     else
       render :edit
     end
@@ -39,6 +40,6 @@ class CarersController < ApplicationController
   end
 
   def set_carer
-    @carer = current_user
+    @carer = current_user # Carer.find(params[:id])
   end
 end
