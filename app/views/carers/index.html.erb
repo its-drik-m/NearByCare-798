@@ -1,0 +1,21 @@
+  <div class="row">
+    <% @carers.each do |carer| %>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <div class="img">
+              <%#= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+            </div>
+            <div class="card-body">
+              <h2><%= carer.last_name %></h2>
+              <p><%= carer.first_name %></p>
+            </div>
+            <div class="card-buttons">
+              <%= link_to "More info", carer_path(carer), class: "btn btn-green" %>
+              <% if current_user %>
+                <%= link_to "Book", "#",  class: "btn btn-green" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>

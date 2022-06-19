@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="simple-form">
-      <%= simple_form_for(@carer) do |f| %>
+      <%= simple_form_for([@user, @carer]) do |f| %>
         <%= f.input :region %>
         <%= f.input :specialty %>
         <%= f.input :photo, as: :file, input_html: {multiple: true} %>

@@ -12,14 +12,13 @@ class CarersController < ApplicationController
     @carer = Carer.new(carer_params)
     @carer.user.role = 1
     if @carer.save
-      redirect_to carer_path(@carer)
+      redirect_to user_carer_path(@carer)
     else
       render :new
     end
   end
 
   def show
-    @review = Review.new
     @booking = Booking.new
   end
 
@@ -27,7 +26,7 @@ class CarersController < ApplicationController
 
   def update
     if @carer.update(carer_params)
-      redirect_to carer_path(@carer)
+      redirect_to user_carer_path(@carer)
     else
       render :edit
     end

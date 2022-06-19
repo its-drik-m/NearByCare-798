@@ -1,4 +1,4 @@
 <div class="role-selection">
-  <%= link_to "Carer", "#", class: "btn btn-primary" %>
-  <%= link_to "Patient", "#", class: "btn btn-primary" %>
+  <%= link_to "Carer", new_user_carer_path(current_user.id), class: "btn btn-primary" %>
+  <%= link_to "Patient", new_user_patient_path(current_user.id), class: "btn btn-primary" %>
 </div>
