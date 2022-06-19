@@ -2,13 +2,12 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
 
   def new
-    @booking = Booking.new
+    @booking = Booking.new(params[:booking][:carer_id])
   end
 
   def create
-    @booking = Booking.new(booking_param)
-
-    if @current_user.role == false
+    @booking = Booking.new(booking_params)
+    if @current_user.role == 1
       @booking.patient_id = @current_user.id
       @booking.carer_id = params[:booking][:carer_id]
     else

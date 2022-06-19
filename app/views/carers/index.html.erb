@@ -1,0 +1,12 @@
+<div class="calendar-container">
+  <%= month_calendar(bookings: @bookings, end_attribute: :date) do |date, bookings| %>
+    <%= date %>
+
+    <% bookings.each do |booking| %>
+      <div class="booking">
+        <p><%= booking.name %></p>
+        <small><%= booking.time %></small>
+      </div>
+    <% end %>
+  <% end %>
+</div>
