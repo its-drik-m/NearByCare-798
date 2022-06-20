@@ -13,7 +13,7 @@ class CarersController < ApplicationController
     @carer.user_id = current_user.id
     User.find(@carer.user_id).role = 1
     if @carer.save
-      redirect_to carer_path
+      redirect_to carer_path(@carer)
     else
       render :new
     end
@@ -36,7 +36,7 @@ class CarersController < ApplicationController
   private
 
   def carer_params
-    params.require(:carer).permit(:user_id, :photo, :region, :specialty,)
+    params.require(:carer).permit(:user_id, :photo, :region, :specialty)
   end
 
   def set_carer
