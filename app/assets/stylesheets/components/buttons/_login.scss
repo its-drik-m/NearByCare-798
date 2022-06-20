@@ -57,3 +57,24 @@
   transition: 0.4s;
   border-color: grey;
 }
+
+
+// button for devise - sign in, log in, etc...
+.btn-submit-desaturated-cyan {
+  background-color: $desaturated-cyan;
+  color: white;
+  border-radius: 40px;
+  text-decoration-style: none;
+  // box-shadow: 0.1px 0.1px 2px 0px;;
+  font-size: 16px;
+  // font-weight: bold;
+  padding: 5px 20px;
+  margin: 24px 16px 24px 16px;
+
+}
+
+.btn-submit-desaturated-cyan:hover {
+  color: $navy-blue;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+}
