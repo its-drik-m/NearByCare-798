@@ -1,0 +1,21 @@
+  <div class="row">
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h2><%= @patient.last_name %></h2>
+              <p><%= @patient.first_name %></p>
+              <p><%= @patient.health_conditions %></p>
+              <p><%= @patient.phone_number %></p>
+              <p><%= @patient.address %></p>
+            </div>
+            <div class="card-buttons">
+              <%= link_to "Back", carers_path, class: "btn btn-green" %>
+              <% if current_user %>
+                <%= link_to "Interview", "#",  class: "btn btn-green" %>
+                <%= link_to "Book", "#",  class: "btn btn-green" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>

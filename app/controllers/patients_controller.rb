@@ -7,7 +7,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(patient_params)
-    # @patient.user = current_user
+    @patient.user_id = current_user.id
     if @patient.save
       redirect_to carers_path
     else
@@ -33,10 +33,10 @@ class PatientsController < ApplicationController
   private
 
   def patient_params
-    params.require(:patient).permit(:address, :health_condition)
+    params.require(:patient).permit(:user_id, :address, :health_conditions)
   end
 
   def set_patient
-    @patient = current_user # Patient.find(params[:id])
+    @patient = Patient.find(params[:id])
   end
 end

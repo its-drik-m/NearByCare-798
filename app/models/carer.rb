@@ -9,6 +9,6 @@ class Carer < ApplicationRecord
   # thanks to Cloudinary
   has_one_attached :photo
 
-  validates :region, presence: true, inclusion: { in: REGION }
-  validates :specialty, presence: true, inclusion: { in: SPECIALTY }
+  validates :region, presence: true, inclusion: { in: Carer::REGION, presence: true }
+  validates :specialty, inclusion: { in: Carer::SPECIALTY}
 end

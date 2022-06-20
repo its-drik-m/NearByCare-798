@@ -1,9 +1,9 @@
 <div class="form-container">
   <div class="simple-form">
       <%= simple_form_for(carer) do |f| %>
-        <%= f.input :region %>
-        <%= f.input :specialty %>
-        <%= f.button :submit , class: "btn btn-custom " %>
+        <%= f.input :region, collection: Carer::REGION %>
+        <%= f.input :specialty, as: :check_boxes, collection: Carer::SPECIALTY, input_html: { multiple: true }  %>
+        <%= f.submit 'Save my profile', class: "btn-primary" %>
       <% end %>
   </div>
 </div>
