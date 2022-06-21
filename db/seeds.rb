@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require_relative '../app/models/carer'
+
 # require 'faker'
 require 'uri'
 require "open-uri"
@@ -16,10 +18,12 @@ Carer.destroy_all
 
 puts "Database cleaned !"
 pw = 123456
-region = %w[North South East West Center]
-specialty = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
-             "Assistance during treatments", " Assistance and providing care",
-             "Accomodative care", "Injury recovery treatment"]
+
+# region = %w[North South East West Center]
+# specialty = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
+#              "Assistance during treatments", " Assistance and providing care",
+#              "Accomodative care", "Injury recovery treatment"]
+# email = ["ajaghen@test.com", "cedric@test.com", "karishma@test.com"]
 
   User.create!(
     first_name: "Ajaghen",
@@ -298,240 +302,240 @@ specialty = ["Palliative care", "Surgery recovery treatment", "Rehabilitation ca
 
   carer1 = Carer.create!(
     user_id: 1,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
   carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer2 = Carer.create!(
     user_id: 2,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797882/Nearbycare/man_02.jpg')
   carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer3 = Carer.create!(
     user_id: 3,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/woman_17.jpg')
   carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer4 = Carer.create!(
     user_id: 4,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/man_03.jpg')
   carer4.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer5 = Carer.create!(
     user_id: 5,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797870/Nearbycare/man_04.jpg')
   carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer6 = Carer.create!(
     user_id: 6,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797864/Nearbycare/man_05.jpg')
   carer6.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer7 = Carer.create!(
     user_id: 7,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797849/Nearbycare/man_06.jpg')
   carer7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer8 = Carer.create!(
     user_id: 8,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797839/Nearbycare/man_07.jpg')
   carer8.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer9 = Carer.create!(
     user_id: 9,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797827/Nearbycare/man_08.jpg')
   carer9.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer10 = Carer.create!(
     user_id: 10,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797820/Nearbycare/man_09.jpg')
   carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer11 = Carer.create!(
     user_id: 11,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797810/Nearbycare/man_10.jpg')
   carer11.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer12 = Carer.create!(
     user_id: 12,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797797/Nearbycare/man_11.jpg')
   carer12.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer13 = Carer.create!(
     user_id: 13,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797787/Nearbycare/man_12.jpg')
   carer13.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer14 = Carer.create!(
     user_id: 14,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/man_13.jpg')
   carer14.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer15 = Carer.create!(
     user_id: 15,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803871/Nearbycare/woman_18.jpg')
   carer15.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer16 = Carer.create!(
     user_id: 16,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655798003/Nearbycare/woman_01.jpg')
   carer16.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer17 = Carer.create!(
     user_id: 17,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797997/Nearbycare/woman_02.jpg')
   carer17.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer18 = Carer.create!(
     user_id: 18,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797990/Nearbycare/woman_03.jpg')
   carer18.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer19 = Carer.create!(
     user_id: 19,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797983/Nearbycare/woman_04.jpg')
   carer19.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer20 = Carer.create!(
     user_id: 20,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/woman_05.jpg')
   carer20.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer21 = Carer.create!(
     user_id: 21,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_06.jpg')
   carer21.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer22 = Carer.create!(
     user_id: 22,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797955/Nearbycare/woman_08.jpg')
   carer22.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer23 = Carer.create!(
     user_id: 23,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797950/Nearbycare/woman_09.jpg')
   carer23.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer24 = Carer.create!(
     user_id: 24,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797945/Nearbycare/woman_10.jpg')
   carer24.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer25 = Carer.create!(
     user_id: 18,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797939/Nearbycare/woman_11.jpg')
   carer25.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer26 = Carer.create!(
     user_id: 26,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797933/Nearbycare/woman_12.jpg')
   carer26.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer27 = Carer.create!(
     user_id: 27,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797927/Nearbycare/woman_13.jpg')
   carer27.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer28 = Carer.create!(
     user_id: 28,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797922/Nearbycare/woman_14.jpg')
   carer28.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer29 = Carer.create!(
     user_id: 29,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797916/Nearbycare/woman_15.jpg')
   carer29.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
   carer30 = Carer.create!(
     user_id: 30,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797911/Nearbycare/woman_16.jpg')
   carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')

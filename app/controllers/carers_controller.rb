@@ -18,7 +18,8 @@ class CarersController < ApplicationController
 
   def create
     @carer = Carer.new(carer_params)
-    @carer.user.role = 1
+    @carer.user_id = current_user.id
+    User.find(@carer.user_id).role = 1
     if @carer.save
       redirect_to carer_path(@carer)
     else
@@ -27,7 +28,6 @@ class CarersController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @booking = Booking.new
   end
 
@@ -48,6 +48,6 @@ class CarersController < ApplicationController
   end
 
   def set_carer
-    @carer = current_user
+    @carer = Carer.find(params[:id])
   end
 end
