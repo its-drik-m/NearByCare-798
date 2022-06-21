@@ -3,7 +3,7 @@
   <div class="simple-form">
       <%= simple_form_for(carer) do |f| %>
         <%= f.input :region, collection: Carer::REGION %>
-        <%= f.input :specialty, collection: Carer::SPECIALTY %>
+        <%= f.input :specialty, as: :check_boxes, collection: Carer::SPECIALTY, input_html: { multiple: true }  %>
         <%= f.submit 'Save my profile', class: "btn-primary" %>
       <% end %>
   </div>
