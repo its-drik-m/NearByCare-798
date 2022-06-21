@@ -516,15 +516,10 @@ pw = 123456
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797927/Nearbycare/woman_13.jpg')
   carer27.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-  Carer.create!(
-    user_id: rand(user_id_first..user_id_last),
-    region: Carer::REGION.sample, # could also have used region.shuffle.first
-    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-
   carer28 = Carer.create!(
     user_id: 28,
-    region: region.sample, # could also have used region.shuffle.first
-    specialty: specialty.sample # could also have used specialty.shuffle.first
+    region: Carer::REGION.sample, # could also have used region.shuffle.first
+    specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
   )
   file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797922/Nearbycare/woman_14.jpg')
   carer28.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
