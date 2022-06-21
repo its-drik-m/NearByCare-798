@@ -1,4 +1,4 @@
-.register-card {
+register-card {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -8,13 +8,9 @@
   display: grid;
   justify-items: center;
 
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.75) 100%);
   margin-bottom: 1rem;
   padding: 20px 30px;
-  margin-top: 50px;
   border-radius: 20px;
-  box-shadow: 0.1px 0.1px 2px 0px;;
 
   .h2 {
     font-size: 40px;
@@ -24,12 +20,17 @@
   }
 
   .simple_form{
-    width: 90%;
-    margin: auto;
+    width: 100%;
   }
 }
 
 
 .logo-sm{
   width: 100px;
+}
+
+
+@media screen and (min-width: 700px) {
+
+  width: 75vw;
 }

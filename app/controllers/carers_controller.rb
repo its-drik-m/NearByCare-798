@@ -1,7 +1,13 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
+  
   def index
     @carers = Carer.all
+    @carers = Carer.order(region: :desc, specialty: :desc)
+
+    if params[:query].present?
+      @carers = @carers.where('region ILIKE ?', "%#{params[:query]}%")
+    end
   end
 
   def new
