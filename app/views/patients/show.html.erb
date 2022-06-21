@@ -2,10 +2,10 @@
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h2><%= @patient.last_name %></h2>
-              <p><%= @patient.first_name %></p>
+              <h2><%= User.find(@patient.user_id).last_name %></h2>
+              <p><%= @User.find(@patient.user_id).first_name %></p>
               <p><%= @patient.health_conditions %></p>
-              <p><%= @patient.phone_number %></p>
+              <p><%= User.find(@patient.user_id).phone_number %></p>
               <p><%= @patient.address %></p>
             </div>
             <div class="card-buttons">

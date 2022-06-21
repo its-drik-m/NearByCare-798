@@ -7,7 +7,7 @@
             <div class="card-body">
               <h2><%= User.find(@carer.user_id).last_name %></h2>
               <p><%= User.find(@carer.user_id).first_name %></p>
-              <p><%= (@carer.specialty).join(",") %></p>
+              <p><%= @carer.specialty%></p>
               <p><%= User.find(@carer.user_id).phone_number %></p>
               <p><%= @carer.region %></p>
             </div>
