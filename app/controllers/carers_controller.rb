@@ -1,12 +1,14 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
-  
+
   def index
-    @carers = Carer.all
-    @carers = Carer.order(region: :desc, specialty: :desc)
+    @carers = Carer.order(first_name: :desc)
 
     if params[:query].present?
-      @carers = @carers.where('region ILIKE ?', "%#{params[:query]}%")
+      sql_query = "region ILIKE :query OR specialty ILIKE :query"
+      @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @carers = Carer.all
     end
   end
 
@@ -42,7 +44,7 @@ class CarersController < ApplicationController
   private
 
   def carer_params
-    params.require(:carer).permit(:region, :specialty, :photo)
+    params.require(:carer).permit(:first_name, :last_name, :region, :specialty, :photo)
   end
 
   def set_carer
