@@ -1,0 +1,8 @@
+<div class="carer-card">
+  <%= cl_image_path(carer.photo.key) %>
+
+  <div class="carer-infos">
+    <h2><%= "#{@carer.user_id.first_name} + #{@carer.user_id.last_name}" %></h2>
+    <i class="fas fa-pen fa-xs ml-2"></i>
+  </div>
+</div>

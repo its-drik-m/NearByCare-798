@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="h2 my-3 d-flex justify-content-center">Select a carer</h1>
+
+      <div>
+        <%= form_with url: carers_path, method: :get, html: { class: 'mb-4' } do |f| %>
+          <%= f.text_field :query,
+                           class: "form-control",
+                           placeholder: 'Choose by region and by specialty',
+                           value: params[:query]
+                           %>
+        <% end %>
+
+        <%= render 'cards', carers: @carers %>
+      </div>
+    </div>
+  </div>
+</div>
