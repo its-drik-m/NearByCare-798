@@ -1,0 +1,59 @@
+//yellow button with animation on hover
+.btn-submit-yellow {
+  background-color: $vivid-yellow;
+  color: $moderate-cyan;
+  border-radius: 40px;
+  // box-shadow: 0.1px 0.1px 2px 0px;;
+  font-size: 20px;
+  // font-weight: bold;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.btn-submit-yellow:hover {
+  color: white;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+  // border-color: grey;
+}
+
+
+//blue button with animation on hover
+.btn-submit-blue {
+  background-color: $navy-blue;
+  color: $vivid-yellow;
+  border-radius: 40px;
+  // box-shadow: 0.1px 0.1px 2px 0px;;
+  font-size: 20px;
+  // font-weight: bold;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.btn-submit-blue:hover {
+  background-color: transparent;
+  transition: 0.4s;
+  border-color: grey;
+  color: white;
+}
+
+
+//white button with animation on hover
+.btn-submit-white {
+  background-color: white;
+  color: $moderate-cyan;
+  border-radius: 40px;
+  // box-shadow: 0.1px 0.1px 2px 0px;;
+  font-size: 20px;
+  // font-weight: bold;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.btn-submit-white:hover {
+  color: $navy-blue;
+  background-color: transparent;
+  transition: 0.4s;
+  border-color: grey;
+}
