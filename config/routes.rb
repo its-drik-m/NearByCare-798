@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :patients, except: %i[destroy index]
   get 'patients/:id/destination', to: 'patients#destination', as: 'destination'
   get 'carers/:id/bookings', to: 'carers#bookings', as: 'bookings'
+  get 'carers/index', to: 'carers#index', as: 'carershome'
+  get '/carers/map', to: 'carers#map'
     # resources :users, only: %i[edit update] do
   #  resources :patients, only: %i[edit update show] do
   #  resources :bookings, only: %i[new create index show destroy]
