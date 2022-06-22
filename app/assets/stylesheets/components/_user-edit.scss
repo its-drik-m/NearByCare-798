@@ -1,0 +1,25 @@
+.edit-role{
+  .container{
+    height: 70vh;
+  }
+}
+
+.user-edit {
+  display: flex;
+  align-items: flex-end;
+
+  .patient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+  }
+
+  .carer {
+    margin: 8px;
+  }
+}
+
+#icon-patient {
+  height: 91px;
+}

@@ -1,4 +1,23 @@
-<div class="role-selection">
-  <%= link_to "Carer", "#", class: "btn btn-primary" %>
-  <%= link_to "Patient", "#", class: "btn btn-primary" %>
+<div class="edit-role">
+  <div class="container">
+    <div class="user-edit">
+      <div class="carer">
+        <div class="role-icon">
+          <%= image_tag "icon-carer.svg", alt:"carer" %>
+        </div>
+        <div>
+          <%= link_to "Carer", new_carer_path, class: "btn btn-submit-white" %>
+        </div>
+      </div>
+
+      <div class="patient">
+        <div class="role-icon">
+          <%= image_tag "icon-patient.svg",id:"icon-patient", alt:"patient" %>
+        </div>
+        <div>
+          <%= link_to "Patient", new_patient_path, class: "btn btn-submit-white" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
