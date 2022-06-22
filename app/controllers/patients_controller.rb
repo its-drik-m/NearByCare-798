@@ -29,6 +29,13 @@ class PatientsController < ApplicationController
     end
   end
 
+  def destination
+    @marker = [{
+      lat: @patient.latitude,
+      lng: @patient.longitude
+    }]
+  end
+
   private
 
   def patient_params
