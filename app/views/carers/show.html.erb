@@ -2,11 +2,7 @@
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
             <div class="img">
-<<<<<<< HEAD
-              <%# <%= cl_image_tag carer.photo.key, height: 300, width: 400, crop: :fill %>
-=======
               <% cl_image_tag @carer.photo.key, height: 300, width: 400, crop: :fill %>
->>>>>>> 0af5536f76572db71d992380abe613f4e2a3d39d
             </div>
             <div class="card-body">
               <h2><%= User.find(@carer.user_id).last_name %></h2>

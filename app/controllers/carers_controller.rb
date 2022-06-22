@@ -10,6 +10,11 @@ class CarersController < ApplicationController
     else
       @carers = Carer.all
     end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { carers: @carers } }
+    end
   end
 
   def new

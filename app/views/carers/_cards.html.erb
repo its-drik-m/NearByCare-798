@@ -1,10 +1,10 @@
-<div>
+<div data-refresh-list-target="list">
   <p class="h3">
-    <% if params[:query].blank? %>
-      <%= pluralize carers.count, 'carer' %> available
-    <% else %>
-      <%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code>
-    <% end %>
+   <% if params[:query].blank? %>
+    <h1 class="h3"><%= pluralize carers.count, 'carer' %> available</h1>
+  <% else %>
+    <h1 class="h3"><%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code></h1>
+  <% end %>
   </p>
   <div class="carers">
     <% carers.each do |carer| %>
