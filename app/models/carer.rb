@@ -10,5 +10,5 @@ class Carer < ApplicationRecord
   has_one_attached :photo
 
   validates :region, presence: true, inclusion: { in: REGION }
-  validates :specialty, presence: true, inclusion: { in: SPECIALTY }
+  #validates :specialty, inclusion: SPECIALTY
 end

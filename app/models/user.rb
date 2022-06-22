@@ -8,10 +8,10 @@ class User < ApplicationRecord
   has_many :patients
 
  # Added validations
- #   validates :last_name, presence: true
- #   validates :first_name, presence: true
- #  validates :phone_number, presence: true, uniqueness: true
- # validates :role, presence: true, inclusion: { in: [true, false] }
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :phone_number, presence: true
+  validates :role, presence: true
 
   enum role: %i[patient carer]
 

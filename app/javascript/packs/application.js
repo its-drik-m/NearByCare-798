@@ -29,3 +29,10 @@ require("flatpickr/dist/flatpickr.css")
 
 // Manually register Flatpickr as a stimulus controller
 application.register('flatpickr', Flatpickr)
+
+// Using the jquery bar rating plugin
+// import "jquery-bar-rating"
+
+// import { initStarRating } from '../plugins/init_star_rating';
+
+// initStarRating();
