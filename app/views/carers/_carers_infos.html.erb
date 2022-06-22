@@ -1,8 +1,15 @@
-<div class="carer-card">
+<div class="carer-card" style="width: 18rem;">
   <%= cl_image_tag(carer.photo.key) %>
 
   <div class="carer-infos">
-    <h2><%= "#{@carer.user_id.first_name} + #{@carer.user_id.last_name}" %></h2>
+    <h2><%= "#{User.find(carer.user_id).first_name } #{" "} #{User.find(carer.user_id).last_name }" %></h2>
     <i class="fas fa-pen fa-xs ml-2"></i>
+  <div class="card-buttons">
+    <%= link_to "More info", carer_path(carer), class: "btn btn-green" %>
+    <% if current_user %>
+      <%= link_to "Interview", "#",  class: "btn btn-green" %>
+      <%= link_to "Book", "#",  class: "btn btn-green" %>
+    <% end %>
+  </div>
   </div>
 </div>
