@@ -44,7 +44,7 @@ class CarersController < ApplicationController
   private
 
   def carer_params
-    params.require(:carer).permit(:first_name, :last_name, :region, :specialty, :photo)
+    params.require(:carer).permit(:user_id, :photo, :region, specialty: [])
   end
 
   def set_carer
