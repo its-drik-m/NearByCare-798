@@ -31,8 +31,8 @@ require("flatpickr/dist/flatpickr.css")
 application.register('flatpickr', Flatpickr)
 
 // Using the jquery bar rating plugin
-import "jquery-bar-rating"
+// import "jquery-bar-rating"
 
-import { initStarRating } from '../plugins/init_star_rating';
+// import { initStarRating } from '../plugins/init_star_rating';
 
-initStarRating();
+// initStarRating();

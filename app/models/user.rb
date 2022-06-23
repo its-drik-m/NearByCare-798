@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :carers
   has_many :patients
 
- # Added validationss
+ # Added validations
   validates :last_name, presence: true
   validates :first_name, presence: true
   validates :phone_number, presence: true
