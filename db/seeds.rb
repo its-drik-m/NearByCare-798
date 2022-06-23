@@ -14,6 +14,8 @@ require "open-uri"
 
 puts "Cleaning up database..."
 Review.destroy_all
+Booking.destroy_all
+Patient.destroy_all
 Carer.destroy_all
 User.destroy_all
 
