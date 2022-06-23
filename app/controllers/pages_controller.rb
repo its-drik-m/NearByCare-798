@@ -6,4 +6,8 @@ class PagesController < ApplicationController
 
   def test
   end
+
+  def character_counter
+
+  end
 end

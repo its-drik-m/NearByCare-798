@@ -2,8 +2,6 @@ class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
 
   def index
-    @carers = Carer.order(first_name: :desc)
-
     if params[:query].present?
       sql_query = "region ILIKE :query OR specialty ILIKE :query"
       @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
