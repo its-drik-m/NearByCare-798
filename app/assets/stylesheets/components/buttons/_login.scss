@@ -3,9 +3,7 @@
   background-color: $vivid-yellow;
   color: $moderate-cyan;
   border-radius: 40px;
-  // box-shadow: 0.1px 0.1px 2px 0px;;
   font-size: 20px;
-  // font-weight: bold;
   padding: 5px 20px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -14,7 +12,6 @@
   color: white;
   background-color: $moderate-cyan;
   transition: 0.4s;
-  // border-color: grey;
 }
 
 
@@ -23,9 +20,7 @@
   background-color: $navy-blue;
   color: $vivid-yellow;
   border-radius: 40px;
-  // box-shadow: 0.1px 0.1px 2px 0px;;
   font-size: 20px;
-  // font-weight: bold;
   padding: 5px 20px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -43,9 +38,7 @@
   background-color: white;
   color: $moderate-cyan;
   border-radius: 40px;
-  // box-shadow: 0.1px 0.1px 2px 0px;;
   font-size: 20px;
-  // font-weight: bold;
   padding: 5px 20px;
   margin-bottom: 20px;
   margin-top: 20px;
@@ -65,16 +58,33 @@
   color: white;
   border-radius: 40px;
   text-decoration-style: none;
-  // box-shadow: 0.1px 0.1px 2px 0px;;
   font-size: 16px;
-  // font-weight: bold;
   padding: 5px 20px;
   margin: 24px 16px 24px 16px;
-
 }
 
 .btn-submit-desaturated-cyan:hover {
   color: $navy-blue;
   background-color: $moderate-cyan;
   transition: 0.4s;
+}
+
+
+//carer-card button
+.btn-submit-carer {
+  background-color: white;
+  color: grey;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-submit-carer:hover {
+  color: white;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+
 }

@@ -72,8 +72,25 @@ body {
     flex-direction: column;
   }
 
+  //container for patient
 .container {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
+  width: 90vw;
+  border-radius: 32px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 16px 8px 16px 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+//container for carers
+.container_2 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
   width: 90vw;
   border-radius: 32px;
   margin-top: 16px;
@@ -179,4 +196,8 @@ p {
     width: 30vw;
   }
 
+
+  .container_2 {
+    width: 75vw;
+  }
 }
