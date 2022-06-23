@@ -8,17 +8,17 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_param)
 
-    if @current_user.role == false
+    if @current_user.patient?
       @booking.patient_id = @current_user.id
       @booking.carer_id = params[:booking][:carer_id]
+      @booking.patient_confirmed = true
     else
       @booking.carer_id = @current_user.id
       @booking.patient_id = params[:booking][:patient_id]
+      @booking.carer_confirmed = true
     end
 
     @booking.call_confirm = # call confirm variable
-    @booking.patient_confirmed = # patient confirm variable
-    @booking.carer_confirmed = # carer confirm variable
 
     if @booking.save
       redirect_to # some appropriate path
@@ -35,11 +35,6 @@ class BookingsController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def destroy
-    @booking.destroy
-    redirect_to bookings_path
   end
 
   def index; end
