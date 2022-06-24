@@ -4,16 +4,7 @@
         <h1 class="my-3 d-flex justify-content-center">Select a carer</h1>
 
         <div data-controller="search-carers">
-        <%= form_with url: carers_path, method: :get, html: { class: "mb-4", data: { search_carers_target: "form" } } do |f| %>
-            <%= f.text_field :query,
-                           class: "form-control",
-                           placeholder: "Choose a carer by region and specialty",
-                           value: params[:query],
-                            data: {
-                              action: "keyup->search-carers#update",
-                              search_carers_target: "searchInput"
-                            } %>
-        <% end %>
+
          <%= render "list", carers: @carers %>
         </div>
       </div>

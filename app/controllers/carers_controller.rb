@@ -5,8 +5,12 @@ class CarersController < ApplicationController
     @carers = Carer.order(first_name: :desc)
 
     if params[:query].present?
-      sql_query = "region ILIKE :query OR specialty ILIKE :query"
-      @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+      sql_query_north = (@carers = Carer.where("region ILIKE 'North' "))
+      sql_query_south = (@carers = Carer.where("region ILIKE 'South' "))
+      sql_query_east = (@carers = Carer.where("region ILIKE 'East' "))
+      sql_query_west = (@carers = Carer.where("region ILIKE 'West' "))
+      sql_query_center = (@carers = Carer.where("region ILIKE 'Center' "))
+
     else
       @carers = Carer.all
     end
