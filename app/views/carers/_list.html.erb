@@ -6,9 +6,3 @@
       <%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code>
     <% end %>
   </p>
-  <div class="carers">
-    <% @carers.each do |carer| %>
-      <%= render 'carers_infos', carer: carer %>
-    <% end %>
-  </div>
-</div>
