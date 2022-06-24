@@ -31,7 +31,7 @@
             <p><%= User.find(carer.user_id).first_name %></p>
           </div>
           <br>
-          <div class="card-buttons">
+          <div id="card-button-in-list" class="card-buttons">
             <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
             <% if current_user %>
               <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
