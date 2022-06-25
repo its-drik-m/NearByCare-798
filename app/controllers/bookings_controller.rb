@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     # end
     # @booking.call_confirm = # call confirm variable
     if @booking.save
-      redirect_to root_path # some appropriate path
+      redirect_to carer_path(@carer.id) # some appropriate path
     else
       render 'new'
     end

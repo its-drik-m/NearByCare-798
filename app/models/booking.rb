@@ -14,11 +14,11 @@ class Booking < ApplicationRecord
   # end
 
   def date_cannot_be_in_the_past
-    if start_date.present? && start_date < Date.today
+    if start_date.present? && start_date < Time.zone.now
       errors.add(:start_date, "can't be in the past")
     end
 
-    if end_date.present? && end_date < Date.today
+    if end_date.present? && end_date < Time.zone.now
       errors.add(:end_date, "can't be in the past")
     end
   end
