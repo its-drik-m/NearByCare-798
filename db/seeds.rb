@@ -538,9 +538,14 @@ carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
+# Data Set
 address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe", "Albion", "Tamarin", "Mahebourg"]
 users_pick = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+carer_id = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+patient_id = [1, 2, 3, 4, 5]
 
+
+puts "> Creating imaginary patients..."
 7.times do
   Patient.create!(
     user_id: users_pick.sample,
@@ -549,12 +554,10 @@ users_pick = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   )
 end
 
-puts "Created #{Patient.count} patients!"
+puts "> Created #{Patient.count} patients!"
 
 # Create Bookings
-puts "> Creating bookings..."
-carer_id = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-patient_id = [1, 2, 3, 4, 5]
+puts "> Faking bookings..."
 
 7.times do
   Booking.create!(
@@ -567,5 +570,5 @@ patient_id = [1, 2, 3, 4, 5]
   )
 end
 
-puts "Created #{Booking.count} bookings!"
-puts 'Finished!'
+puts "> Created #{Booking.count} bookings!"
+puts '> Seed Completed!'
