@@ -15,6 +15,14 @@ class CarersController < ApplicationController
       format.html
       format.text { render partial: 'list.html', locals: { carers: @carers }, formats: [:html] }
     end
+
+    @markers = @carers.geocoded.map do |flat|
+      {
+        lat: carer.latitude,
+        lng: carer.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { carer: carer })
+      }
+    end
   end
 
   def new

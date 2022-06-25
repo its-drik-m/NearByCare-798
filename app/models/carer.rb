@@ -6,6 +6,10 @@ class Carer < ApplicationRecord
   has_one :user
   has_many :patients
 
+    # geocoder configuration for patient
+    geocoded_by :address
+    after_validation :geocode, if: :will_save_change_to_address?
+
   # thanks to Cloudinary
   has_one_attached :photo
 

@@ -1,6 +1,15 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[show edit update destroy]
 
+  def index
+    @markers = @patients.geocoded.map do |patient|
+      {
+        lat: patient.latitude,
+        lng: patient.longitude
+      }
+    end
+  end
+
   def new
     @patient = Patient.new
   end
