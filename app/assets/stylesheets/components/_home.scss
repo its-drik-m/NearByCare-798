@@ -104,6 +104,20 @@ body {
   flex-direction: column;
 }
 
+.container_3 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  width: 90vw;
+  border-radius: 16px;
+  margin: 8px;
+  padding: 16px 16px 16px 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
 .intro {
   display: flex;
   justify-content: center;
@@ -198,6 +212,10 @@ p {
 
 
   .container_2 {
+    width: 75vw;
+  }
+
+  .container_3 {
     width: 75vw;
   }
 }
