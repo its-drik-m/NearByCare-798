@@ -4,7 +4,8 @@ class Carer < ApplicationRecord
                "Assistance during treatments", " Assistance and providing care",
                "Accomodative care", "Injury recovery treatment"]
   has_one :user
-  has_many :patients
+  has_many :bookings
+  has_many :patients, through: :bookings
 
     # geocoder configuration for patient
     geocoded_by :address

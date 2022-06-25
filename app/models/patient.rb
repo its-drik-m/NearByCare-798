@@ -3,7 +3,8 @@ class Patient < ApplicationRecord
                 "Neurological disorders", "Diabetes", "Back injury", "Spinal cord injury", "Alzheimer",
                 "Dialysis", "Chronic illness", "Accident Injury Recovery", "Sports Injury Treatment"]
   has_one :user
-  has_many :carers
+  has_many :bookings
+  has_many :carers, through: :bookings
   has_many :reviews, through: :bookings
 
   # geocoder configuration for patient
