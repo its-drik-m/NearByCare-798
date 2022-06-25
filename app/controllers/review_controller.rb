@@ -2,8 +2,13 @@ class ReviewController < ApplicationController
   before_action :set_review, only: %i[create show index destroy]
 
   def new
-    @review = Review.new
-    @review.booking_id = @booking.id
+    # allow booking only if carer is not same as patient
+    if @booking.carer_id == current_user.id
+      redirect_to booking_path(@booking)
+    else
+      @review = Review.new
+      # @review.booking_id = @booking.id
+    end
   end
 
   def create

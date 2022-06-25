@@ -540,8 +540,8 @@ puts "Created #{Carer.count} carers !"
 
 # Data Set
 address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe", "Albion", "Tamarin", "Mahebourg"]
-users_pick = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-carer_id = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+users_pick = [1, 2, 3, 4, 5]
+carer_id = [1, 2, 3, 4, 5]
 patient_id = [1, 2, 3, 4, 5]
 
 
@@ -564,7 +564,7 @@ puts "> Faking bookings..."
     carer_id: carer_id.sample,
     patient_id: patient_id.sample,
     start_date: DateTime.now + 0.025,
-    end_date: start_date + 0.3,
+    end_date: DateTime.now + 0.3,
     patient_confirmed: [true, false].sample,
     carer_confirmed: [true, false].sample
   )
