@@ -1,5 +1,5 @@
 <div class="carer-card" style="width: 18rem;">
-  <%= cl_image_tag(carer.photo.key) %>
+  <%= cl_image_tag carer.photo.key %>
 
   <div class="carer-infos">
     <h2><%= "#{User.find(carer.user_id).first_name } #{" "} #{User.find(carer.user_id).last_name }" %></h2>
@@ -13,4 +13,3 @@
   </div>
   </div>
 </div>
-
