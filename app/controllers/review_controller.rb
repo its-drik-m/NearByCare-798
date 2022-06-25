@@ -7,9 +7,8 @@ class ReviewController < ApplicationController
   end
 
   def create
-
     # allow booking only if carer is not same as patient
-    if @booking.carer_id == current_user.
+    if @booking.carer_id == current_user.id
       flash[:danger] = 'You cannot review your own booking!'
       redirect_to booking_path(@booking)
     else
@@ -17,7 +16,6 @@ class ReviewController < ApplicationController
       @review.booking_id = @booking.id
       @review.carer_id = @booking.carer_id
       @review.patient_id = @booking.patient_id
-      # #
       @review.rating = params[:review][:rating]
       @review.comment = params[:review][:comment]
 

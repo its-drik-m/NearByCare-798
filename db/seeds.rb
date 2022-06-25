@@ -538,80 +538,34 @@ carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
-Patient.create!(
-  user_id: 1,
-  address: "Port-Louis",
-  health_conditions: Patient::CONDITIONS.sample
-)
+address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe", "Albion", "Tamarin", "Mahebourg"]
+users_pick = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-Patient.create!(
-  user_id: 2,
-  address: "Chemin Grenier",
-  health_conditions: Patient::CONDITIONS.sample
-)
+7.times do
+  Patient.create!(
+    user_id: users_pick.sample,
+    address: address_book.sample,
+    health_conditions: Patient::CONDITIONS.sample
+  )
+end
 
-Patient.create!(
-  user_id: 3,
-  address: "Flacq",
-  health_conditions: Patient::CONDITIONS.sample
-)
-
-Patient.create!(
-  user_id: 4,
-  address: "Tamarin",
-  health_conditions: Patient::CONDITIONS.sample
-)
-
-Patient.create!(
-  user_id: 5,
-  address: "Saint Pierre",
-  health_conditions: Patient::CONDITIONS.sample
-)
 puts "Created #{Patient.count} patients!"
 
-Booking.create!(
-  carer_id: 1,
-  patient_id: 1,
-  start_date: Date.today + 1,
-  end_date: Date.today + 2,
-  patient_confirmed: true,
-  carer_confirmed: true
-)
+# Create Bookings
+puts "> Creating bookings..."
+carer_id = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+patient_id = [1, 2, 3, 4, 5]
 
-Booking.create!(
-  carer_id: 2,
-  patient_id: 2,
-  start_date: Date.today + 1,
-  end_date: Date.today + 2,
-  patient_confirmed: false,
-  carer_confirmed: false
-)
+7.times do
+  Booking.create!(
+    carer_id: carer_id.sample,
+    patient_id: patient_id.sample,
+    start_date: DateTime.now + 0.025,
+    end_date: start_date + 0.3,
+    patient_confirmed: [true, false].sample,
+    carer_confirmed: [true, false].sample
+  )
+end
 
-Booking.create!(
-  carer_id: 3,
-  patient_id: 3,
-  start_date: Date.today + 1,
-  end_date: Date.today + 2,
-  patient_confirmed: true,
-  carer_confirmed: false
-)
-
-Booking.create!(
-  carer_id: 4,
-  patient_id: 4,
-  start_date: Date.today + 1,
-  end_date: Date.today + 2,
-  patient_confirmed: false,
-  carer_confirmed: true
-)
-
-Booking.create!(
-  carer_id: 5,
-  patient_id: 5,
-  start_date: Date.today + 1,
-  end_date: Date.today + 2,
-  patient_confirmed: true,
-  carer_confirmed: true
-)
 puts "Created #{Booking.count} bookings!"
 puts 'Finished!'
