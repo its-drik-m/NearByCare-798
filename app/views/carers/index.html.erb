@@ -35,7 +35,7 @@
             <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
             <% if current_user %>
               <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
-              <%= link_to "Book", "#",  class: "btn-submit-carer" %>
+              <%= link_to "Book", new_carer_booking_path(carer),  class: "btn-submit-carer" %>
             <% end %>
           </div>
       </div>

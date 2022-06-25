@@ -1,12 +1,15 @@
 <% if current_user.carer? %>
   <div class="container">
-    <h3>Do you want to confirm your appointment for patient <%= User.find(Patient.find(@booking.patient_id)).last_name %></h3>
-    <div>
-      <%= link_to "Confirm", carer_path, class: "btn btn-submit-white" %>
-    </div>
-    <div>
-      <%= link_to "Reject", carer_path, class: "btn btn-submit-white" %>
-    </div>
+    <h3>Do you want to confirm appointment with <%= User.find(Patient.find(@booking.patient_id)).last_name %></h3>
+      <div class="carer-new-form">
+        <div class="row">
+          <div class="col">
+            <div class="form p-3">
+              <%= render 'carerconfirm', booking: @booking %>
+            </div>
+          </div>
+        </div>
+      </div>
 <% else %>
   <div class="container_2">
       <div class="patient-new-form">
