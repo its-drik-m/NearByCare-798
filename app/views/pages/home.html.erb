@@ -5,17 +5,21 @@
           <%= image_tag "2-hands.png", class:"2-hands", alt:"hands" %>
 
             <div class="signin-button-icon">
-            <div>
-              <%= link_to new_user_registration_path do %>
-              <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
-              <% end %>
-            </div>
-            <div>
-              <%= link_to user_session_path do %>
-              <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
-              <% end %>
-            </div>
-            </div>
+    <% if user_signed_in? %>
+      <p><%= " " %></p>
+    <% else %>
+      <div>
+        <%= link_to user_session_path do %>
+        <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
+        <% end %>
+      </div>
+      <div>
+        <%= link_to new_user_registration_path do %>
+        <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
+        <% end %>
+      </div>
+    <% end %>
+</div>
         </div>
     <div class="container">
 
