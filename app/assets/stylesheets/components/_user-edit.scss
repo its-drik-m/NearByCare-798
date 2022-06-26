@@ -23,3 +23,16 @@
 #icon-patient {
   height: 91px;
 }
+
+
+//devise edit button
+.devise-edit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.devise-edit-button .btn-submit-yellow {
+  color: $navy-blue;
+  margin-left: 16px;
+  margin-right: 16px;
+}
