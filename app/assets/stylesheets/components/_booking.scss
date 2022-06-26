@@ -1,0 +1,40 @@
+.booking-card .btn-submit-carer {
+width: 97%;
+}
+
+
+.booking-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+
+.booking-card-outline {
+  border: 1px solid white;
+  border-radius: 16px;
+  margin: 16px;
+  width: 90vw;
+  padding: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.new-booking-gif {
+  width: 35%;
+  mix-blend-mode: multiply;
+}
+
+
+@media screen and (min-width: 700px) {
+  .booking-card-outline {
+    width: 67vw;
+  }
+}

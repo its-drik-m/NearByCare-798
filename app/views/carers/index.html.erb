@@ -75,3 +75,31 @@
       </div>
     </div>
   </div>
+<div class="row">
+  <% @carers.each do |carer| %>
+      <div class="col-xs-9 col-sm-6 col-md-4">
+      <div class="carer-card-border">
+        <div class="carer-card-box" >
+          <div class="carer-photo">
+            <div class="carer-img">
+              <%= cl_image_tag carer.photo.key, height: 200, width: 200, crop: :fill %>
+            </div>
+          </div>
+          <br>
+          <div class="cards-body">
+            <h2><%= User.find(carer.user_id).last_name %></h2>
+            <p><%= User.find(carer.user_id).first_name %></p>
+          </div>
+          <br>
+          <div id="card-button-in-list" class="card-buttons">
+            <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
+            <% if current_user %>
+              <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
+              <%= link_to "Book", new_carer_booking_path(carer),  class: "btn-submit-carer" %>
+            <% end %>
+          </div>
+      </div>
+        </div>
+      </div>
+  <% end %>
+</div>
