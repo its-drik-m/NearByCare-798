@@ -87,5 +87,21 @@
   color: white;
   background-color: $moderate-cyan;
   transition: 0.4s;
+}
 
+.btn-region-search {
+  background-color: $moderate-cyan;
+  color: white;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-region-search:hover {
+  color: $moderate-cyan;
+  background-color: white;
+  transition: 0.4s;
 }
