@@ -14,19 +14,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # Only patients will be able to create a new booking, so no need to compare for role
-    # if @current_user.patient?
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
-    # else
-    #   @booking.carer_id = @current_user.id
-    #   @booking.patient_id = params[:booking][:patient_id]
-    #   @booking.carer_confirmed = true
-    # end
-    # @booking.call_confirm = # call confirm variable
     if @booking.save
-      redirect_to carer_path(@carer.id) # some appropriate path
+      redirect_to carer_path(@carer.id)
     else
       render 'new'
     end
@@ -37,7 +29,7 @@ class BookingsController < ApplicationController
   def update
     if @current_user.carer? && @booking.update(booking_params)
       @booking.carer_id = @current_user.id
-      # @booking.carer_confirmed = true
+      @booking.carer_confirmed = true
       redirect_to carer_path(@booking.carer_id)
     elsif @current_user.patient? && @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)

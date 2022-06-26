@@ -17,6 +17,11 @@
                 <p><%= User.find(@carer.user_id).phone_number %></p>
                 <p><%= @carer.region %></p>
               </div>
+              <div>
+                <% if current_user.id == @carer.user_id %>
+                  <%= render 'calenderinfo', carer: @carer %>
+                <% end %>
+              </div>
               <div id="carer-viewmore-card" class="card-buttons">
                 <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
                 <% if current_user.id == @carer.user_id %>
