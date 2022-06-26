@@ -1,28 +1,27 @@
 <div class="grid">
   <div class="responsive-grid">
-        <div class= "home-main-icon">
+    <div class= "home-main-icon">
           <%= image_tag "nearby-care-logo.svg", class:"home-page-icon", alt:"login" %>
           <%= image_tag "2-hands.png", class:"2-hands", alt:"hands" %>
 
-            <div class="signin-button-icon">
-    <% if user_signed_in? %>
-      <p><%= " " %></p>
-    <% else %>
-      <div>
-        <%= link_to user_session_path do %>
-        <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
+      <div class="signin-button-icon">
+        <% if user_signed_in? %>
+          <p><%= " " %></p>
+        <% else %>
+          <div>
+            <%= link_to user_session_path do %>
+            <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to new_user_registration_path do %>
+            <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
-      <div>
-        <%= link_to new_user_registration_path do %>
-        <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
-        <% end %>
-      </div>
-    <% end %>
-</div>
-        </div>
+    </div>
     <div class="container">
-
       <div class="about">
         <div class="intro">
           <%= image_tag "icon-login.svg", class:"home-page-icon", alt:"logo" %>
@@ -38,7 +37,7 @@
 
         <div class="intro">
           <h3 id="services-text"  class="h3-color"><strong>Our services</strong></h3>
-          <p class="p-color">We offer the kind of care and support that makes it possible to thrive at any age. Cherishing people, and their need for independence, is at the very heart of Cherished Companions.</p>
+          <p class="p-color">We offer the kind of care and support that makes it possible to thrive at any age. Cherishing people, and their need for independence, is at the very heart of NearbyCare App.</p>
 
             <div class="all-services-icon">
               <div class="icon-with-text">
@@ -68,7 +67,7 @@
 
               <div class="icon-with-text">
               <%= image_tag "icon-rehab.svg", class:"services-icon", alt:"rehab" %>
-              <p class="p-color"><strong>Rehab</strong></p>
+              <p class="p-color"><strong>Rehabilitation</strong></p>
               </div>
             </div>
         </div>
@@ -88,7 +87,7 @@
         <div class="intro">
             <%= image_tag "icon-become-carer.svg", class:"home-page-icon", alt:"caregiver" %>
             <h3 class="h3-color"><strong>Become a caregiver</strong></h3>
-            <p class="p-color">If you’re seeking a Caregiver position and have a heart of compassion, Cherished Companions Home Care is the premier company to work for. Providing care is considered a high calling at Cherished Companions Home Care. We seek those individuals who see their work as a mission and not just a job. We offer an outstanding compensation package to those individuals who meet our rigorous standards to become a Cherished Companion.</p>
+            <p class="p-color">If you’re seeking a Caregiver position and have a heart of compassion, NearbyCare App is the premier company to work for. Providing care is considered a high calling at NearbyCare App. We seek those individuals who see their work as a mission and not just a job. We offer an outstanding compensation package to those individuals who meet our rigorous standards to become a caregiver at NearbyCare.</p>
         </div>
       </div>
     </div>
