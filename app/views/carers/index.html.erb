@@ -1,19 +1,100 @@
   <div class="container">
+        <h1 class="my-3 d-flex justify-content-center">Select a carer</h1>
+          <div>
+            <h3>Choose a carer by region</h3>
+          </div>
+        <div class="search-region">
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'north') do %>
+              <%= image_tag "button_north.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'east') do %>
+              <%= image_tag "button_east.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'south') do %>
+              <%= image_tag "button_south.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'west') do %>
+              <%= image_tag "button_west.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'center') do %>
+              <%= image_tag "button_centre.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+            <div>
+              <%= link_to(controller: 'carers', action: 'index', region: 'all') do %>
+              <%= image_tag "button_show-all.svg", class: "direction-button", alt:"#" %>
+              <% end %>
+            </div>
+        </div>
+        <div class="search-specialty-dropdown">
+         <div class="search-specialty">
+          <a class="btn btn-region-search dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Choose a carer by specialty</h3>
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Palliative Care', region: @region) do %>
+                Palliative Care
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Surgery Recovery Treatment', region: @region) do %>
+                Surgery Recovery Treatment
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Rehabilitation Care', region: @region) do %>
+                Rehabilitation Care
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Assistance During Treatments', region: @region) do %>
+                Assistance During Treatments
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Assistance and Providing Care', region: @region) do %>
+                Assistance and Providing Care
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Accomodative Care', region: @region) do %>
+                Accomodative Care
+              <% end %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to(controller: 'carers', action: 'index', specialty: 'Injury Recovery Treatment', region: @region) do %>
+                Injury Recovery Treatment
+              <% end %>
+            </li>
+          </ul>
+         </div>
+        </div>
+
     <div class="row">
       <div class="col">
-        <h1 class="my-3 d-flex justify-content-center">Select a carer</h1>
 
-        <div data-controller="search-carers">
-        <%= form_with url: carers_path, method: :get, html: { class: "mb-4", data: { search_carers_target: "form" } } do |f| %>
-            <%= f.text_field :query,
-                           class: "form-control",
-                           placeholder: "Choose a carer by region and specialty",
-                           value: params[:query],
-                            data: {
-                              action: "keyup->search-carers#update",
-                              search_carers_target: "searchInput"
-                            } %>
-        <% end %>
+        <%# <div data-controller="search-carers"> %>
+        <%# <%= form_with url: carers_path, method: :get, html: { class: "mb-4", data: { search_carers_target: "form" } } do |f| %>
+            <%# <%= f.text_field :query, %>
+                           <%# class: "form-control", %>
+                           <%# placeholder: "Choose a carer by region and specialty", %>
+                           <%# value: params[:query], %>
+                            <%# data: { %>
+                              <%# action: "keyup->search-carers#update", %>
+                              <%# search_carers_target: "searchInput" %>
+                            <%# } %>
+        <%# <% end %>
          <%= render "list", carers: @carers %>
         </div>
       </div>

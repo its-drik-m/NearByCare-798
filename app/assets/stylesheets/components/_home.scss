@@ -1,9 +1,9 @@
 //gradient animation
 body {
-	background: linear-gradient(-45deg, #ffffcc, #e5e9ed, #90ced3);
-	background-size: 400% 400%;
+	background: linear-gradient(80deg, #ffffcc, #e5e9ed, #90ced3);
+	background-size: 400% 900%;
 	animation: gradient 9s ease infinite;
-	height: 100vh;
+	width: 100vw;
 }
 
 @keyframes gradient {
@@ -96,6 +96,19 @@ body {
   margin-top: 16px;
   margin-bottom: 16px;
   padding: 16px 8px 16px 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.container_3 {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+  width: 95%;
+  border-radius: 16px;
+  margin: 8px;
 
   display: flex;
   justify-content: center;
