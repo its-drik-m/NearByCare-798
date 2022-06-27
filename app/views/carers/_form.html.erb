@@ -3,6 +3,7 @@
       <div>
         <%= simple_form_for(carer) do |f| %>
           <%= f.input :region, collection: Carer::REGION %>
+          <%= f.input :photo, as: :file %>
           <%= f.input :specialty, as: :check_boxes, collection: Carer::SPECIALTY, input_html: { multiple: true }  %>
           <div>
             <%= f.submit 'Save my profile', class: "btn-submit-desaturated-cyan" %>
