@@ -7,11 +7,11 @@ class Booking < ApplicationRecord
   validate :start_must_be_before_end_time
 
   # All bookings will be ordered by their start_time by default
-  # default_scope -> { order(:start_time) }
+  default_scope -> { order(:start_time) }
 
-  # def date
-  #   "#{date.strfdate('%I:%M %p')} - #{date.strfdate('%I:%M %p')}"
-  # end
+  def date
+    "#{date.strfdate('%I:%M %p')} - #{date.strfdate('%I:%M %p')}"
+  end
 
   def date_cannot_be_in_the_past
     if start_date.present? && start_date < Time.zone.now

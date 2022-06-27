@@ -22,7 +22,9 @@ const context = require.context('../controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
 
 // import Flatpickr
-import Flatpickr from 'stimulus-flatpickr'
+import Flatpickr from "../plugins/flatpickr";
+
+initFlatpickr();
 
 // Import style for flatpickr
 require("flatpickr/dist/flatpickr.css")

@@ -14,11 +14,19 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    # Only patients will be able to create a new booking, so no need to compare for role
+    # if @current_user.patient?
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
+    # else
+    #   @booking.carer_id = @current_user.id
+    #   @booking.patient_id = params[:booking][:patient_id]
+    #   @booking.carer_confirmed = true
+    # end
+    # @booking.call_confirm = # call confirm variable
     if @booking.save
-      redirect_to carer_path(@carer.id)
+      redirect_to carer_path(@booking.carer_id)
     else
       render 'new'
     end
@@ -38,14 +46,18 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @bookings = Booking.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
+  end
 
   def show; end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:carer_id, :patient_id, :start_date, :end_date, :patient_confirmed)
+    params.require(:booking).permit(:carer_id, :patient_id, :start_date, :end_date, :patient_confirmed, :carer_confirmed)
   end
 
   def set_booking
