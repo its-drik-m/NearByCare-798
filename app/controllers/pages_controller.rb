@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def test
   end
+
+  def landing
+  end
 end
