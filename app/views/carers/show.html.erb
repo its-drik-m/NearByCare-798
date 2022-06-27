@@ -14,12 +14,14 @@
               </div>
               <div class="carer-description">
                 <p><%= @carer.specialty%></p>
-                <p><%= User.find(@carer.user_id).phone_number %></p>
                 <p><%= @carer.region %></p>
               </div>
               <div>
                 <% if current_user.id == @carer.user_id %>
-                  <%= render 'calenderinfo', carer: @carer %>
+                  <%# <%= render 'calendarinfo', carer: @carer %>
+                  <%= month_calendar do |date| %>
+                    <%= date %>
+                  <% end %>
                 <% end %>
               </div>
               <div id="carer-viewmore-card" class="card-buttons">

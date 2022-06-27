@@ -22,7 +22,7 @@ const context = require.context('../controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
 
 // import Flatpickr
-import Flatpickr from "../plugins/flatpickr";
+import { initFlatpickr } from "../plugins/flatpickr";
 
 initFlatpickr();
 

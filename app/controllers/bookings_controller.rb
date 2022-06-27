@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
     # end
     # @booking.call_confirm = # call confirm variable
     if @booking.save
+      flash[:notice] = "Booking successfully done."
       redirect_to carer_path(@booking.carer_id)
     else
       render 'new'
@@ -47,9 +48,9 @@ class BookingsController < ApplicationController
   end
 
   def index
+    @bookings = Booking.all
     start_date = params.fetch(:start_date, Date.today).to_date
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
-    @bookings = Booking.where(starts_at: start_date.beginning_of_week..start_date.end_of_week)
   end
 
   def show; end

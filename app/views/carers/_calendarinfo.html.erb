@@ -1,4 +1,4 @@
-<%= month_calendar do |date, bookings| %>
+<%= month_calendar events: @bookings do |date, bookings| %>
   <%= date %>
     <% bookings.each do |booking| %>
     <div class="booking">
