@@ -1,0 +1,6 @@
+simple form for new review
+<%= simple_form_for [@carer, @booking, @review, :url => new_carer_booking_review_path ] do |f| %>
+  <%= f.input :rating, as: :select, collection: Review::RATING %>
+  <%= f.input :comment, as: :textarea, placeholder: "Write a comment" %>
+  <%= f.submit class: 'btn-submit-carer' %>
+<% end %>

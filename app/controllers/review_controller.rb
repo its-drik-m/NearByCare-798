@@ -1,9 +1,13 @@
 class ReviewController < ApplicationController
   before_action :set_review, only: %i[create show index destroy]
+  before_action :set_booking, only: %i[new create]
+  before_action :set_carer, only: %i[new create]
+  before_action :set_patient, only: %i[new create]
+  before_action :set_user, only: %i[new create]
 
   def new
     # allow booking only if carer is not same as patient
-    if @booking.carer_id == current_user.id
+    if @carer.id == current_user.id
       redirect_to booking_path(@booking)
     else
       @review = Review.new
@@ -53,4 +57,15 @@ class ReviewController < ApplicationController
     @booking = Booking.find(params[:booking_id])
   end
 
+  def set_carer
+    @carer = Carer.find(params[:carer_id])
+  end
+
+  def set_patient
+    @patient = current_user
+  end
+
+  def set_user
+    @user = User.find(@carer.user_id)
+  end
 end

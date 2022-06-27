@@ -6,6 +6,7 @@ class Carer < ApplicationRecord
   has_one :user
   has_many :bookings
   has_many :patients, through: :bookings
+  has_many :reviews, through: :bookings
 
   # thanks to Cloudinary
   has_one_attached :photo
