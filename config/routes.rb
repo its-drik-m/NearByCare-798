@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
   root to: 'pages#home'
   get 'testing', to: 'pages#test'
+  get 'index', to: 'carers#index'
   resources :users, only: %i[edit update]
 
   resources :carers, except: :destroy do

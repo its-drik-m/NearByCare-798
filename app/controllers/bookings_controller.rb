@@ -26,7 +26,8 @@ class BookingsController < ApplicationController
     # end
     # @booking.call_confirm = # call confirm variable
     if @booking.save
-      redirect_to root_path # some appropriate path
+      flash[:notice] = "Booking successfully done."
+      redirect_to carer_path(@booking.carer_id)
     else
       render 'new'
     end
@@ -37,7 +38,7 @@ class BookingsController < ApplicationController
   def update
     if @current_user.carer? && @booking.update(booking_params)
       @booking.carer_id = @current_user.id
-      # @booking.carer_confirmed = true
+      @booking.carer_confirmed = true
       redirect_to carer_path(@booking.carer_id)
     elsif @current_user.patient? && @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)
@@ -46,14 +47,18 @@ class BookingsController < ApplicationController
     end
   end
 
-  def index; end
+  def index
+    @bookings = Booking.all
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+  end
 
   def show; end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:carer_id, :patient_id, :start_date, :end_date, :patient_confirmed)
+    params.require(:booking).permit(:carer_id, :patient_id, :start_date, :end_date, :patient_confirmed, :carer_confirmed)
   end
 
   def set_booking
