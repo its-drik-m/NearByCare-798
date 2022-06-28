@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
-  before_action :set_carer, only: %i[new create]
+  before_action :set_carer, only: %i[new create show]
   before_action :set_patient, only: %i[new create]
 
   def new
@@ -49,6 +49,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @bookings.carer_id = @carer.id
     start_date = params.fetch(:start_date, Date.today).to_date
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end

@@ -1,5 +1,5 @@
 <% @bookings.each do |booking| %>
-  <p><%= User.find(booking.patient_id).last_name %></p>
+  <p><%= User.find((Patient.find(booking.patient_id)).user_id).last_name %></p>
   <p><%= booking.start_date %></p>
   <p><%= link_to 'Show', carer_booking(booking.id) %></p>
   <p><%= link_to 'Confirm Booking', edit_carer_booking(booking.id) %></p>
