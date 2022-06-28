@@ -1,8 +1,8 @@
 <% if current_user.carer? %>
-  <div class="bbooking-card-outline">
+  <div class="booking-card-outline">
   </div>
     <div class="container">
-      <h3>Do you want to confirm appointment with <%= User.find(Patient.find(@booking.patient_id)).last_name %></h3>
+      <h3>Do you want to confirm appointment with <%= User.find((Patient.find(@booking.patient_id)).user_id).last_name %></h3>
         <div class="carer-new-form">
           <div class="row">
             <div class="col">
