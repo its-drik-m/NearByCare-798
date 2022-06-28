@@ -1,13 +1,24 @@
 .carer-new-form-icon {
   width: 100px;
-  margin-top: 8px;;
+  margin-top: 8px;
 }
 
-
+.carer-edit-form-icon{
+  width: 100px;
+  margin-top: 8px;
+}
 
 .carer-simple-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: $desaturated-cyan;
+}
+
+.carers-new-form .btn-submit-desaturated-cyan {
+width: 90%;
+}
+
+.carers-new-form .form-check-label {
   color: $desaturated-cyan;
 }

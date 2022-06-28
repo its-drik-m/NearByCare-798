@@ -1,8 +1,8 @@
 class Carer < ApplicationRecord
   REGION = %w[North South East West Center]
-  SPECIALTY = ["Palliative care", "Surgery recovery treatment", "Rehabilitation care",
-               "Assistance during treatments", " Assistance and providing care",
-               "Accomodative care", "Injury recovery treatment"]
+  SPECIALTY = ["Palliative Care", "Surgery Recovery Treatment", "Rehabilitation Care",
+               "Assistance During Treatments", "Assistance and Providing Care",
+               "Accomodative Care", "Injury Recovery Treatment"]
   has_one :user
   has_many :bookings
   has_many :patients, through: :bookings

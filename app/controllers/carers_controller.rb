@@ -3,13 +3,22 @@ class CarersController < ApplicationController
   before_action :set_start_date
 
   def index
-    @carers = Carer.order(first_name: :desc)
+    # @carers = Carer.order(first_name: :desc)
 
-    if params[:query].present?
-      sql_query = "region ILIKE :query OR specialty ILIKE :query"
-      @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+    # if params[:query].present?
+    sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
+    region_query = "specialty ILIKE :specialty"
+      # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+    # else
+    #   @carers = Carer.all
+    # end
+    @region = params[:region]
+    @specialty = params[:specialty]
+
+    if @region == "all"
+      @carers = Carer.where(region_query, specialty: "%#{params[:specialty]}%")
     else
-      @carers = Carer.all
+      @carers = Carer.where(sql_query, region: "%#{params[:region]}%", specialty: "%#{params[:specialty]}%")
     end
 
     respond_to do |format|
