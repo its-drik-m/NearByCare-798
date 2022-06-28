@@ -1,9 +1,9 @@
-class ReviewController < ApplicationController
-  before_action :set_review, only: %i[create show index destroy]
+class ReviewsController < ApplicationController
+  before_action :set_review, only: %i[show destroy]
   before_action :set_booking, only: %i[new create]
-  before_action :set_carer, only: %i[new create]
-  before_action :set_patient, only: %i[new create]
-  before_action :set_user, only: %i[new create]
+  before_action :set_carer, only: %i[new create index]
+  before_action :set_patient, only: %i[new create index]
+  before_action :set_user, only: %i[new create index]
 
   def new
     # allow booking only if carer is not same as patient
@@ -23,23 +23,24 @@ class ReviewController < ApplicationController
     else
       @review = Review.new(review_params)
       @review.booking_id = @booking.id
-      @review.carer_id = @booking.carer_id
-      @review.patient_id = @booking.patient_id
       @review.rating = params[:review][:rating]
       @review.comment = params[:review][:comment]
 
       if @review.save
         flash[:success] = 'Review created successfully!'
+        redirect_to carer_reviews_path
       else
         flash[:danger] = 'Review not created!'
       end
     end
-    redirect_to booking_path(@booking)
   end
 
   def destroy; end
 
-  def index; end
+  def index
+    # obtain reviews by joining reviews with bookings table
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  end
 
   def show; end
 

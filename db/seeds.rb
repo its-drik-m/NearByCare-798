@@ -570,5 +570,13 @@ puts "> Faking bookings..."
   )
 end
 
+5.times do
+  Review.create!(
+    booking_id: Booking.all.sample.id,
+    rating: [1, 2, 3, 4, 5].sample,
+    comment: ["Great Caring","Good Caring","Bad Caring","Terrible Caring","Awful Caring"].sample
+  )
+end
+
 puts "> Created #{Booking.count} bookings!"
 puts '> Seed Completed!'

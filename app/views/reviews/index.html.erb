@@ -1,0 +1,14 @@
+<h1>All reviews about <%= @user.first_name %> <%= @user.last_name %></h1>
+
+  <% if @reviews.empty? %>
+    <p>No reviews yet.</p>
+  <% else %>
+    <ul>
+      <% @reviews.each do |review| %>
+      <% if review.booking.carer_id == @user.id %>
+        <li><%= review.comment %>, Rating: <%= review.rating %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+inde
