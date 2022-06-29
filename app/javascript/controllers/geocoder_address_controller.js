@@ -10,8 +10,8 @@ export default class extends Controller {
 
   geocode(event) {
     event.preventDefault()
-    const address = this.inputTarget.value
-    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${address}.json?access_token=${this.token}`)
+    const patient_address = this.inputTarget.value
+    fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${patient_address}.json?access_token=${this.token}`)
       .then(response => response.json())
       .then(data => {
         const longitude = data.features[0].center[0]
