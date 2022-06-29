@@ -1,2 +1,7 @@
-
-<%= cl_video_tag "wzpr4asv4a8cdxejfvtt.mp4", autoplay: :autoplay, muted: :muted %>
+<div class="container_4">
+  <div class="splash-screen">
+    <%= cl_video_tag "gxfdtlbwomp2nhiw3kxi.mp4", autoplay: :autoplay, muted: :muted, :transformation=>[
+      {:gravity=>"auto", :width=>400, :height=>800, :crop=>"fill"}
+      ] %>
+  </div>
+</div>
