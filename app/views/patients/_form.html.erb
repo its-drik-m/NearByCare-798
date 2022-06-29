@@ -1,20 +1,13 @@
-<div class="form-container">
-  <div data-controller="geocoder_address">
-        <%= form_with url: new_patient_path, method: :get, html: { class: "mb-4", data: { geocoder_address_target: "form" } } do |f| %>
-            <%= f.text_field :query,
-                           class: "form-control",
-                           placeholder: "Type your address",
-                           value: params[:query],
-                            data: {
-                              action: "keyup->geocoder-address#geocode",
-                              geocoder_address_target: "input"
-                            } %>
+<div data-controller="geocoder">
+  <div class="form-container">
+    <div class="simple-form">
+        <%= simple_form_for(patient) do |f| %>
+          <%= f.input :address,
+              input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+          <%= f.input :health_conditions, as: :check_boxes, collection: Patient::CONDITIONS, input_html: { multiple: true }  %>
+          <%= f.submit 'Save my profile', class: "btn-submit-yellow" %>
         <% end %>
-  </div>
-  <div class="simple-form">
-    <%= simple_form_for(patient) do |f| %>
-            <%= f.input :health_conditions, as: :check_boxes, collection: Patient::CONDITIONS, input_html: { multiple: true }  %>
-            <%= f.submit 'Save my profile', class: "btn-submit-yellow" %>
-    <% end %>
+    </div>
   </div>
 </div>

@@ -11,6 +11,6 @@ class Carer < ApplicationRecord
   has_one_attached :photo
 
   validates :region, presence: true, inclusion: { in: REGION }
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  # geocoded_by :address
+  # after_validation :geocode, if: :will_save_change_to_address?
 end
