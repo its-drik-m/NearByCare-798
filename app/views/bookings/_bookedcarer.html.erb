@@ -1,0 +1,14 @@
+<% user = User.find((Carer.find(@booking.carer_id)).user_id) %>
+<% carer = Carer.where(user_id: user.id) %>
+
+<h3><%= user.last_name %></h3>
+<h3><%= user.first_name %></h3>
+<% if carer.specialty.count < 1 %>
+  <%= carer.specialty %>
+<% else %>
+  <% carer.specialty.each do |spec| %>
+  <p><%= spec %></p> <br>
+  <% end %>
+<% end %>
+<h3>Do you want to reshedule your appointment</h3>
+  <%= render 'form', booking: @booking %>
