@@ -49,6 +49,11 @@ class BookingsController < ApplicationController
     @token = generate_token(@booking)
   end
 
+  def test
+    @booking = Booking.find(params[:booking_id])
+    @token = generate_token(@booking)
+  end
+
   private
 
   def booking_params
@@ -65,5 +70,18 @@ class BookingsController < ApplicationController
 
   def set_patient
     @patient = current_user
+  end
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['SID'], ENV['KEY_ID'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 end

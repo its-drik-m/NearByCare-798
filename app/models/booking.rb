@@ -1,4 +1,5 @@
 class Booking < ApplicationRecord
+  require 'twilio-ruby'
   belongs_to :carer
   belongs_to :patient
 
@@ -13,8 +14,8 @@ class Booking < ApplicationRecord
 
   # callback ActiveRecord
   def set_room_name
-    client = Twilio::REST::Client.new(ENV["KEY_ID"], ENV["AUTH_TOKEN"])
-    room = client.video.rooms.create(unique_name: "#{proposal.name}_#{Time.now.to_i}")
+    client = Twilio::REST::Client.new(ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"])
+    room = client.video.rooms.create(unique_name: "#{self.patient_id}_#{Time.now.to_i}")
     self.url_room = room.unique_name
   end
 

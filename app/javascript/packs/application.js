@@ -24,6 +24,8 @@ application.load(definitionsFromContext(context))
 // import Flatpickr
 import { initFlatpickr } from "../plugins/flatpickr";
 
+import twilioInit from "../plugins/twilio.js";
+
 // initFlatpickr();
 
 // Import style for flatpickr
