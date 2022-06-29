@@ -1,5 +1,6 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
+  before_action :set_start_date
 
   def index
     # @carers = Carer.order(first_name: :desc)
@@ -43,6 +44,7 @@ class CarersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
   end
 
   def edit; end
@@ -63,5 +65,9 @@ class CarersController < ApplicationController
 
   def set_carer
     @carer = Carer.find(params[:id])
+  end
+
+  def set_start_date
+    @start_date = params.fetch(:start_date, Date.today).to_date
   end
 end
