@@ -1,0 +1,7 @@
+    <%- if current_user = @carer %>
+       "navy-blue-carer-background"
+       <%- elsif current_user = @patient %>
+          "gradient-patient-background"
+      <%- else %>
+        "gradient-patient-background"
+    <% end %>
