@@ -7,7 +7,7 @@ class CarersController < ApplicationController
     # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
     specialty_query = "specialty ILIKE :specialty"
-      # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+    # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
     # else
     #   @carers = Carer.all
     # end
@@ -23,13 +23,6 @@ class CarersController < ApplicationController
     respond_to do |format|
       format.html
       format.text { render partial: 'list.html', locals: { carers: @carers }, formats: [:html] }
-    end
-
-    @marker = @carers.geocoded.map do |carer|
-      {
-        lat: carer.latitude,
-        lng: carer.longitude
-      }
     end
   end
 
@@ -50,6 +43,7 @@ class CarersController < ApplicationController
 
   def show
     @booking = Booking.new
+
   end
 
   def edit; end

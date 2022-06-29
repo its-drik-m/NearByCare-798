@@ -53,7 +53,14 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
 
-  def show; end
+  def show
+    @marker = @patients.geocoded.map do |patient|
+      {
+        lat: patient.latitude,
+        lng: patient.longitude
+      }
+    end
+  end
 
   private
 
