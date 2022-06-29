@@ -24,4 +24,17 @@ export default class extends Controller {
   #insertCoordinates(longitude, latitude) {
     this.coordinatesTarget.innerText = `${latitude}, ${longitude}`
   }
+
+  #insertMap(longitude, latitude) {
+    mapboxgl.accessToken = this.token
+    const map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v9",
+      center: [ longitude, latitude ],
+      zoom: 12
+    })
+    new mapboxgl.Marker()
+      .setLngLat([ longitude, latitude ])
+      .addTo(map)
+  }
 }
