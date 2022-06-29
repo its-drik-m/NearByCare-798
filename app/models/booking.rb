@@ -9,6 +9,15 @@ class Booking < ApplicationRecord
   # All bookings will be ordered by their start_time by default
   default_scope -> { order(:start_date) }
 
+  before_create :set_room_name
+
+  # callback ActiveRecord
+  def set_room_name
+    client = Twilio::REST::Client.new(ENV["KEY_ID"], ENV["AUTH_TOKEN"])
+    room = client.video.rooms.create(unique_name: "#{proposal.name}_#{Time.now.to_i}")
+    self.url_room = room.unique_name
+  end
+
   def date
     "#{start_date.strftime('%I:%M %p')} - #{end_date.strftime('%I:%M %p')}"
   end

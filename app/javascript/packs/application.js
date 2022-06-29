@@ -40,4 +40,8 @@ application.register('flatpickr', initFlatpickr)
 // initStarRating();
 document.addEventListener('turbolinks:load', ()=>{
   initFlatpickr();
+
+  if (document.querySelector('.twilio-video')) {
+    twilioInit();
+  }
 });

@@ -44,7 +44,10 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
   end
 
-  def show; end
+  def show
+    @booking = Booking.find(params[:id])
+    @token = generate_token(@booking)
+  end
 
   private
 
