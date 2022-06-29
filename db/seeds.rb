@@ -559,7 +559,7 @@ puts "> Created #{Patient.count} patients!"
 # Create Bookings
 puts "> Faking bookings..."
 
-7.times do
+15.times do
   Booking.create!(
     carer_id: carer_id.sample,
     patient_id: patient_id.sample,
@@ -569,6 +569,7 @@ puts "> Faking bookings..."
     carer_confirmed: [true, false].sample
   )
 end
+puts "> Simulated #{Booking.count} bookings!"
 
 5.times do
   Review.create!(
@@ -578,5 +579,5 @@ end
   )
 end
 
-puts "> Created #{Booking.count} bookings!"
+puts "> Faked #{Review.count} reviews!"
 puts '> Seed Completed!'

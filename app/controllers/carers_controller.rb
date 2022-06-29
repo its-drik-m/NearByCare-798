@@ -1,5 +1,7 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
+  before_action :import_reviews, only: %i[show]
+  before_action :average_rating, only: %i[show]
 
   def index
     # @carers = Carer.order(first_name: :desc)
@@ -63,5 +65,19 @@ class CarersController < ApplicationController
 
   def set_carer
     @carer = Carer.find(params[:id])
+  end
+
+  def import_reviews
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  end
+
+  # calculate average rating for the carer
+  def average_rating
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+    @average_rating = 0
+    @reviews.each do |review|
+      @average_rating += review.rating
+    end
+    return @average_rating /= @reviews.count
   end
 end

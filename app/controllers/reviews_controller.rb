@@ -42,6 +42,17 @@ class ReviewsController < ApplicationController
     @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
   end
 
+  # calculate average rating for a carer
+  # def rating_average
+  #   @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  #   @average_rating = 0
+  #   @reviews.each do |review|
+  #     @average_rating += review.rating
+  #   end
+  #   @average_rating /= @reviews.count
+  # end
+  # helper_method :rating_average
+
   def show; end
 
   private
