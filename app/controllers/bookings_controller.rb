@@ -28,13 +28,14 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if current_user.carer?
-      @booking.carer_id = Carer.find(current_user.id)
-      @booking.patient_id = @patient.id
-    else
-      @booking.carer_id = @carer.id
-      @booking.patient_id = Patient.find(current_user.id)
-    end
+    @patient.id = @booking.patient_id
+    @carer.id = @booking.carer_id
+    # if current_user.carer?
+    #   @booking.carer_id = Carer.find(current_user.id)
+    # else
+    #   @booking.carer_id = @carer.id
+    #   @booking.patient_id = Patient.find(current_user.id)
+    # end
     if @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)
     else

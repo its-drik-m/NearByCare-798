@@ -300,7 +300,7 @@ puts "Created #{User.count} users !"
 carer1 = Carer.create!(
   user_id: 1,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY.sample, Carer::SPECIALTY.sample] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -316,7 +316,7 @@ carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer3 = Carer.create!(
   user_id: 3,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY.sample, Carer::SPECIALTY.sample] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/woman_17.jpg')
 carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -541,7 +541,7 @@ puts "Created #{Carer.count} carers !"
 Patient.create!(
   user_id: 2,
   address: "Port-Louis",
-  health_conditions: Patient::CONDITIONS.sample
+  health_conditions: [Patient::CONDITIONS.sample, Patient::CONDITIONS.sample]
 )
 
 Patient.create!(
@@ -565,7 +565,7 @@ Patient.create!(
 Patient.create!(
   user_id: 11,
   address: "Saint Pierre",
-  health_conditions: Patient::CONDITIONS.sample
+  health_conditions: [Patient::CONDITIONS.sample, Patient::CONDITIONS.sample]
 )
 puts "Created #{Patient.count} patients!"
 

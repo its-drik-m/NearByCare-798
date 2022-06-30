@@ -38,6 +38,7 @@ application.register('flatpickr', initFlatpickr)
 // import { initStarRating } from '../plugins/init_star_rating';
 
 // initStarRating();
+
 document.addEventListener('turbolinks:load', ()=>{
   initFlatpickr();
 });
