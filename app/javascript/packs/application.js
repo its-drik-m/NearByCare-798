@@ -24,13 +24,13 @@ application.load(definitionsFromContext(context))
 // import Flatpickr
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
+// initFlatpickr();
 
 // Import style for flatpickr
 require("flatpickr/dist/flatpickr.css")
 
 // Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', Flatpickr)
+application.register('flatpickr', initFlatpickr)
 
 // Using the jquery bar rating plugin
 // import "jquery-bar-rating"
@@ -38,3 +38,6 @@ application.register('flatpickr', Flatpickr)
 // import { initStarRating } from '../plugins/init_star_rating';
 
 // initStarRating();
+document.addEventListener('turbolinks:load', ()=>{
+  initFlatpickr();
+});

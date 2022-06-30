@@ -19,3 +19,12 @@
   background: $moderate-cyan;
   color: white;
 }
+
+.booking{
+  .confirmed {
+    background-color: $yellow;
+  }
+  .notconfirmed {
+    background-color: $desaturated-cyan
+  }
+}

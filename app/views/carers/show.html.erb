@@ -18,10 +18,7 @@
               </div>
               <div>
                 <% if current_user.id == @carer.user_id %>
-                  <%# <%= render 'calendarinfo', carer: @carer %>
-                  <%= month_calendar do |date| %>
-                    <%= date %>
-                  <% end %>
+                  <%= render 'calendarinfo', carer: @carer %>
                 <% end %>
               </div>
               <div id="carer-viewmore-card" class="card-buttons">
