@@ -28,8 +28,6 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    @patient.id = @booking.patient_id
-    @carer.id = @booking.carer_id
     # if current_user.carer?
     #   @booking.carer_id = Carer.find(current_user.id)
     # else

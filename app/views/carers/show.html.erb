@@ -13,8 +13,8 @@
                 <p><%= User.find(@carer.user_id).first_name %></p>
               </div>
               <div class="carer-description">
-                <% @carer.specialty.each do |spec|%>
-                  <%= spec %>
+                <% @carer.specialty.split(",").each do |spec| %>
+                <%= spec %>
                 <% end %>
                 <p><%= @carer.region %></p>
               </div>

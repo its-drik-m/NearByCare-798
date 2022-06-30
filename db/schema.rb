@@ -57,24 +57,20 @@ ActiveRecord::Schema.define(version: 2022_06_25_125454) do
   end
 
   create_table "carers", force: :cascade do |t|
-    t.string "specialty"
+    t.string "specialty", array: true
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "region"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["user_id"], name: "index_carers_on_user_id"
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "health_conditions"
+    t.string "health_conditions", array: true
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
-    t.float "latitude"
-    t.float "longitude"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 

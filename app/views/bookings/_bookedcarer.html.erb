@@ -3,8 +3,6 @@
 
 <h3><%= user.last_name %></h3>
 <h3><%= user.first_name %></h3>
-<% carer.specialty.each do |spec|  %>
-  <p><%= spec %></p> <br>
-<% end %>
+<% carer.specialty %>
 <h3>Do you want to reshedule your appointment</h3>
   <%= render 'form', booking: @booking %>
