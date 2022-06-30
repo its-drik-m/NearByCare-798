@@ -1,93 +1,97 @@
-<div class="grid">
-  <div class="responsive-grid">
-    <div class= "home-main-icon">
-          <%= image_tag "nearby-care-logo.svg", class:"home-page-icon", alt:"login" %>
-          <%= image_tag "2-hands.png", class:"2-hands", alt:"hands" %>
 
-      <div class="signin-button-icon">
-        <% if user_signed_in? %>
-          <p><%= " " %></p>
-        <% else %>
-          <div>
-            <%= link_to user_session_path do %>
-            <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
-            <% end %>
-          </div>
-          <div>
-            <%= link_to new_user_registration_path do %>
-            <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="container">
-      <div class="about">
-        <div class="intro">
-          <%= image_tag "icon-login.svg", class:"home-page-icon", alt:"logo" %>
-            <h3 class="h3-color"><strong>Stay in your comfort zone</strong></h3>
-            <p class="p-color">Home is the best place for a loved one living with a disability. With the right care, they are able to continue their daily activities and live the highest possible quality of life in the comfort of their home.</p>
-        </div>
+<div class="white-background">
 
-        <div class="intro">
-          <%= image_tag "icon-book-carer.svg", class:"home-page-icon", alt:"caring" %>
-            <h3 class="h3-color"><strong>Caring for a Parent</strong></h3>
-            <p class="p-color">It may have started slowly… Mom couldn’t find her keys or got lost driving. Maybe she left the stove on or fell getting out of her chair. But, you now realize that she needs help with those activities that she has always done, otherwise, she may no longer be safe on her own.  You need to get the best care to help with those daily activities. That’s where Nearby Care comes in with a range of senior care services so your loved one can remain at home having the control and ability to thrive independently.</p>
-        </div>
+  <div class="grid">
+    <div class="responsive-grid">
+      <div class= "home-main-icon">
+            <%= image_tag "nearby-care-logo.svg", class:"home-page-icon", alt:"login" %>
+            <%= image_tag "2-hands.png", class:"2-hands", alt:"hands" %>
 
-        <div class="intro">
-          <h3 id="services-text"  class="h3-color"><strong>Our services</strong></h3>
-          <p class="p-color">We offer the kind of care and support that makes it possible to thrive at any age. Cherishing people, and their need for independence, is at the very heart of NearbyCare App.</p>
-
-            <div class="all-services-icon">
-              <div class="icon-with-text">
-               <%= image_tag "icon-alzheimer.svg", class:"services-icon", alt:"alzheimer" %>
-              <p class="p-color"><strong>Alzheimer’s</strong></p>
-              </div>
-
-              <div class="icon-with-text">
-               <%= image_tag "icon-assisted.svg", class:"services-icon", alt:"assisted" %>
-              <p class="p-color"><strong>Assisted Living</strong></p>
-              </div>
-
-              <div class="icon-with-text">
-              <%= image_tag "icon-login.svg", class:"services-icon", alt:"disabilities" %>
-              <p class="p-color"><strong>Disabilities</strong></p>
-              </div>
-
-              <div class="icon-with-text">
-              <%= image_tag "icon-injury.svg", class:"services-icon", alt:"injury" %>
-              <p class="p-color"><strong>Injury & Falls</strong></p>
-              </div>
-
-              <div class="icon-with-text">
-              <%= image_tag "icon-neuromuscular.svg", class:"services-icon", alt:"neuromuscular" %>
-              <p class="p-color"><strong>Neuromuscular</strong></p>
-              </div>
-
-              <div class="icon-with-text">
-              <%= image_tag "icon-rehab.svg", class:"services-icon", alt:"rehab" %>
-              <p class="p-color"><strong>Rehabilitation</strong></p>
-              </div>
+        <div class="signin-button-icon">
+          <% if user_signed_in? %>
+            <p><%= " " %></p>
+          <% else %>
+            <div>
+              <%= link_to user_session_path do %>
+              <%= image_tag "log-in.svg", class: "log-in-button", alt:"#" %>
+              <% end %>
             </div>
+            <div>
+              <%= link_to new_user_registration_path do %>
+              <%= image_tag "sign-up.svg", class: "sign-up-button", alt:"#" %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
+      </div>
+      <div class="container">
+        <div class="about">
+          <div class="intro">
+            <%= image_tag "icon-login.svg", class:"home-page-icon", alt:"logo" %>
+              <h3 class="h3-color"><strong>Stay in your comfort zone</strong></h3>
+              <p class="p-color">Home is the best place for a loved one living with a disability. With the right care, they are able to continue their daily activities and live the highest possible quality of life in the comfort of their home.</p>
+          </div>
 
-        <div class="intro">
-            <%= image_tag "icon-24-7.svg", class:"home-page-icon", alt:"day-night" %>
-            <h3 class="h3-color"><strong>Day and night Care</strong></h3>
-            <p class="p-color">A caregiver provides care during the day and/or evening based on the needs of the client. The caregiver and the amount of hours are matched to the needs of each client.</p>
-        </div>
+          <div class="intro">
+            <%= image_tag "icon-book-carer.svg", class:"home-page-icon", alt:"caring" %>
+              <h3 class="h3-color"><strong>Caring for a Parent</strong></h3>
+              <p class="p-color">It may have started slowly… Mom couldn’t find her keys or got lost driving. Maybe she left the stove on or fell getting out of her chair. But, you now realize that she needs help with those activities that she has always done, otherwise, she may no longer be safe on her own.  You need to get the best care to help with those daily activities. That’s where Nearby Care comes in with a range of senior care services so your loved one can remain at home having the control and ability to thrive independently.</p>
+          </div>
 
-        <div class="intro">
-            <%= image_tag "icon-mauritius.svg", class:"home-page-icon", alt:"service-area" %>
-            <h3 class="h3-color"><strong>Service Area</strong></h3>
-            <p class="p-color">We provide award-winning home care services throughout the island.</p>
-        </div>
+          <div class="intro">
+            <h3 id="services-text"  class="h3-color"><strong>Our services</strong></h3>
+            <p class="p-color">We offer the kind of care and support that makes it possible to thrive at any age. Cherishing people, and their need for independence, is at the very heart of NearbyCare App.</p>
 
-        <div class="intro">
-            <%= image_tag "icon-become-carer.svg", class:"home-page-icon", alt:"caregiver" %>
-            <h3 class="h3-color"><strong>Become a caregiver</strong></h3>
-            <p class="p-color">If you’re seeking a Caregiver position and have a heart of compassion, NearbyCare App is the premier company to work for. Providing care is considered a high calling at NearbyCare App. We seek those individuals who see their work as a mission and not just a job. We offer an outstanding compensation package to those individuals who meet our rigorous standards to become a caregiver at NearbyCare.</p>
+              <div class="all-services-icon">
+                <div class="icon-with-text">
+                <%= image_tag "icon-alzheimer.svg", class:"services-icon", alt:"alzheimer" %>
+                <p class="p-color"><strong>Alzheimer’s</strong></p>
+                </div>
+
+                <div class="icon-with-text">
+                <%= image_tag "icon-assisted.svg", class:"services-icon", alt:"assisted" %>
+                <p class="p-color"><strong>Assisted Living</strong></p>
+                </div>
+
+                <div class="icon-with-text">
+                <%= image_tag "icon-login.svg", class:"services-icon", alt:"disabilities" %>
+                <p class="p-color"><strong>Disabilities</strong></p>
+                </div>
+
+                <div class="icon-with-text">
+                <%= image_tag "icon-injury.svg", class:"services-icon", alt:"injury" %>
+                <p class="p-color"><strong>Injury & Falls</strong></p>
+                </div>
+
+                <div class="icon-with-text">
+                <%= image_tag "icon-neuromuscular.svg", class:"services-icon", alt:"neuromuscular" %>
+                <p class="p-color"><strong>Neuromuscular</strong></p>
+                </div>
+
+                <div class="icon-with-text">
+                <%= image_tag "icon-rehab.svg", class:"services-icon", alt:"rehab" %>
+                <p class="p-color"><strong>Rehabilitation</strong></p>
+                </div>
+              </div>
+          </div>
+
+          <div class="intro">
+              <%= image_tag "icon-24-7.svg", class:"home-page-icon", alt:"day-night" %>
+              <h3 class="h3-color"><strong>Day and night Care</strong></h3>
+              <p class="p-color">A caregiver provides care during the day and/or evening based on the needs of the client. The caregiver and the amount of hours are matched to the needs of each client.</p>
+          </div>
+
+          <div class="intro">
+              <%= image_tag "icon-mauritius.svg", class:"home-page-icon", alt:"service-area" %>
+              <h3 class="h3-color"><strong>Service Area</strong></h3>
+              <p class="p-color">We provide award-winning home care services throughout the island.</p>
+          </div>
+
+          <div class="intro">
+              <%= image_tag "icon-become-carer.svg", class:"home-page-icon", alt:"caregiver" %>
+              <h3 class="h3-color"><strong>Become a caregiver</strong></h3>
+              <p class="p-color">If you’re seeking a Caregiver position and have a heart of compassion, NearbyCare App is the premier company to work for. Providing care is considered a high calling at NearbyCare App. We seek those individuals who see their work as a mission and not just a job. We offer an outstanding compensation package to those individuals who meet our rigorous standards to become a caregiver at NearbyCare.</p>
+          </div>
         </div>
       </div>
     </div>
