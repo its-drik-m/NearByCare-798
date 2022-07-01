@@ -48,6 +48,14 @@ class BookingsController < ApplicationController
 
   def show; end
 
+  def destroy
+    @booking.destroy
+    respond_to do |format|
+      format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def booking_params
