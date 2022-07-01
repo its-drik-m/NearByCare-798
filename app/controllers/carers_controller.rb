@@ -1,5 +1,7 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
+  before_action :import_reviews, only: %i[show]
+  helper_method :average_rating
   before_action :set_start_date
 
   def index
@@ -44,6 +46,7 @@ class CarersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @carer = Carer.find(params[:id])
     @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
   end
 
@@ -57,7 +60,21 @@ class CarersController < ApplicationController
     end
   end
 
+
   private
+
+  def average_rating(carer)
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', carer.id)
+    @average_rating = 0
+    @reviews.each do |review|
+      @average_rating += review.rating
+    end
+    if @reviews.count.zero?
+      return 0
+    else
+      return @average_rating /= @reviews.count
+    end
+  end
 
   def carer_params
     params.require(:carer).permit(:user_id, :photo, :region, specialty: [])
@@ -67,6 +84,11 @@ class CarersController < ApplicationController
     @carer = Carer.find(params[:id])
   end
 
+  def import_reviews
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  end
+
+  # calculate average rating for the carer
   def set_start_date
     @start_date = params.fetch(:start_date, Date.today).to_date
   end

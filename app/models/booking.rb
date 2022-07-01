@@ -1,6 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :carer
   belongs_to :patient
+  has_many :reviews, dependent: :destroy
 
   validates :start_date, :end_date, presence: true
   # validate :date_cannot_be_in_the_past
