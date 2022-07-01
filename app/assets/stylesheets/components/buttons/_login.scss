@@ -109,3 +109,21 @@
   background-color: white;
   transition: 0.4s;
 }
+
+
+.btn-gray-blue {
+  background-color: $gray-blue;
+  color: $navy-blue;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn-gray-blue:hover {
+  color: white;
+  background-color: $navy-blue;
+  transition: 0.4s;
+}
