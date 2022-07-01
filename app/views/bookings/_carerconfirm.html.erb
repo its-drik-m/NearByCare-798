@@ -2,7 +2,8 @@
   <div class="card">
     <%= simple_form_for([@carer, @booking]) do |f| %>
       <%= f.submit 'Confirm', class: 'btn btn-green' %>
-      <%= f.submit 'Reject', class: 'btn btn-green' %>
+      <%= link_to "Reject", carer_path,
+      data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
     <% end %>
   </div>
 </div>

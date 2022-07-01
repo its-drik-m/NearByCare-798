@@ -1,9 +1,9 @@
 <div data-search-carers-target="list">
   <p class="h3">
     <% if params[:query].blank? %>
-      <%= pluralize carers.count, 'carer' %> available
+      <%= pluralize @carers.count, 'carer' %> available
     <% else %>
-      <%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code>
+      <%= pluralize @carers.count, 'result' %> for <code><%= params[:query] %></code>
     <% end %>
   </p>
 </div>
@@ -27,8 +27,10 @@
           <div class="card-buttons">
             <% if user_signed_in? %>
               <% if current_user.id == carer.user_id %>
+                <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
                 <%= link_to "Edit my profile", edit_carer_path(carer.id),  class: "btn-submit-carer" %>
               <% else %>
+                <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
                 <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
                 <%= link_to "Book", new_carer_booking_path(carer.id),  class: "btn btn-green" %>
               <% end %>

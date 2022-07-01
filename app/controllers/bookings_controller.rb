@@ -28,8 +28,6 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    @patient.id = @booking.patient_id
-    @carer.id = @booking.carer_id
     # if current_user.carer?
     #   @booking.carer_id = Carer.find(current_user.id)
     # else
@@ -49,6 +47,14 @@ class BookingsController < ApplicationController
   end
 
   def show; end
+
+  def destroy
+    @booking.destroy
+    respond_to do |format|
+      format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
+      format.json { head :no_content }
+    end
+  end
 
   private
 
