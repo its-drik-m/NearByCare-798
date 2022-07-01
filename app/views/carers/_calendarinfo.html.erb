@@ -1,8 +1,18 @@
-<%= month_calendar events: @bookings do |date, bookings| %>
+<%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
   <%= date %>
     <% bookings.each do |booking| %>
     <div class="booking">
-      <p><%= User.find(booking.patient_id).last_name %></p>
+        <% if booking.carer_confirmed? %>
+          <div class = confirmed >
+            <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
+            <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-green" %>
+          </div>
+          <% else %>
+            <div class = notconfirmed >
+              <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
+              <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-green" %>
+            </div>
+        <% end %>
     </div>
     <% end %>
 <% end %>

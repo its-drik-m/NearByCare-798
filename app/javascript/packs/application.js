@@ -24,10 +24,10 @@ application.load(definitionsFromContext(context))
 // import Flatpickr
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
+// initFlatpickr();
 
 // Import style for flatpickr
 require("flatpickr/dist/flatpickr.css")
 
 // Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', Flatpickr)
+// application.register('flatpickr', Flatpickr)

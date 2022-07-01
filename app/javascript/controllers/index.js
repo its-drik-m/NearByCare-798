@@ -2,6 +2,9 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
+// Load all the controllers within this directory and all subdirectories.
+// Controller files must be named *_controller.js.
+
 import { application } from "./application"
 
 import HelloController from "./hello_controller.js"
@@ -15,3 +18,11 @@ application.register("search-carers", SearchCarersController)
 
 import StarRatingController from "./star_rating_controller.js"
 application.register("star-rating", StarRatingController)
+
+const application = Application.start()
+const context = require.context("controllers", true, /_controller\.js$/)
+application.load(definitionsFromContext(context))
+
+
+// import a theme (could be in your main CSS entry too...)
+// import 'flatpickr/dist/themes/dark.css'
