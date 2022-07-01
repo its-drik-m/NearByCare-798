@@ -8,7 +8,7 @@ class CarersController < ApplicationController
     # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
     region_query = "specialty ILIKE :specialty"
-      # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
+    # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
     # else
     #   @carers = Carer.all
     # end

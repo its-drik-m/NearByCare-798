@@ -35,9 +35,11 @@ class BookingsController < ApplicationController
     #   @booking.patient_id = Patient.find(current_user.id)
     # end
     if @booking.update(booking_params)
-      redirect_to carer_path(@booking.carer_id)
+      respond_to do |format|
+        format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully updated" }
+      end
     else
-      render 'edit'
+      format.html { render 'edit' }
     end
   end
 
@@ -49,6 +51,7 @@ class BookingsController < ApplicationController
   def show; end
 
   def destroy
+    @booking.find(booking_params)
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
