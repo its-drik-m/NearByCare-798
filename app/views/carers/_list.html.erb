@@ -1,9 +1,9 @@
 <div data-search-carers-target="list">
   <p class="h3">
     <% if params[:query].blank? %>
-      <%= pluralize carers.count, 'carer' %> available
+      <%= pluralize @carers.count, 'carer' %> available
     <% else %>
-      <%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code>
+      <%= pluralize @carers.count, 'result' %> for <code><%= params[:query] %></code>
     <% end %>
   </p>
 </div>

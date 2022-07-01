@@ -2,6 +2,9 @@
 <% patient = Patient.find_by_user_id(user.id) %>
 
 <h3><%= user.last_name %> <%= user.first_name %></h3>
-  <% patient.health_conditions %>
+<h4><%= pluralize patient.health_conditions.size, "Health condition" %>:</h4>
+<% patient.health_conditions.each do |cond| %>
+  <%= cond %> <br>
+<% end %>
 <h3> Do you want to confirm your appointment</h3>
   <%= render 'carerconfirm', booking: @booking %>
