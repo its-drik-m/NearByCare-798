@@ -294,9 +294,6 @@ User.create!(
 
 puts "Created #{User.count} users !"
 
-# user_id_first = User.first.id
-# user_id_last = User.last.id
-
 carer1 = Carer.create!(
   user_id: 1,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
@@ -538,31 +535,38 @@ file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797911/N
 carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
-# Data Set
-address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe", "Albion", "Tamarin", "Mahebourg"]
-users_pick = [1, 2, 3, 4, 5]
-carer_id = [1, 2, 3, 4, 5]
-patient_id = [1, 2, 3, 4, 5]
-
+# address boo
+9
+address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
+                "Albion", "Tamarin", "Mahebourg", "Phoenix", "Grand-Baie", "Souillac", "Chemin Grenier",
+                "Le Morne", "Sainte-Marie", "Vacoas", "Dagotiere"]
 
 puts "> Creating imaginary patients..."
-5.times do
+
+user_id_first = User.first.id
+user_id_last = User.last.id
+
+20.times do
   Patient.create!(
-    user_id: users_pick.sample,
+    user_id: [user_id_first..user_id_last].sample,
     address: address_book.sample,
     health_conditions: Patient::CONDITIONS.sample
   )
 end
 
 puts "> Created #{Patient.count} patients!"
-
-# Create Bookings
 puts "> Faking bookings..."
+
+carer_id_first = Carer.first.id
+carer_id_last = Carer.last.id
+
+patient_id_first = Patient.first.id
+patient_id_last = Patient.last.id
 
 15.times do
   Booking.create!(
-    carer_id: carer_id.sample,
-    patient_id: patient_id.sample,
+    carer_id: [carer_id_first..carer_id_last].sample,
+    patient_id: [patient_id_first..patient_id_last].sample,
     start_date: DateTime.now + 0.025,
     end_date: DateTime.now + 0.3,
     patient_confirmed: [true, false].sample,
