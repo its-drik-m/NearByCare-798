@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
-  before_action :set_carer, only: %i[new create show]
+  before_action :set_carer, only: %i[new create]
   before_action :set_patient, only: %i[new create]
 
   def new
@@ -28,11 +28,15 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @current_user.carer? && @booking.update(booking_params)
-      @booking.carer_id = @current_user.id
-      @booking.carer_confirmed = true
-      redirect_to carer_path(@booking.carer_id)
-    elsif @current_user.patient? && @booking.update(booking_params)
+    @patient.id = @booking.patient_id
+    @carer.id = @booking.carer_id
+    # if current_user.carer?
+    #   @booking.carer_id = Carer.find(current_user.id)
+    # else
+    #   @booking.carer_id = @carer.id
+    #   @booking.patient_id = Patient.find(current_user.id)
+    # end
+    if @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)
     else
       render 'edit'
