@@ -1,7 +1,8 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
   before_action :import_reviews, only: %i[show]
-  before_action :average_rating, only: %i[show]
+  helper_method :average_rating
+
 
   def index
     # @carers = Carer.order(first_name: :desc)
@@ -45,6 +46,7 @@ class CarersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @carer = Carer.find(params[:id])
   end
 
   def edit; end
@@ -57,7 +59,21 @@ class CarersController < ApplicationController
     end
   end
 
+
   private
+
+  def average_rating(carer)
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', carer.id)
+    @average_rating = 0
+    @reviews.each do |review|
+      @average_rating += review.rating
+    end
+    if @reviews.count.zero?
+      return 0
+    else
+      return @average_rating /= @reviews.count
+    end
+  end
 
   def carer_params
     params.require(:carer).permit(:user_id, :photo, :region, specialty: [])
@@ -72,12 +88,4 @@ class CarersController < ApplicationController
   end
 
   # calculate average rating for the carer
-  def average_rating
-    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
-    @average_rating = 0
-    @reviews.each do |review|
-      @average_rating += review.rating
-    end
-    return @average_rating /= @reviews.count
-  end
 end

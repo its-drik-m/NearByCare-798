@@ -546,7 +546,7 @@ patient_id = [1, 2, 3, 4, 5]
 
 
 puts "> Creating imaginary patients..."
-7.times do
+5.times do
   Patient.create!(
     user_id: users_pick.sample,
     address: address_book.sample,
@@ -571,11 +571,11 @@ puts "> Faking bookings..."
 end
 puts "> Simulated #{Booking.count} bookings!"
 
-5.times do
+20.times do
   Review.create!(
     booking_id: Booking.all.sample.id,
     rating: [1, 2, 3, 4, 5].sample,
-    comment: ["Great Caring","Good Caring","Bad Caring","Terrible Caring","Awful Caring"].sample
+    comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
   )
 end
 
