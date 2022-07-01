@@ -6,6 +6,7 @@
           <%= f.input :photo, as: :file %>
           <%= f.input :specialty, as: :check_boxes, collection: Carer::SPECIALTY, input_html: { multiple: true }  %>
           <div>
+             <%= link_to 'Back', :back %>
             <%= f.submit 'Save my profile', class: "btn-submit-desaturated-cyan" %>
           </div>
         <% end %>
