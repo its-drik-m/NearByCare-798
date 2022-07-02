@@ -32,7 +32,7 @@ import twilioInit from "../plugins/twilio.js";
 require("flatpickr/dist/flatpickr.css")
 
 // Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', initFlatpickr)
+// application.register('flatpickr', initFlatpickr)
 
 // Using the jquery bar rating plugin
 // import "jquery-bar-rating"

@@ -12,9 +12,15 @@
                 <h2><%= User.find(@carer.user_id).last_name %></h2>
                 <p><%= User.find(@carer.user_id).first_name %></p>
               </div>
+              <div>
+                <p> Carer Rating: <%= average_rating(@carer) %></p>
+              </div>
               <div class="carer-description">
-                <p><%= @carer.specialty%></p>
-                <p><%= @carer.region %></p>
+              <h4><%= pluralize @carer.specialty.size, "specialty" %>:</h4>
+              <% @carer.specialty.each do |spec| %>
+                <%= spec %> <br>
+              <% end %>
+                <p>Is located in the <%= @carer.region %> region.</p>
               </div>
               <div>
                 <% if current_user.id == @carer.user_id %>
@@ -22,7 +28,8 @@
                 <% end %>
               </div>
               <div id="carer-viewmore-card" class="card-buttons">
-                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
+                <%= link_to "Back", :back, class: "btn-submit-carer" %>
+                <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
                 <% if current_user.id == @carer.user_id %>
                   <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
                 <% else %>

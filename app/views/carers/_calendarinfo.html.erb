@@ -4,11 +4,13 @@
     <div class="booking">
         <% if booking.carer_confirmed? %>
           <div class = confirmed >
-            <p><%= User.find((Patient.find(booking.patient_id)).user_id).last_name %></p>
+            <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
+            <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-green" %>
           </div>
           <% else %>
             <div class = notconfirmed >
-              <p><%= User.find((Patient.find(booking.patient_id)).user_id).last_name %></p>
+              <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
+              <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-green" %>
             </div>
         <% end %>
     </div>
