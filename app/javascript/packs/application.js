@@ -24,13 +24,15 @@ application.load(definitionsFromContext(context))
 // import Flatpickr
 import { initFlatpickr } from "../plugins/flatpickr";
 
+import twilioInit from "../plugins/twilio.js";
+
 // initFlatpickr();
 
 // Import style for flatpickr
 require("flatpickr/dist/flatpickr.css")
 
 // Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', initFlatpickr)
+// application.register('flatpickr', initFlatpickr)
 
 // Using the jquery bar rating plugin
 // import "jquery-bar-rating"
@@ -40,4 +42,8 @@ application.register('flatpickr', initFlatpickr)
 // initStarRating();
 document.addEventListener('turbolinks:load', ()=>{
   initFlatpickr();
+
+  if (document.querySelector('.twilio-video')) {
+    twilioInit();
+  }
 });

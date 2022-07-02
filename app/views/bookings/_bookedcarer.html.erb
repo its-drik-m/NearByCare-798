@@ -1,0 +1,17 @@
+<% user = User.find((Carer.find(@booking.carer_id)).user_id) %>
+<% carer = Carer.where(user_id: user.id) %>
+
+<div class="modal-body">
+  <h3><%= user.last_name %></h3>
+  <h3><%= user.first_name %></h3>
+  <h4><%= pluralize carer.specialty.size, "specialty" %>:</h4>
+  <% carer.specialty.each do |spec| %>
+    <%= spec %> <br>
+  <% end %>
+</div>
+
+
+
+
+<h3>Do you want to reshedule your appointment</h3>
+  <%= render 'form', booking: @booking %>

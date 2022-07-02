@@ -4,6 +4,7 @@
         <%= simple_form_for(patient) do |f| %>
           <%= f.input :address %>
           <%= f.input :health_conditions, as: :check_boxes, collection: Patient::CONDITIONS, input_html: { multiple: true }  %>
+          <%= link_to 'Back', :back %>
           <%= f.submit 'Save my profile', class: "btn-submit-yellow" %>
         <% end %>
     </div>
