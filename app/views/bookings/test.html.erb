@@ -20,7 +20,7 @@
         <div class="remote-media-div text-center">
           <video id="userVideo" autoplay muted="true" ></video>
           <div>
-            <button id='leave-btn' class='btn btn-primary mt-3'>
+            <button id='leave-btn' class='btn btn-submit-carer'>
               End Conversation
             </button>
           </div>
@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-7">
       <p class="text-center">
-        <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
+        <%# <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
       </p>
       </div>
     </div>

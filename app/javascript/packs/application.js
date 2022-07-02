@@ -15,9 +15,36 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
+import { Application } from 'stimulus'
+import { definitionsFromContext } from 'stimulus/webpack-helpers'
+
+const application = Application.start()
+const context = require.context('../controllers', true, /\.js$/)
+application.load(definitionsFromContext(context))
+
+// import Flatpickr
+import { initFlatpickr } from "../plugins/flatpickr";
+
+import twilioInit from "../plugins/twilio.js";
+
+// initFlatpickr();
+
+// Import style for flatpickr
+require("flatpickr/dist/flatpickr.css")
+
+// Manually register Flatpickr as a stimulus controller
+// application.register('flatpickr', initFlatpickr)
+
 // Using the jquery bar rating plugin
 // import "jquery-bar-rating"
 
 // import { initStarRating } from '../plugins/init_star_rating';
 
 // initStarRating();
+document.addEventListener('turbolinks:load', ()=>{
+  initFlatpickr();
+
+  if (document.querySelector('.twilio-video')) {
+    twilioInit();
+  }
+});

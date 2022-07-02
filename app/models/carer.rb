@@ -4,8 +4,9 @@ class Carer < ApplicationRecord
                "Assistance During Treatments", "Assistance and Providing Care",
                "Accomodative Care", "Injury Recovery Treatment"]
   has_one :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :patients, through: :bookings
+  has_many :reviews, through: :bookings
 
   # thanks to Cloudinary
   has_one_attached :photo

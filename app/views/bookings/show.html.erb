@@ -1,4 +1,76 @@
+<% if current_user.carer? %>
+  <div class="booking-card-outline">
+  </div>
+    <div class="container">
+      <h3>Details on <%= User.find((Patient.find(@booking.patient_id)).user_id).last_name %></h3>
+        <div class="carer-new-form">
+          <div class="row">
+            <div class="col">
+              <div class="form p-3">
+                <%= render 'bookedpatient', booking: @booking %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% else %>
+    <div class="container_2">
+    <h3>Details on <%= User.find((Carer.find(@booking.carer_id)).user_id).last_name %></h3>
+        <div class="patient-new-form">
+          <div class="row">
+            <div class="col">
+              <div class="form p-3">
+                <%= render 'bookedcarer', booking: @booking %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+
+
+<div class="title-wrapper">
+  <div class="container">
+    <h1 class="title">Your NearbyCarer online</h1>
+  </div>
+</div>
+<div class="container">
+  <div
+    class="twilio-video"
+    data-sid="<%= ENV["ACCOUNT_SID"] %>"
+    data-room="<%= @booking.url_room %>"
+    data-token="<%= @token %>"
+    >
+
+    <div class="row justify-content-between">
+      <div class="col-7">
+        <div class="participant">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="remote-media-div text-center">
+          <video id="userVideo" autoplay muted="true" ></video>
+          <div>
+            <button id='leave-btn' class='btn btn-primary mt-3'>
+              End Conversation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-7">
+      <p class="text-center">
+        <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
+      </p>
+      </div>
+    </div>
+    <%= link_to '', root_path, class: 'd-none root-link', data: {turbolinks: false}  %>
+  </div>
+</div>
+
 <div style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

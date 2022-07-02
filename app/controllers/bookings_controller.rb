@@ -14,17 +14,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # Only patients will be able to create a new booking, so no need to compare for role
-    # if @current_user.patient?
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
-    # else
-    #   @booking.carer_id = @current_user.id
-    #   @booking.patient_id = params[:booking][:patient_id]
-    #   @booking.carer_confirmed = true
-    # end
-    # @booking.call_confirm = # call confirm variable
     if @booking.save
       flash[:notice] = "Booking successfully done."
       redirect_to carer_path(@booking.carer_id)
@@ -36,21 +28,24 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @current_user.carer? && @booking.update(booking_params)
-      @booking.carer_id = @current_user.id
-      @booking.carer_confirmed = true
-      redirect_to carer_path(@booking.carer_id)
-    elsif @current_user.patient? && @booking.update(booking_params)
-      redirect_to carer_path(@booking.carer_id)
+    # if current_user.carer?
+    #   @booking.carer_id = Carer.find(current_user.id)
+    # else
+    #   @booking.carer_id = @carer.id
+    #   @booking.patient_id = Patient.find(current_user.id)
+    # end
+    if @booking.update(booking_params)
+      respond_to do |format|
+        format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully updated" }
+      end
     else
-      render 'edit'
+      format.html { render 'edit' }
     end
   end
 
   def index
-    @bookings = Booking.all
     start_date = params.fetch(:start_date, Date.today).to_date
-    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
   end
 
   def show
@@ -59,6 +54,21 @@ class BookingsController < ApplicationController
         lat: patient.latitude,
         lng: patient.longitude
       }
+    @booking = Booking.find(params[:id])
+    @token = generate_token(@booking)
+  end
+
+  def test
+    @booking = Booking.find(params[:booking_id])
+    @token = generate_token(@booking)
+  end
+
+  def destroy
+    @booking.find(booking_params)
+    @booking.destroy
+    respond_to do |format|
+      format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
+      format.json { head :no_content }
     end
   end
 
@@ -78,5 +88,18 @@ class BookingsController < ApplicationController
 
   def set_patient
     @patient = current_user
+  end
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['SID'], ENV['KEY_ID'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 end
