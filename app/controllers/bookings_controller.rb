@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
-  before_action :set_carer, only: %i[new create show]
+  before_action :set_carer, only: %i[new create]
   before_action :set_patient, only: %i[new create]
 
   def new
@@ -29,11 +29,10 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      respond_to do |format|
-        format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully updated" }
-      end
+      redirect_to carer_path(@booking.carer_id)
+      flash[:notice] = "Booking successfully updated"
     else
-      format.html { render 'edit' }
+      render 'edit'
     end
   end
 
