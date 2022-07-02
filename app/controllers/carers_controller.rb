@@ -4,7 +4,6 @@ class CarersController < ApplicationController
 
   def index
     # @carers = Carer.order(first_name: :desc)
-
     # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
     region_query = "specialty ILIKE :specialty"
