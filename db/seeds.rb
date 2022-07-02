@@ -537,9 +537,8 @@ carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 # carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
-# address boo
-
-address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
+# address book
+ddress_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
                 "Albion", "Tamarin", "Mahebourg", "Phoenix", "Grand-Baie", "Souillac", "Chemin Grenier",
                 "Le Morne", "Sainte-Marie", "Vacoas", "Dagotiere"]
 
@@ -587,56 +586,3 @@ end
 
 puts "> Faked #{Review.count} reviews!"
 puts '> Seed Completed!'
-# Patient.create!(
-#   user_id: 11,
-#   address: "Saint Pierre",
-#   health_conditions: [Patient::CONDITIONS.sample, Patient::CONDITIONS.sample]
-# )
-# puts "Created #{Patient.count} patients!"
-
-# Booking.create!(
-#   carer_id: 1,
-#   patient_id: 1,
-#   start_date: (Time.now + 1.day).to_datetime,
-#   end_date: (Time.now + 2.day).to_datetime,
-#   patient_confirmed: true,
-#   carer_confirmed: true
-# )
-
-# Booking.create!(
-#   carer_id: 2,
-#   patient_id: 3,
-#   start_date: (Time.now + 1.day).to_datetime,
-#   end_date: (Time.now + 2.day).to_datetime,
-#   patient_confirmed: false,
-#   carer_confirmed: false
-# )
-
-# Booking.create!(
-#   carer_id: 1,
-#   patient_id: 3,
-#   start_date: (Time.now + 2.day).to_datetime,
-#   end_date: (Time.now + 2.day + 1.hour).to_datetime,
-#   patient_confirmed: true,
-#   carer_confirmed: false
-# )
-
-# Booking.create!(
-#   carer_id: 3,
-#   patient_id: 4,
-#   start_date: (Time.now + 1.day).to_datetime,
-#   end_date: (Time.now + 2.day).to_datetime,
-#   patient_confirmed: false,
-#   carer_confirmed: true
-# )
-
-# Booking.create!(
-#   carer_id: 1,
-#   patient_id: 5,
-#   start_date: (Time.now + 2.day + 3.hour).to_datetime,
-#   end_date: (Time.now + 2.day + 4.hour).to_datetime,
-#   patient_confirmed: true,
-#   carer_confirmed: true
-# )
-# puts "Created #{Booking.count} bookings!"
-# puts 'Finished!'

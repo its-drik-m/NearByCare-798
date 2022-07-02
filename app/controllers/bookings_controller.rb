@@ -48,7 +48,15 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
   end
 
-  def show; end
+  def show
+    @booking = Booking.find(params[:id])
+    @token = generate_token(@booking)
+  end
+
+  def test
+    @booking = Booking.find(params[:booking_id])
+    @token = generate_token(@booking)
+  end
 
   def destroy
     @booking.find(booking_params)
@@ -75,5 +83,18 @@ class BookingsController < ApplicationController
 
   def set_patient
     @patient = current_user
+  end
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['SID'], ENV['KEY_ID'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 end
