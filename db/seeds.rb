@@ -302,14 +302,6 @@ carer1 = Carer.create!(
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
-carer2 = Carer.create!(
-  user_id: 2,
-  region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-)
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797882/Nearbycare/man_02.jpg')
-carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
-
 carer3 = Carer.create!(
   user_id: 3,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
@@ -538,7 +530,7 @@ carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
 # address book
-ddress_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
+address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
                 "Albion", "Tamarin", "Mahebourg", "Phoenix", "Grand-Baie", "Souillac", "Chemin Grenier",
                 "Le Morne", "Sainte-Marie", "Vacoas", "Dagotiere"]
 
