@@ -30,6 +30,8 @@ class PatientsController < ApplicationController
     end
   end
 
+  # def call; end
+
   private
 
   def patient_params

@@ -1,5 +1,5 @@
 <%= month_calendar(events: @bookings, attribute: :start_date, end_attribute: :end_date) do |date, bookings| %>
-  <%= date %>
+  <%= date.day %>
     <% bookings.each do |booking| %>
     <div class="booking">
         <% if booking.carer_confirmed? %>

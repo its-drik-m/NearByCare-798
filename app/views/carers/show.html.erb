@@ -33,7 +33,6 @@
                 <% if current_user.id == @carer.user_id %>
                   <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
                 <% else %>
-                  <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
                   <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-green" %>
                 <% end %>
               </div>

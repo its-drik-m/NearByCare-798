@@ -49,6 +49,8 @@ class CarersController < ApplicationController
     @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
   end
 
+  # def call; end
+
   def edit; end
 
   def update
@@ -58,7 +60,6 @@ class CarersController < ApplicationController
       render :edit
     end
   end
-
 
   private
 
