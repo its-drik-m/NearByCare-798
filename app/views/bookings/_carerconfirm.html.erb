@@ -1,10 +1,11 @@
 <div class="col-4">
   <div class="card">
     <%= simple_form_for([@carer, @booking]) do |f| %>
-      <%= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
-      <%= link_to "Reject", carer_path,
+      <%= f.input :carer_confirmed %>
+      <%= link_to "Reject", booking_path(@booking),
       data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
       <%= f.button :submit %>
+      <%# <%= link_to "Reject", booking_path(@booking.id), method: :delete, notice: "Are you sure?" %>
     <% end %>
   </div>
 </div>
