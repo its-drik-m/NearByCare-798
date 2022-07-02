@@ -14,17 +14,9 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    # Only patients will be able to create a new booking, so no need to compare for role
-    # if @current_user.patient?
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
-    # else
-    #   @booking.carer_id = @current_user.id
-    #   @booking.patient_id = params[:booking][:patient_id]
-    #   @booking.carer_confirmed = true
-    # end
-    # @booking.call_confirm = # call confirm variable
     if @booking.save
       flash[:notice] = "Booking successfully done."
       redirect_to carer_path(@booking.carer_id)
@@ -36,11 +28,15 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @current_user.carer? && @booking.update(booking_params)
-      @booking.carer_id = @current_user.id
-      @booking.carer_confirmed = true
-      redirect_to carer_path(@booking.carer_id)
-    elsif @current_user.patient? && @booking.update(booking_params)
+    @patient.id = @booking.patient_id
+    @carer.id = @booking.carer_id
+    # if current_user.carer?
+    #   @booking.carer_id = Carer.find(current_user.id)
+    # else
+    #   @booking.carer_id = @carer.id
+    #   @booking.patient_id = Patient.find(current_user.id)
+    # end
+    if @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)
     else
       render 'edit'
@@ -48,9 +44,8 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.all
     start_date = params.fetch(:start_date, Date.today).to_date
-    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+    @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
   end
 
   def show; end
