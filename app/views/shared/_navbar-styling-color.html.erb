@@ -1,10 +1,10 @@
     <% if user_signed_in? %>
       <% if current_user.role == "carer" %>
-        "navbar-carer"
+        "navbar navbar-expand-sm navbar-lewagon navbar-carer"
        <% else current_user.role == "patient" %>
-          "navbar-patient"
+          "navbar navbar-expand-sm navbar-lewagon navbar-patient"
     <% end %>
 
     <% else %>
-        "navbar-patient"
+        "navbar navbar-expand-sm navbar-lewagon navbar-patient"
     <% end %>
