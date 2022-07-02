@@ -54,6 +54,7 @@ class BookingsController < ApplicationController
         lat: patient.latitude,
         lng: patient.longitude
       }
+    end
     @booking = Booking.find(params[:id])
     @token = generate_token(@booking)
   end
