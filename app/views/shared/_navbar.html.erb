@@ -3,12 +3,34 @@
   <div class="navbar navbar-expand-sm navbar-lewagon">
     <div class="container-fluid">
       <%= link_to root_path, class: "navbar-brand" do %>
+
+            <% if user_signed_in? %>
+      <% if current_user.role == "carer" %>
         <%= image_tag "nearby-care-logo-white-crop.svg" %>
+       <% else current_user.role == "patient" %>
+          <%= image_tag "nearby-care-logo-crop.svg" %>
+    <% end %>
+
+    <% else %>
+        <%= image_tag "nearby-care-logo-crop.svg" %>
+    <% end %>
       <% end %>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
-          <%= image_tag "burger-menu-white.svg" %>
+
+                <% if user_signed_in? %>
+          <% if current_user.role == "carer" %>
+            <%= image_tag "burger-menu-white.svg" %>
+          <% else current_user.role == "patient" %>
+              <%= image_tag "burger-menu.svg" %>
+        <% end %>
+
+        <% else %>
+            <%= image_tag "burger-menu.svg" %>
+        <% end %>
+
+
         </span>
       </button>
 
