@@ -14,23 +14,6 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
-
-const application = Application.start()
-const context = require.context('../controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
-
-// import Flatpickr
-import { initFlatpickr } from "../plugins/flatpickr";
-
-initFlatpickr();
-
-// Import style for flatpickr
-require("flatpickr/dist/flatpickr.css")
-
-// Manually register Flatpickr as a stimulus controller
-application.register('flatpickr', Flatpickr)
 
 // Using the jquery bar rating plugin
 // import "jquery-bar-rating"
