@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 require("flatpickr/dist/flatpickr.css")
-// import "controllers"
 import "bootstrap"
 import { initFlatpickr } from "../plugins/flatpickr";
 import twilioInit from "../plugins/twilio.js";
@@ -17,30 +16,8 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// import { Application } from 'stimulus'
-// import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import "controllers"
 
-// const application = Application.start()
-// const context = require.context('../controllers', true, /\.js$/)
-// application.load(definitionsFromContext(context))
-
-// import Flatpickr
-
-
-// initFlatpickr();
-
-// Import style for flatpickr
-
-
-// Manually register Flatpickr as a stimulus controller
-// application.register('flatpickr', initFlatpickr)
-
-// Using the jquery bar rating plugin
-// import "jquery-bar-rating"
-
-// import { initStarRating } from '../plugins/init_star_rating';
-
-// initStarRating();
 document.addEventListener('turbolinks:load', ()=>{
   initFlatpickr();
 
