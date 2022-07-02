@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2022_06_29_214643) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "region"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_carers_on_user_id"
   end
 
@@ -72,6 +74,8 @@ ActiveRecord::Schema.define(version: 2022_06_29_214643) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_patients_on_user_id"
   end
 

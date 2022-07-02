@@ -538,7 +538,7 @@ carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
 # address book
-ddress_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
+address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
                 "Albion", "Tamarin", "Mahebourg", "Phoenix", "Grand-Baie", "Souillac", "Chemin Grenier",
                 "Le Morne", "Sainte-Marie", "Vacoas", "Dagotiere"]
 
