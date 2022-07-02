@@ -562,7 +562,7 @@ carer7 = Carer.create!(
   user_id: 7,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-
+)
 Patient.create!(
   user_id: 2,
   address: "Port-Louis",
@@ -576,7 +576,7 @@ carer8 = Carer.create!(
   user_id: 8,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-
+)
 Patient.create!(
   user_id: 8,
   address: "Chemin Grenier",
@@ -589,7 +589,7 @@ carer9 = Carer.create!(
   user_id: 9,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-
+)
 Patient.create!(
   user_id: 9,
   address: "Flacq",
@@ -602,7 +602,7 @@ carer10 = Carer.create!(
   user_id: 10,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: Carer::SPECIALTY.sample # could also have used specialty.shuffle.first
-
+)
 Patient.create!(
   user_id: 10,
   address: "Tamarin",
@@ -772,8 +772,7 @@ file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797911/N
 carer30.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 puts "Created #{Carer.count} carers !"
 
-# address boo
-9
+# address book
 address_book = ["Port-Louis", "Chemin Grenier", "Flacq", "Saint Pierre", "Rose-Hill", "Curepipe",
                 "Albion", "Tamarin", "Mahebourg", "Phoenix", "Grand-Baie", "Souillac", "Chemin Grenier",
                 "Le Morne", "Sainte-Marie", "Vacoas", "Dagotiere"]
