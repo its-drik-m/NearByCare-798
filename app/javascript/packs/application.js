@@ -7,30 +7,30 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require("flatpickr/dist/flatpickr.css")
+// import "controllers"
+import "bootstrap"
+import { initFlatpickr } from "../plugins/flatpickr";
+import twilioInit from "../plugins/twilio.js";
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "controllers"
-import "bootstrap"
+// import { Application } from 'stimulus'
+// import { definitionsFromContext } from 'stimulus/webpack-helpers'
 
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
-
-const application = Application.start()
-const context = require.context('../controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
+// const application = Application.start()
+// const context = require.context('../controllers', true, /\.js$/)
+// application.load(definitionsFromContext(context))
 
 // import Flatpickr
-import { initFlatpickr } from "../plugins/flatpickr";
 
-import twilioInit from "../plugins/twilio.js";
 
 // initFlatpickr();
 
 // Import style for flatpickr
-require("flatpickr/dist/flatpickr.css")
+
 
 // Manually register Flatpickr as a stimulus controller
 // application.register('flatpickr', initFlatpickr)
