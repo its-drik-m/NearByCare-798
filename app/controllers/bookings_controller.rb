@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
   before_action :set_carer, only: %i[new create show]
-  before_action :set_patient, only: %i[new create]
+  before_action :set_patient, only: %i[new create show]
 
   def new
     if @carer.id == current_user
@@ -44,7 +44,17 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
   end
 
-  def show; end
+  def show
+    @patients = Patient.all
+    @marker = @patients.geocoded.map do |patient|
+      {
+        lat: patient.latitude,
+        lng: patient.longitude
+      }
+    end
+    @booking = Booking.find(params[:id])
+    @token = generate_token(@booking)
+  end
 
   private
 
