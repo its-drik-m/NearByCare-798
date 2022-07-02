@@ -21,6 +21,7 @@
           <div class="cards-body">
             <h2><%= User.find(carer.user_id).last_name %></h2>
             <p><%= User.find(carer.user_id).first_name %></p>
+            <p>Carer Rating: <%= average_rating(carer) %></p>
           </div>
           <br>
           <div class="card-buttons">
