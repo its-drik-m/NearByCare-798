@@ -1,39 +1,69 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions"
 
 export default class extends Controller {
-  static values = {
-    apiKey: String,
-    markers: Array
-  }
-
+  // static values = {
+  //   apiKey: String,
+  //   markers: Array
+  // }
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    console.log("connected");
+    // mapboxgl.accessToken = this.apiKeyValue
 
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      style: "mapbox://styles/mapbox/streets-v9",
-      center: [57.613891, -20.282669],
-      zoom: 8
-    })
+    // let directions = new MapboxDirections({
+    //   accessToken: mapboxgl.accessToken,
+    //   unit: "metric",
+    //   profile: "mapbox/driving",
+    //   controls: {instructions: false}
+    // });
 
-    this.#addMarkersToMap()
+    // this.map = new mapboxgl.Map({
+    //   container: this.element,
+    //   style: "mapbox://styles/mapbox/streets-v10"
+    // })
+
+    // this.map.addControl(directions, "top-left");
+
+    // this.#addMarkersToMap();
+
+    // navigator.geolocation.getCurrentPosition(position => {
+    //   const { latitude, longitude } = position.coords;
+    //   // window.location.reload()
+    //   if (this.map.loaded()) {
+    //     directions.setOrigin([longitude, latitude]);
+    //     directions.setDestination([20, 57]);
+    //   } else {
+    //     this.map.on("load", () => {
+    //       directions.setOrigin([longitude, latitude]);
+    //       directions.setDestination([20, 57]);
+    //     })
+    //   }
+    //  })
+
+    // this.map.addControl(new mapboxgl.GeolocateControl({
+    //   positionOptions: {
+    //   enableHighAccuracy: true
+    //   },
+    //   trackUserLocation: true,
+    //   showUserHeading: true,
+    //   showUserLocation: true,
+    // }));
   }
 
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const customMarker = document.createElement("div")
-      customMarker.className = "marker"
-      customMarker.style.backgroundImage = `url('${marker.image_url}')`
-      customMarker.style.backgroundSize = "contain"
-      customMarker.style.width = "15px"
-      customMarker.style.height = "25px"
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
+  // #addMarkersToMap() {
+  //   this.markersValue.forEach((marker) => {
+  //     const customMarker = document.createElement("div")
+  //     customMarker.className = "marker"
+  //     customMarker.style.backgroundImage = url(`${marker.image_url}`)
+  //     customMarker.style.backgroundSize = "contain"
+  //     customMarker.style.width = "15px"
+  //     customMarker.style.height = "25px"
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(this.map)
-    });
-  }
+  //     new mapboxgl.Marker(customMarker)
+  //       .setLngLat([ 20, 57 ])
+  //       .addTo(this.map)
+  //   });
+
+  // }
 }
