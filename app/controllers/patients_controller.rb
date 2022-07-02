@@ -18,6 +18,13 @@ class PatientsController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
+
+    @marker = @patients.geocoded.map do |patient|
+      {
+        lat: patient.latitude,
+        lng: patient.longitude
+      }
+    end
   end
 
   def edit; end

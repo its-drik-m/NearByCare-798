@@ -8,7 +8,7 @@ class CarersController < ApplicationController
     # @carers = Carer.order(first_name: :desc)
     # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty @> :specialty"
-    region_query = "specialty @> :specialty"
+    specialty_query = "specialty @> :specialty"
     # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
     # else
     #   @carers = Carer.all
@@ -17,7 +17,7 @@ class CarersController < ApplicationController
     @specialty = params[:specialty]
 
     if @region == "all"
-      @carers = Carer.where(region_query, specialty: "{#{params[:specialty]}}")
+      @carers = Carer.where(specialty_query, specialty: "{#{params[:specialty]}}")
     else
       @carers = Carer.where(sql_query, region: "%#{params[:region]}%", specialty: "{#{params[:specialty]}}")
     end

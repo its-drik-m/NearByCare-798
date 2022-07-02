@@ -49,6 +49,11 @@ class BookingsController < ApplicationController
   end
 
   def show
+    @marker = @patients.geocoded.map do |patient|
+      {
+        lat: patient.latitude,
+        lng: patient.longitude
+      }
     @booking = Booking.find(params[:id])
     @token = generate_token(@booking)
   end

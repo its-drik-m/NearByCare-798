@@ -7,9 +7,6 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller.js"
-application.register("hello", HelloController)
-
 import MapboxController from "./mapbox_controller.js"
 application.register("mapbox", MapboxController)
 
@@ -23,6 +20,17 @@ const application = Application.start()
 const context = require.context("controllers", true, /_controller\.js$/)
 application.load(definitionsFromContext(context))
 
+// import Flatpickr
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
+// Import style for flatpickr
+require("flatpickr/dist/flatpickr.css")
+
+// Manually register Flatpickr as a stimulus controller
+// application.register('flatpickr', Flatpickr)
 
 // import a theme (could be in your main CSS entry too...)
 // import 'flatpickr/dist/themes/dark.css'
+
