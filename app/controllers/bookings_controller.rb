@@ -28,14 +28,12 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @current_user.carer? && @booking.update(booking_params)
-      @booking.carer_id = @current_user.id
-      @booking.carer_confirmed = true
-      redirect_to carer_path(@booking.carer_id)
-    elsif @current_user.patient? && @booking.update(booking_params)
-      redirect_to carer_path(@booking.carer_id)
+    if @booking.update(booking_params)
+      respond_to do |format|
+        format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully updated" }
+      end
     else
-      render 'edit'
+      format.html { render 'edit' }
     end
   end
 
@@ -45,6 +43,14 @@ class BookingsController < ApplicationController
   end
 
   def show; end
+
+  def destroy
+    @booking.find(booking_params)
+    @booking.destroy
+    respond_to do |format|
+      format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
+    end
+  end
 
   private
 
