@@ -4,7 +4,6 @@ class CarersController < ApplicationController
 
   def index
     # @carers = Carer.order(first_name: :desc)
-
     # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
     region_query = "specialty ILIKE :specialty"
@@ -43,9 +42,10 @@ class CarersController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
     @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
     @specialty = JSON.parse(@carer.specialty)
+    # @booking = Booking.where(patient: )
+    # raise
   end
 
   def edit; end

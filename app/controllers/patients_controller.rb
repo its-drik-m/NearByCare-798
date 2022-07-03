@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
     @review = Review.new
     @booking = Booking.new
     @patients = Patient.all
-    @marker = @patients.geocoded.map do |patient|
+    @markers = @patients.geocoded.map do |patient|
       if patient.user_id == current_user.id
         {
           lat: patient.latitude,
