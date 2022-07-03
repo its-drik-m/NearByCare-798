@@ -7,7 +7,6 @@ export default class extends Controller {
   static targets = ["address"]
 
   geocode() {
-    console.log('heyooo')
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,locality,neighborhood,address"
