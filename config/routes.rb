@@ -6,25 +6,17 @@ Rails.application.routes.draw do
   resources :users, only: %i[edit update]
 
   resources :carers, except: :destroy do
-    resources :bookings, except: :destroy
+    resources :bookings do
+      resources :reviews, except: %i[index show destroy]
+    end
     resources :reviews, only: %i[index show]
   end
+  resources :bookings
 
   resources :patients, except: %i[destroy index] do
-    resources :bookings, only: %i[index show]
+    resources :bookings, only: %i[index show call] do
+      get 'call', to: 'bookings#call'
+    end
     resources :reviews, only: %i[new create index show]
   end
-  # resources :booking do
-  #   resources :review
-  # end
-  # resources :users, only: %i[edit update] do
-  #  resources :patients, only: %i[edit update show] do
-  #  resources :bookings, only: %i[new create index show destroy]
-  #  resources :reviews, only: %i[new create index show destroy]
-  # end
-  # resources :carers, only: %i[index edit update show] do
-  #   resources :bookings, only: %i[new create index show destroy]
-  #   resources :reviews, only: %i[new create index show destroy]
-  # end
-  # end
 end

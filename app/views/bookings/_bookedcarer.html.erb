@@ -1,0 +1,15 @@
+<%# <% @booking.each do |book| %>
+    <% user = User.find((Carer.find(@booking.carer_id)).user_id) %>
+    <% carer = (Carer.find(@booking.carer_id)) %>
+    <div class="carer-info">
+      <h3>Name: <%= user.last_name %> <%= user.first_name %></h3>
+      <h4><%= pluralize carer.specialty.size, "specialty" %>:</h4>
+      <% carer.specialty.each do |spec| %>
+        <%= spec %> <br>
+      <% end %><br>
+
+    <p>Start date: <%= (@booking.start_date).strftime('%A %d %B %Y %I:%M %p') %></p>
+    <p>End date: <%= (@booking.end_date).strftime('%A %d %B %Y %I:%M %p') %></p> <br>
+    <%= link_to "Edit your booking", edit_booking_path(@booking.id),  class: "btn btn-submit-yellow" %>
+    </div>
+  <%# <% end %>
