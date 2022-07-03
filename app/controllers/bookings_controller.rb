@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
-  before_action :set_carer, only: %i[new create show]
+  before_action :set_carer, only: %i[new create]
   before_action :set_patient, only: %i[new create show]
 
   def new
@@ -28,12 +28,9 @@ class BookingsController < ApplicationController
   def edit; end
 
   def update
-    if @current_user.carer? && @booking.update(booking_params)
-      @booking.carer_id = @current_user.id
-      @booking.carer_confirmed = true
+    if @booking.update(booking_params)
       redirect_to carer_path(@booking.carer_id)
-    elsif @current_user.patient? && @booking.update(booking_params)
-      redirect_to carer_path(@booking.carer_id)
+      flash[:notice] = "Booking successfully updated"
     else
       render 'edit'
     end
@@ -45,15 +42,31 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @patients = Patient.all
-    @marker = @patients.geocoded.map do |patient|
-      {
-        lat: patient.latitude,
-        lng: patient.longitude
-      }
-    end
     @booking = Booking.find(params[:id])
+    # @specialty = JSON.parse(@carer.specialty)
+    @patient = Patient.find(@booking.patient_id)
+    @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
+    # @patients = Patient.all
+    # @markers = []
+    # @patients.geocoded.map do |patient|
+    #   if patient.id == current_user.id
+    #     @markers << { lat: patient.latitude, lng: patient.longitude }
+    #   end
+    # end
+    # @token = generate_token(@booking)
+  end
+
+  def call
+    @booking = Booking.find(params[:booking_id])
     @token = generate_token(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    respond_to do |format|
+      format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }
+    end
   end
 
   private
@@ -72,5 +85,18 @@ class BookingsController < ApplicationController
 
   def set_patient
     @patient = current_user
+  end
+
+  def generate_token(booking)
+    # Create an Access Token
+    token = Twilio::JWT::AccessToken.new ENV['ACCOUNT_SID'], ENV['SID'], ENV['KEY_ID'], [],
+        ttl: 14400,
+        identity: current_user.email
+    # Grant access to Video
+    grant = Twilio::JWT::AccessToken::VideoGrant.new
+    grant.room = booking.url_room
+    token.add_grant grant
+    # Serialize the token as a JWT
+    token.to_jwt
   end
 end
