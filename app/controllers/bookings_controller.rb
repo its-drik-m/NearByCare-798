@@ -44,7 +44,7 @@ class BookingsController < ApplicationController
   def show; end
 
   def destroy
-    @booking.find(booking_params)
+    @booking = Booking.find(params[:id])
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to carer_path(@booking.carer_id), notice: "Booking successfully deleted" }

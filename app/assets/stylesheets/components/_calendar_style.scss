@@ -9,9 +9,8 @@
 
 .booking {
   color: white;
-  padding: 8px 24px;
   border-radius: 4px;
-  background: $vivid-yellow;
+  background: $moderate-cyan;
   transition: background 0.3s ease;
 }
 
@@ -22,7 +21,7 @@
 
 .booking{
   .confirmed {
-    background-color: $yellow;
+    background-color: $navy-blue;
   }
   .notconfirmed {
     background-color: $desaturated-cyan;

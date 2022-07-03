@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
+    @booking = Booking.where(patient_id: @patient)
   end
 
   def edit; end

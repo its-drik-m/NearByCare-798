@@ -2,10 +2,9 @@
   <div class="card">
     <%= simple_form_for([@carer, @booking]) do |f| %>
       <%= f.input :carer_confirmed %>
-      <%= link_to "Reject", booking_path(@booking),
-      data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } %>
+      <%= button_to "Reject", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
       <%= f.button :submit %>
-      <%# <%= link_to "Reject", booking_path(@booking.id), method: :delete, notice: "Are you sure?" %>
+      <%= link_to 'Back', :back %>
     <% end %>
   </div>
 </div>
