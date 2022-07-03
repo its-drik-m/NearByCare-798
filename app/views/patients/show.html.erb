@@ -5,15 +5,16 @@
           <h2><%= User.find(@patient.user_id).last_name %></h2>
           <p><%= User.find(@patient.user_id).first_name %></p>
           <p><%= @patient.address %></p>
-          <h4><%= pluralize patient.health_conditions.size, "Health condition" %>:</h4>
-              <% patient.health_conditions.each do |cond| %>
+          <h4><%= pluralize @patient.health_conditions.size, "Health condition" %>:</h4>
+              <% @patient.health_conditions.each do |cond| %>
                 <%= cond %> <br>
               <% end %>
         </div>
         <div class="card-buttons">
-          <%= link_to "Back", carers_path, class: "btn btn-green" %>
+          <%= link_to "Back", carers_path, class: "btn btn-submit-yellow" %>
           <% if current_user.id == @patient.user_id %>
-            <%= link_to "Edit my profile", edit_patient_path,  class: "btn btn-green" %>
+            <%= link_to "Edit my profile", edit_patient_path(@patient.id),  class: "btn btn-submit-yellow" %>
+            <%= link_to "Your bookings", booking_path(@patient.id),  class: "btn btn-submit-yellow" %>
           <% end %>
         </div>
       </div>

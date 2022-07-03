@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :set_patient, only: %i[show edit update destroy]
+  before_action :set_patient, only: %i[edit update destroy]
 
   def new
     @patient = Patient.new
@@ -16,9 +16,9 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @patient = Patient.find_by_user_id(current_user)
     @review = Review.new
-    @booking = Booking.new
-    @booking = Booking.where(patient_id: @patient)
+    @booking = Booking.where(patient_id: @patient.id)
   end
 
   def edit; end

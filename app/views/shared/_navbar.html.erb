@@ -24,7 +24,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Edit my credentials", edit_user_registration_path, class: "dropdown-item" %>
               <% if current_user.patient? %>
-                <%= link_to "My profile", edit_patient_path(current_user.id), class: "dropdown-item" %>
+                <%= link_to "My profile", patient_path(current_user.id), class: "dropdown-item" %>
               <% else %>
               <%= link_to "My profile", edit_carer_path(current_user.id), class: "dropdown-item" %>
               <% end %>
