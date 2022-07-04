@@ -5,12 +5,15 @@
             <div class="carer-card-box">
               <div class="carer-photo">
                 <div class="carer-img">
-                  <%= cl_image_tag @carer.photo.key, height: 200, width: 200, crop: :fill %>
+                  <%# <%= cl_image_tag @carer.photo.key, height: 200, width: 200, crop: :fill %> %>
                 </div>
               </div>
               <div class="card-body">
                 <h2><%= User.find(@carer.user_id).last_name %></h2>
                 <p><%= User.find(@carer.user_id).first_name %></p>
+              </div>
+              <div class="average-rating">
+              Carer Rating: <%= average_rating(@carer) %>
               </div>
               <div class="carer-description">
                 <p><%= @carer.specialty%></p>
@@ -23,6 +26,7 @@
               </div>
               <div id="carer-viewmore-card" class="card-buttons">
                 <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
+                <%= link_to "Reviews", carer_reviews_path(@carer.id), class: "btn-submit-carer" %>
                 <% if current_user.id == @carer.user_id %>
                   <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
                 <% else %>

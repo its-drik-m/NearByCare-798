@@ -1,11 +1,11 @@
-class ReviewController < ApplicationController
-  before_action :set_review, only: %i[create show index destroy]
-  before_action :set_review, only: %i[show destroy]
+class ReviewsController < ApplicationController
+  before_action :set_review, only: %i[create show destroy]
   before_action :set_booking, only: %i[new create]
   before_action :set_carer, only: %i[new create index]
   before_action :set_patient, only: %i[new create index]
   before_action :set_user, only: %i[new create index]
-  helper_method :average_rating
+  before_action :import_reviews, only: %i[show]
+  # helper_method :average_rating
 
   def new
     # allow booking only if carer is not same as patient
@@ -44,19 +44,23 @@ class ReviewController < ApplicationController
     @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
   end
 
-  # calculate average rating for a carer
-  def average_rating
-    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
-    @average_rating = 0
-    @reviews.each do |review|
-      @average_rating += review.rating
-    end
-    @average_rating /= @reviews.count
-  end
-
   def show; end
 
   private
+
+  # # calculate average rating for a carer
+  # def average_rating(carer)
+  #   @reviews = Review.joins(:booking).where('bookings.carer_id = ?', carer.id)
+  #   @average_rating = 0
+  #   @reviews.each do |review|
+  #     @average_rating += review.rating
+  #   end
+  #   if @reviews.count.zero?
+  #     return 0
+  #   else
+  #     return @average_rating /= @reviews.count
+  #   end
+  # end
 
   def review_params
     params.require(:review).permit(:rating, :comment, :booking_id)

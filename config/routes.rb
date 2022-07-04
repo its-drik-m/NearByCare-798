@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :carers, except: :destroy do
     resources :bookings, except: :destroy do
-      resources :reviews, except: %i[index show destroy]
+      resources :reviews, except: %i[show destroy]
     end
     resources :reviews, only: %i[index show]
   end

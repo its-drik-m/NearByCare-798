@@ -1,6 +1,8 @@
 class CarersController < ApplicationController
   before_action :set_carer, only: %i[show edit update destroy]
   before_action :set_start_date
+  before_action :import_reviews, only: %i[show]
+  helper_method :average_rating
 
   def index
     sql_query = "region ILIKE :region AND specialty @> :specialty"
@@ -52,12 +54,30 @@ class CarersController < ApplicationController
 
   private
 
+  # calculate average rating for a carer
+  def average_rating(carer)
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', carer.id)
+    @average_rating = 0
+    @reviews.each do |review|
+      @average_rating += review.rating
+    end
+    if @reviews.count.zero?
+      return 0
+    else
+      return @average_rating /= @reviews.count
+    end
+  end
+
   def carer_params
     params.require(:carer).permit(:user_id, :photo, :region, specialty: [])
   end
 
   def set_carer
     @carer = Carer.find(params[:id])
+  end
+
+  def import_reviews
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
   end
 
   def set_start_date
