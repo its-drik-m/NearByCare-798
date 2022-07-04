@@ -3,8 +3,8 @@
     <% carer = (Carer.find(@booking.carer_id)) %>
     <div class="carer-info">
       <h3>Name: <%= user.last_name %> <%= user.first_name %></h3>
-      <h4><%= pluralize carer.specialty.size, "specialty" %>:</h4>
-      <% carer.specialty.each do |spec| %>
+      <h4><%= pluralize @specialty.size, "specialty" %>:</h4>
+      <% @specialty.each do |spec| %>
         <%= spec %> <br>
       <% end %><br>
 

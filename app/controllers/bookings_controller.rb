@@ -43,17 +43,8 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    # @specialty = JSON.parse(@carer.specialty)
     @patient = Patient.find(@booking.patient_id)
     @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
-    # @patients = Patient.all
-    # @markers = []
-    # @patients.geocoded.map do |patient|
-    #   if patient.id == current_user.id
-    #     @markers << { lat: patient.latitude, lng: patient.longitude }
-    #   end
-    # end
-    # @token = generate_token(@booking)
   end
 
   def call
