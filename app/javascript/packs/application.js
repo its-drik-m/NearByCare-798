@@ -17,12 +17,12 @@ import "controllers"
 import "bootstrap"
 
 import { initFlatpickr } from "../plugins/flatpickr";
-// import twilioInit from "../plugins/twilio.js";
+import twilioInit from "../plugins/twilio.js";
 
 document.addEventListener('turbolinks:load', ()=>{
    initFlatpickr();
 
   if (document.querySelector('.twilio-video')) {
-    // twilioInit();
+     twilioInit();
   }
 });

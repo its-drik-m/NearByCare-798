@@ -11,12 +11,12 @@ Rails.application.routes.draw do
     end
     resources :reviews, only: %i[index show]
   end
-  resources :bookings
+  resources :bookings do
+    get 'call', to: 'bookings#call'
+  end
 
   resources :patients, except: %i[destroy index] do
-    resources :bookings, only: %i[index show call] do
-      get 'call', to: 'bookings#call'
-    end
+    resources :bookings, only: %i[index show]
     resources :reviews, only: %i[new create index show]
   end
 end

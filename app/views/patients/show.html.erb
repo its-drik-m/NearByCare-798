@@ -5,8 +5,8 @@
           <h2><%= User.find(@patient.user_id).last_name %></h2>
           <p><%= User.find(@patient.user_id).first_name %></p>
           <p><%= @patient.address %></p>
-          <h4><%= pluralize @patient.health_conditions.size, "Health condition" %>:</h4>
-              <% @patient.health_conditions.each do |cond| %>
+          <h4><%= pluralize @health_conditions.size, "Health condition" %>:</h4>
+              <% @health_conditions.each do |cond| %>
                 <%= cond %> <br>
               <% end %>
         </div>

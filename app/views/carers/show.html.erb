@@ -13,7 +13,7 @@
               <p><%= User.find(@carer.user_id).first_name %></p>
             </div>
             <div class="carer-description">
-              <h4><%= pluralize @carer.specialty.length, "specialty" %>:</h4>
+              <h4><%= pluralize @specialty.size, "specialty" %>:</h4>
               <% @specialty.each do |spec| %>
                 <%= spec %> <br>
               <% end %>
