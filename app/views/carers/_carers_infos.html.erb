@@ -5,10 +5,10 @@
     <h2><%= "#{User.find(carer.user_id).first_name } #{" "} #{User.find(carer.user_id).last_name }" %></h2>
     <i class="fas fa-pen fa-xs ml-2"></i>
   <div class="card-buttons">
-    <%= link_to "More info", carer_path(carer), class: "btn btn-green" %>
+    <%= link_to "More info", carer_path(carer), class: "btn btn-submit-carer" %>
     <% if current_user %>
-      <%= link_to "Interview", "#",  class: "btn btn-green" %>
-      <%= link_to "Book", "#",  class: "btn btn-green" %>
+      <%= link_to "Interview", "#",  class: "btn btn-submit-carer" %>
+      <%= link_to "Book", "#",  class: "btn btn-submit-carer" %>
     <% end %>
   </div>
   </div>

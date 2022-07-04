@@ -13,8 +13,8 @@
               <p><%= User.find(@carer.user_id).first_name %></p>
             </div>
             <div class="carer-description">
-              <h4><%= pluralize @carer.specialty.size, "specialty" %>:</h4>
-              <% @carer.specialty.each do |spec| %>
+              <h4><%= pluralize @carer.specialty.length, "specialty" %>:</h4>
+              <% @specialty.each do |spec| %>
                 <%= spec %> <br>
               <% end %>
               <p>Is located in the <%= @carer.region %> region.</p>
@@ -30,7 +30,7 @@
               <% if current_user.id == @carer.user_id %>
                 <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
               <% else %>
-                <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-green" %>
+                <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-submit-carer" %>
               <% end %>
             </div>
           </div>
