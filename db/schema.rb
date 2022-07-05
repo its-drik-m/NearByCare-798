@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_125454) do
   end
 
   create_table "carers", force: :cascade do |t|
-    t.string "specialty", array: true
+    t.string "specialty"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_06_25_125454) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "health_conditions", array: true
+    t.string "health_conditions"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
