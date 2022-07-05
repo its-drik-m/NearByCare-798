@@ -5,15 +5,15 @@ class CarersController < ApplicationController
   helper_method :average_rating
 
   def index
-    sql_query = "region ILIKE :region AND specialty @> :specialty"
-    region_query = "specialty @> :specialty"
+    sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
+    region_query = "specialty ILIKE :specialty"
     @region = params[:region]
     @specialty = params[:specialty]
 
     if @region == "all"
-      @carers = Carer.where(region_query, specialty: "{#{params[:specialty]}}")
+      @carers = Carer.where(region_query, specialty: "%#{params[:specialty]}%")
     else
-      @carers = Carer.where(sql_query, region: "%#{params[:region]}%", specialty: "{#{params[:specialty]}}")
+      @carers = Carer.where(sql_query, region: "%#{params[:region]}%", specialty: "%#{params[:specialty]}%")
     end
 
     respond_to do |format|
