@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     @patient = Patient.find(@booking.patient_id)
+    @health_conditions = JSON.parse(@patient.health_conditions)
     @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
   end
 
@@ -51,6 +52,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @token = generate_token(@booking)
   end
+
+  def map; end
 
   def destroy
     @booking = Booking.find(params[:id])

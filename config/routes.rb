@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :bookings do
     get 'call', to: 'bookings#call'
+    get 'map', to: 'bookings#map'
   end
 
   resources :patients, except: %i[destroy index] do
