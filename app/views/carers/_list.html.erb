@@ -1,10 +1,10 @@
 <div data-search-carers-target="list">
   <p class="h3">
-    <%# <% if params[:query].blank? %> %>
-      <%# <%= pluralize carers.count, 'carer' available %> %>
-    <%# <% else %> %>
-      <%# <%= pluralize carers.count, 'result' for <code><%= params[:query] %></code> %> %>
-    <%# <% end %> %>
+       <% if params[:query].blank? %>
+      <%= pluralize carers.count, 'carer' %> available
+    <% else %>
+      <%= pluralize carers.count, 'result' %> for <code><%= params[:query] %></code>
+    <% end %>
   </p>
 </div>
 <div class="row">
@@ -14,7 +14,7 @@
         <div class="carer-card-box" >
           <div class="carer-photo">
             <div class="carer-img">
-              <%# <%= cl_image_tag(carer.photo.key, height: 200, width: 200, crop: :fill) %> %>
+              <%= cl_image_tag(carer.photo.key, height: 200, width: 200, crop: :fill) %>
             </div>
           </div>
           <br>
