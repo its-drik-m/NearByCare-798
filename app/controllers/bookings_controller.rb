@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
   before_action :set_carer, only: %i[new create]
-  before_action :set_patient, only: %i[new create show]
+  before_action :set_patient, only: %i[new show]
 
   def new
     if @carer.id == current_user
@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @patient = Patient.where(user_id: current_user.id)[0]
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
