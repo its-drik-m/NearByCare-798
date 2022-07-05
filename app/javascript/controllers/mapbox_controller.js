@@ -1,39 +1,62 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from "mapbox-gl"
-
+import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions"
 export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array
   }
-
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-
+    console.log("connected")
+    let directions = new MapboxDirections({
+      accessToken: mapboxgl.accessToken,
+      unit: "metric",
+      profile: "mapbox/driving",
+      controls: {instructions: false}
+    });
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10",
       center: [57.613891, -20.282669],
       zoom: 8
     })
-
-    this.#addMarkersToMap()
+    this.map.addControl(directions, "top-left");
+    this.#addMarkersToMap();
+    this.#fitMapToMarkers()
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords;
+      // window.location.reload()
+      if (this.map.loaded()) {
+        directions.setOrigin([longitude, latitude]);
+        directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
+      } else {
+        this.map.on("load", () => {
+          directions.setOrigin([longitude, latitude]);
+          directions.setDestination([this.markersValue[0].lng, this.markersValue[0].lat]);
+        })
+      }
+     })
+    this.map.addControl(new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true,
+      showUserHeading: true,
+      showUserLocation: true,
+    }));
   }
-
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
-      const customMarker = document.createElement("div")
-      customMarker.className = "marker"
-      customMarker.style.backgroundImage = `url('${marker.image_url}')`
-      customMarker.style.backgroundSize = "contain"
-      customMarker.style.width = "15px"
-      customMarker.style.height = "25px"
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-
-      new mapboxgl.Marker(customMarker)
+      console.log(marker)
+      new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
         .addTo(this.map)
     });
+  }
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 70, duration: 200 })
   }
 }

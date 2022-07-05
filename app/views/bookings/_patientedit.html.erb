@@ -1,0 +1,9 @@
+ <div class="booking-card">
+    <%= simple_form_for [@booking] do |f| %>
+      <h3>Reshedule your appointement with <%= User.find((Carer.find(@booking.carer_id)).user_id).first_name%> <%= User.find((Carer.find(@booking.carer_id)).user_id).last_name%> !</h3>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker" } %>
+      <%= link_to "Back", booking_path(@booking.id), class: "btn-submit-patient" %>
+      <%= f.submit class: 'btn-submit-patient' %>
+    <% end %>
+  </div>
