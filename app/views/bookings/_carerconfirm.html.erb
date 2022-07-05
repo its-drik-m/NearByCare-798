@@ -1,8 +1,10 @@
 <div class="col-4">
   <div class="card">
-    <%= simple_form_for([@patient, @booking]) do |f| %>
-      <%= f.submit 'Confirm', class: 'btn btn-green' %>
-      <%= f.submit 'Reject', class: 'btn btn-green' %>
+    <%= simple_form_for([@carer, @booking]) do |f| %>
+      <%= f.input :carer_confirmed %>
+      <%= button_to "Reject", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
+      <%= f.button :submit %>
+      <%= link_to 'Back', :back %>
     <% end %>
   </div>
 </div>

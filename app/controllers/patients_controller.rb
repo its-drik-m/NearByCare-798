@@ -18,6 +18,17 @@ class PatientsController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
+    @patients = Patient.all
+    @patient = Patient.find_by_user_id(current_user)
+    @health_conditions = JSON.parse(@patient.health_conditions)
+    @markers = @patients.geocoded.map do |patient|
+      if patient.user_id == current_user.id
+        {
+          lat: patient.latitude,
+          lng: patient.longitude
+        }
+      end
+    end
   end
 
   def edit; end
