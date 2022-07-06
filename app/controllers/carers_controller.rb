@@ -1,17 +1,12 @@
 class CarersController < ApplicationController
-  before_action :set_carer, only: %i[show edit update destroy]
+  before_action :set_carer, only: %i[edit update destroy]
   before_action :set_start_date
+  # before_action :import_reviews, only: %i[show]
+  helper_method :average_rating
 
   def index
-    @carers = Carer.all
-    # @carers = Carer.order(first_name: :desc)
-    # if params[:query].present?
     sql_query = "region ILIKE :region AND specialty ILIKE :specialty"
     region_query = "specialty ILIKE :specialty"
-      # @carers = Carer.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    #   @carers = Carer.all
-    # end
     @region = params[:region]
     @specialty = params[:specialty]
 
@@ -43,10 +38,10 @@ class CarersController < ApplicationController
   end
 
   def show
+    @carer = Carer.find(params[:id])
     @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
     @specialty = JSON.parse(@carer.specialty)
-    # @booking = Booking.where(patient: )
-    # raise
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
   end
 
   def edit; end
@@ -61,6 +56,20 @@ class CarersController < ApplicationController
 
   private
 
+  # calculate average rating for a carer
+  def average_rating(carer)
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', carer.id)
+    @average_rating = 0
+    @reviews.each do |review|
+      @average_rating += review.rating
+    end
+    if @reviews.count.zero?
+      return 0
+    else
+      return @average_rating /= @reviews.count
+    end
+  end
+
   def carer_params
     params.require(:carer).permit(:user_id, :photo, :region, specialty: [])
   end
@@ -68,6 +77,10 @@ class CarersController < ApplicationController
   def set_carer
     @carer = Carer.find(params[:id])
   end
+
+  # def import_reviews
+  #   @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  # end
 
   def set_start_date
     @start_date = params.fetch(:start_date, Date.today).to_date

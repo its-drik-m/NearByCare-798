@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(_users)
     if current_user.carer?
-      carer_path(current_user.id)
+      carer_path(Carer.find_by_user_id(current_user.id))
     else
       carers_path
     end
