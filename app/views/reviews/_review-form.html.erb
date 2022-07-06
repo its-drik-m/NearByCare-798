@@ -1,4 +1,4 @@
-<%= simple_form_for [@carer, @booking, @review] do |f| %>
+<%= simple_form_for [@booking, @review] do |f| %>
   <%= f.input :rating, collection: Review::RATING, input_html: {data: {controller: "star-rating"}} %>
   <%= f.input :comment, as: :text, placeholder: "Write a comment" %>
   <%= f.submit class: 'btn-submit-carer' %>

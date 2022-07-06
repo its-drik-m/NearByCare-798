@@ -1,16 +1,16 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[create show destroy]
+  before_action :set_review, only: %i[show destroy]
   before_action :set_booking, only: %i[new create]
-  before_action :set_carer, only: %i[new create index]
-  before_action :set_patient, only: %i[new create index]
-  before_action :set_user, only: %i[new create index]
+  # before_action :set_carer, only: %i[new create index]
+  # before_action :set_patient, only: %i[new create index]
+  # before_action :set_user, only: %i[new create index]
   before_action :import_reviews, only: %i[show]
 
   def new
     # allow booking only if carer is not same as patient
-    if @carer.id == current_user.id
-      redirect_to booking_path(@booking)
-    else
+    # if @carer.id == current_user.id
+    #   redirect_to booking_path(@booking)
+    # else
       @review = Review.new
       # @review.booking_id = @booking.id
     end
@@ -18,14 +18,14 @@ class ReviewsController < ApplicationController
 
   def create
     # allow booking only if carer is not same as patient
-    if @booking.carer_id == current_user.id
-      flash[:danger] = 'You cannot review your own booking!'
-      redirect_to booking_path(@booking)
-    else
+    # if @booking.carer_id == current_user.id
+    #   flash[:danger] = 'You cannot review your own booking!'
+    #   redirect_to booking_path(@booking)
+    # else
       @review = Review.new(review_params)
-      @review.booking_id = @booking.id
-      @review.rating = params[:review][:rating]
-      @review.comment = params[:review][:comment]
+      @review.booking_id = @booking
+      # @review.rating = params[:review][:rating]
+      # @review.comment = params[:review][:comment]
 
       if @review.save
         flash[:success] = 'Review created successfully!'
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
       else
         flash[:danger] = 'Review not created!'
       end
-    end
+    # end
   end
 
   def destroy; end
@@ -59,9 +59,9 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
   end
 
-  def set_carer
-    @carer = Carer.find(params[:carer_id])
-  end
+  # def set_carer
+  #   @carer = Carer.find(params[:carer_id])
+  # end
 
   def set_patient
     @patient = current_user
@@ -70,4 +70,4 @@ class ReviewsController < ApplicationController
   def set_user
     @user = User.find(@carer.user_id)
   end
-end
+# end
