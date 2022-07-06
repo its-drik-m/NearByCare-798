@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :bookings do
     get 'call', to: 'bookings#call'
+    post 'call', to: 'bookings#call'
     get 'map', to: 'bookings#map'
   end
 
