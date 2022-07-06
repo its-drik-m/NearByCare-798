@@ -3,27 +3,60 @@
     min-height: 80vh;
   }
   .today {
-    background-color: $gray-blue;
+    background-color: white;
   }
 }
 
-.booking {
-  color: white;
-  border-radius: 4px;
-  background: $moderate-cyan;
-  transition: background 0.3s ease;
+th {
+  color: $vivid-yellow;
 }
 
-.booking:hover {
-  background: $moderate-cyan;
+tr>td {
   color: white;
 }
 
-.booking{
-  .confirmed {
-    background-color: $navy-blue;
+
+
+.table > :not(caption) > * > * {
+  border-bottom-width: 2px;
+  border-color: $vivid-yellow;
+}
+
+// .booking {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   color: white;
+//   border-radius: 4px;
+//   background: $moderate-cyan;
+//   transition: background 0.3s ease;
+//   margin: 4px;
+// }
+
+.notconfirmed {
+
+}
+
+.horizontal-scrolling-calendar {
+  width: 100vw;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+
+  .horizontal-scroll {
+    flex: 0 0 auto;
+    width: 700px;
+    margin: 24px;
+
   }
-  .notconfirmed {
-    background-color: $desaturated-cyan;
-  }
+}
+
+
+.calendar-heading {
+background-color: $desaturated-cyan;
+padding: 8px;
+border-radius: 8px;
 }

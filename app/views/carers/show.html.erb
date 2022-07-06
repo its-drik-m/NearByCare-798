@@ -1,40 +1,45 @@
-  <div class="carer-viewmore">
-    <div>
-      <div>
-        <div class="carer-card-border">
-          <div class="carer-card-box">
-            <div class="carer-photo">
-              <div class="carer-img">
-                <%= cl_image_tag @carer.photo.key, height: 200, width: 200, crop: :fill %>
+<div class="carer-viewmore">
+    <div class="carer-viewmore">
+      <div class="carer-card-border_2">
+            <div class=<%= render 'shared/carer-card-style' %> >
+                  <div class="carer-photo">
+                    <div class="carer-img">
+                      <%= cl_image_tag @carer.photo.key, height: 200, width: 200, crop: :fill %>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <h2> <%= User.find(@carer.user_id).last_name %> </h2>
+                    <p> <%= User.find(@carer.user_id).first_name %> </p>
+                  </div>
+              <hr>
+
+                  <div class="carer-description">
+                    <h4> <strong> <%= pluralize @specialty.size, "specialty" %>: </strong> </h4>
+                      <% @specialty.each do |spec| %>
+                          <%= spec %> <br>
+                      <% end %>
+                    <hr>
+                    <h4> <strong> Is located in the <%= @carer.region %>. </strong> </h4>
+                  </div>
+            </div>
+      </div>
+
+            <div class="horizontal-scrolling-calendar">
+              <div class="horizontal-scroll">
+                <% if current_user.id == @carer.user_id %>
+                  <%= render 'calendarinfo', carer: @carer %>
+                <% end %>
               </div>
             </div>
-            <div class="card-body">
-              <h2><%= User.find(@carer.user_id).last_name %></h2>
-              <p><%= User.find(@carer.user_id).first_name %></p>
-            </div>
-            <div class="carer-description">
-              <h4><%= pluralize @specialty.size, "specialty" %>:</h4>
-              <% @specialty.each do |spec| %>
-                <%= spec %> <br>
-              <% end %>
-              <p>Is located in the <%= @carer.region %> region.</p>
-            </div>
-            <div>
-              <% if current_user.id == @carer.user_id %>
-                <%= render 'calendarinfo', carer: @carer %>
-              <% end %>
-            </div>
-            <div id="carer-viewmore-card" class="card-buttons">
-              <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
-              <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
-              <% if current_user.id == @carer.user_id %>
-                <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
-              <% else %>
-                <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-submit-carer" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
+
+              <div id="carer-viewmore-card" class="card-buttons">
+                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
+                <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
+                <% if current_user.id == @carer.user_id %>
+                  <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
+                <% else %>
+                  <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-submit-carer" %>
+                <% end %>
+              </div>
     </div>
-  </div>
+</div>

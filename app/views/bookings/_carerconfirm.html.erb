@@ -3,8 +3,8 @@
     <%= simple_form_for([@carer, @booking]) do |f| %>
       <%= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
       <%= f.button :submit %>
-      <%= link_to 'Back', :back %>
-      <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn btn-submit-yellow" %>
+      <%= link_to 'Back', :back , class: "btn-submit-carer" %>
+      <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn-submit-carer" %>
       <%# <%= button_to "Reject", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
     <% end %>
   </div>
