@@ -297,7 +297,7 @@ puts "Created #{User.count} users !"
 carer1 = Carer.create!(
   user_id: 1,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[4], Carer::SPECIALTY[5], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[0], Carer::SPECIALTY[3], Carer::SPECIALTY[4], Carer::SPECIALTY[5]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -305,7 +305,7 @@ carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer2 = Carer.create!(
   user_id: 3,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/woman_17.jpg')
 carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -313,7 +313,7 @@ carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer3 = Carer.create!(
   user_id: 4,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[3], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/man_03.jpg')
 carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -321,7 +321,7 @@ carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer4 = Carer.create!(
   user_id: 5,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797870/Nearbycare/man_04.jpg')
 carer4.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -329,7 +329,7 @@ carer4.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer5 = Carer.create!(
   user_id: 16,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[2] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803871/Nearbycare/woman_18.jpg')
 carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -337,7 +337,7 @@ carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer7 = Carer.create!(
   user_id: 7,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[3] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797849/Nearbycare/man_06.jpg')
 carer7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -345,7 +345,7 @@ carer7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer8 = Carer.create!(
   user_id: 18,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[4] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655798003/Nearbycare/woman_01.jpg')
 carer8.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -353,7 +353,7 @@ carer8.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer9 = Carer.create!(
   user_id: 13,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[4], Carer::SPECIALTY[5]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[4]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797827/Nearbycare/man_08.jpg')
 carer9.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -361,7 +361,7 @@ carer9.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer10 = Carer.create!(
   user_id: 14,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797820/Nearbycare/man_09.jpg')
 carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -369,7 +369,7 @@ carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer11 = Carer.create!(
   user_id: 23,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[1] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[0]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797997/Nearbycare/woman_02.jpg')
 carer11.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -377,7 +377,7 @@ carer11.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer12 = Carer.create!(
   user_id: 20,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[4], Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797990/Nearbycare/woman_03.jpg')
 carer12.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -385,7 +385,7 @@ carer12.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer13 = Carer.create!(
   user_id: 27,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[7] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_10.jpg')
 carer13.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -393,7 +393,7 @@ carer13.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer14 = Carer.create!(
   user_id: 15,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[2] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/man_13.jpg')
 carer14.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -401,7 +401,7 @@ carer14.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer15 = Carer.create!(
   user_id: 12,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[3]]# could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]]# could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797864/Nearbycare/man_05.jpg')
 carer15.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -409,7 +409,7 @@ carer15.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer16 = Carer.create!(
   user_id: 17,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_06.jpg')
 carer16.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -417,7 +417,7 @@ carer16.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer17 = Carer.create!(
   user_id: 19,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: Carer::SPECIALTY[5] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[4]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/woman_05.jpg')
 carer17.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -425,7 +425,7 @@ carer17.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer18 = Carer.create!(
   user_id: 8,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[4]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[0], Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797797/Nearbycare/man_11.jpg')
 carer18.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -433,7 +433,7 @@ carer18.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 carer19 = Carer.create!(
   user_id: 26,
   region: Carer::REGION.sample, # could also have used region.shuffle.first
-  specialty: [Carer::SPECIALTY[6], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
+  specialty: [Carer::SPECIALTY[5], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
 file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797983/Nearbycare/woman_04.jpg')
 carer19.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -442,38 +442,38 @@ puts "Created #{Carer.count} carers !"
 
 Patient.create!(
   user_id: 2,
-  address: "Port-Louis, mauritius",
-  health_conditions: [Patient::CONDITIONS[12], Patient::CONDITIONS[13]]
+  address: "Verdun, Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[11], Patient::CONDITIONS[12]]
 )
 
 Patient.create!(
   user_id: 28,
-  address: "Chemin Grenier, mauritius",
-  health_conditions: [Patient::CONDITIONS[5], Patient::CONDITIONS[3]]
+  address: "Providence, Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[4], Patient::CONDITIONS[2]]
 )
 
 Patient.create!(
   user_id: 9,
-  address: "Flacq, mauritius",
-  health_conditions: [Patient::CONDITIONS[2], Patient::CONDITIONS[9]]
+  address: "Malenga, Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[1], Patient::CONDITIONS[8]]
 )
 
 Patient.create!(
   user_id: 10,
-  address: "Tamarin, mauritius",
-  health_conditions: [Patient::CONDITIONS[4], Patient::CONDITIONS[7], Patient::CONDITIONS[8]]
+  address: "Dagotiere, Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[3], Patient::CONDITIONS[6], Patient::CONDITIONS[7]]
 )
 
 Patient.create!(
   user_id: 24,
-  address: "Saint Pierre, mauritius",
-  health_conditions: [Patient::CONDITIONS[1]]
+  address: "Quartier-Militaire, Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[0]]
 )
 
 Patient.create!(
   user_id: 11,
-  address: "Mahebourg, mauritius",
-  health_conditions: [Patient::CONDITIONS[6], Patient::CONDITIONS[10], Patient::CONDITIONS[14]]
+  address: "Moka, Mauritius",
+  health_conditions: [Patient::CONDITIONS[5], Patient::CONDITIONS[9], Patient::CONDITIONS[3]]
 )
 puts "Created #{Patient.count} patients!"
 #1
@@ -539,18 +539,6 @@ Review.create!(
   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
 
-# Review.create!(
-#   booking_id: 2,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
-# Review.create!(
-#   booking_id: 3,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
 Review.create!(
   booking_id: 4,
   rating: [1, 2, 3, 4, 5].sample,
@@ -562,17 +550,5 @@ Review.create!(
   rating: [1, 2, 3, 4, 5].sample,
   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
-
-# Review.create!(
-#   booking_id: 6,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
-# Review.create!(
-#   booking_id: 1,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
 
 puts "Created #{Review.count} reviews!"

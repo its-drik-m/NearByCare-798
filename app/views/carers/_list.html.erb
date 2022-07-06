@@ -22,19 +22,22 @@
             <h2><%= User.find(carer.user_id).last_name %></h2>
             <p><%= User.find(carer.user_id).first_name %></p>
           </div>
+          <div>
+            <h3>Rating: <%= average_rating(carer) %></h3>
+          </div>
           <br>
           <div class="card-buttons">
             <% if user_signed_in? %>
               <% if current_user.id == carer.user_id %>
                 <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
                 <%= link_to "Edit my profile", edit_carer_path(carer.id),  class: "btn-submit-carer" %>
-              <% else %>
+              <% elsif current_user.patient?%>
                 <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
-                <%= link_to "Book", new_carer_booking_path(carer.id),  class: "btn btn-submit-carer" %>
+                <%= link_to "Book", new_carer_booking_path(carer.id),  class: "btn-submit-carer" %>
               <% end %>
-              <% else %>
+            <% else %>
                 <%= link_to "More info", carer_path(carer), class: "btn-submit-carer" %>
-          <% end %>
+            <% end %>
           </div>
       </div>
         </div>
