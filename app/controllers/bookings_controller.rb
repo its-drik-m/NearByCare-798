@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking.patient_confirmed = true
     if @booking.save
       flash[:notice] = "Booking request successfully created."
-      redirect_to booking_call_path(@booking.id)
+      redirect_to carer_booking_call(@booking.id)
     else
       render 'new'
     end
@@ -46,6 +46,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @patient = Patient.find(@booking.patient_id)
     @health_conditions = JSON.parse(@patient.health_conditions)
+    @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
   end
 
   def call
@@ -53,11 +54,7 @@ class BookingsController < ApplicationController
     @token = generate_token(@booking)
   end
 
-  def map
-    @booking = Booking.find(params[:booking_id])
-    @patient = Patient.find(@booking.patient_id)
-    @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
-  end
+  def map; end
 
   def destroy
     @booking = Booking.find(params[:id])
