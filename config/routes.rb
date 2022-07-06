@@ -7,18 +7,18 @@ Rails.application.routes.draw do
 
   resources :carers, except: :destroy do
     resources :bookings do
+      get 'call', to: 'bookings#call'
+      post 'call', to: 'bookings#call'
       resources :reviews, except: %i[index show destroy]
     end
     resources :reviews, only: %i[index show]
   end
   resources :bookings do
-    get 'call', to: 'bookings#call'
-    post 'call', to: 'bookings#call'
     get 'map', to: 'bookings#map'
   end
 
   resources :patients, except: %i[destroy index] do
-    resources :bookings, only: %i[index show]
+    resources :bookings, only: %i[index show call]
     resources :reviews, only: %i[new create index show]
   end
 end
