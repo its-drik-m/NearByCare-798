@@ -36,7 +36,7 @@
                 <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
                 <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
                 <% if current_user.id == @carer.user_id %>
-                  <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
+                  <%= link_to "Edit my profile", edit_carer_path(@carer.id),  class: "btn-submit-carer" %>
                 <% else %>
                   <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-submit-carer" %>
                 <% end %>
