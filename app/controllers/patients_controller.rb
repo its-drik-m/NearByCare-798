@@ -25,7 +25,8 @@ class PatientsController < ApplicationController
       if patient.user_id == current_user.id
         {
           lat: patient.latitude,
-          lng: patient.longitude
+          lng: patient.longitude,
+          image_url: helpers.asset_url("patient_geotag.svg")
         }
       end
     end
