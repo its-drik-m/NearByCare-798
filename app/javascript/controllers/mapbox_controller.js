@@ -23,7 +23,7 @@ export default class extends Controller {
     })
     this.map.addControl(directions, "top-left");
     this.#addMarkersToMap();
-    this.#fitMapToMarkers()
+    this.#fitMapToMarkers();
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
       // window.location.reload()
