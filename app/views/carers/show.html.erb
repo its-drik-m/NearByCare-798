@@ -8,36 +8,12 @@
                   <%= cl_image_tag @carer.photo.key, height: 200, width: 200, crop: :fill %>
                 </div>
               </div>
-              <div class="card-body">
-                <h2><%= User.find(@carer.user_id).last_name %></h2>
-                <p><%= User.find(@carer.user_id).first_name %></p>
-              </div>
-              <div class="average-rating">
-              Carer Rating: <%= average_rating(@carer) %>
-              </div>
-              <div class="carer-description">
-                <p><%= @carer.specialty%></p>
-                <p><%= @carer.region %></p>
-              </div>
-              <div>
-                <% if current_user.id == @carer.user_id %>
-                  <%= render 'calendarinfo', carer: @carer %>
-                <% end %>
-              </div>
-              <div id="carer-viewmore-card" class="card-buttons">
-                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
-                <%= link_to "Reviews", carer_reviews_path(@carer.id), class: "btn-submit-carer" %>
-                <% if current_user.id == @carer.user_id %>
-                  <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
-                <% else %>
-                  <%= link_to "Interview", "#",  class: "btn-submit-carer" %>
-                  <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-green" %>
-                <% end %>
-              </div>
-            </div>
             <div class="card-body">
               <h2><%= User.find(@carer.user_id).last_name %></h2>
               <p><%= User.find(@carer.user_id).first_name %></p>
+            </div>
+            <div class="average-rating">
+              Carer Rating: <%= average_rating(@carer) %>
             </div>
             <div class="carer-description">
               <h4><%= pluralize @specialty.size, "specialty" %>:</h4>
@@ -52,12 +28,16 @@
               <% end %>
             </div>
             <div id="carer-viewmore-card" class="card-buttons">
-              <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
-              <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
-              <% if current_user.id == @carer.user_id %>
-                <%= link_to "Edit my profile", edit_carer_path,  class: "btn-submit-carer" %>
+             <% if current_user.id == @carer.user_id %>
+                <%= link_to "Edit my profile", edit_carer_path(@carer.id),  class: "btn-submit-carer" %>
+                <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
+                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
+              <% elsif current_user.patient?%>
+                <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn-submit-carer" %>
+                <%= link_to "Reviews", carer_reviews_path(@carer.id) , class: "btn-submit-carer" %>
+                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
               <% else %>
-                <%= link_to "Book", new_carer_booking_path(@carer.id),  class: "btn btn-submit-carer" %>
+                <%= link_to "Back", carers_path, class: "btn-submit-carer" %>
               <% end %>
             </div>
           </div>

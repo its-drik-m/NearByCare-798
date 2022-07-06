@@ -1,7 +1,7 @@
 class CarersController < ApplicationController
-  before_action :set_carer, only: %i[show edit update destroy]
+  before_action :set_carer, only: %i[edit update destroy]
   before_action :set_start_date
-  before_action :import_reviews, only: %i[show]
+  # before_action :import_reviews, only: %i[show]
   helper_method :average_rating
 
   def index
@@ -38,10 +38,10 @@ class CarersController < ApplicationController
   end
 
   def show
+    @carer = Carer.find(params[:id])
     @bookings = Booking.where(start_date: @start_date.beginning_of_month.beginning_of_week..@start_date.end_of_month.end_of_week, carer_id: @carer)
     @specialty = JSON.parse(@carer.specialty)
-    # @booking = Booking.where(patient: )
-    # raise
+    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
   end
 
   def edit; end
@@ -78,9 +78,9 @@ class CarersController < ApplicationController
     @carer = Carer.find(params[:id])
   end
 
-  def import_reviews
-    @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
-  end
+  # def import_reviews
+  #   @reviews = Review.joins(:booking).where('bookings.carer_id = ?', @carer.id)
+  # end
 
   def set_start_date
     @start_date = params.fetch(:start_date, Date.today).to_date
