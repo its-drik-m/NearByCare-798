@@ -1,4 +1,3 @@
-<%# <% @booking.each do |book| %>
     <% user = User.find((Carer.find(@booking.carer_id)).user_id) %>
     <% carer = (Carer.find(@booking.carer_id)) %>
     <div class="carer-info">
@@ -12,4 +11,3 @@
     <p>End date: <%= (@booking.end_date).strftime('%A %d %B %Y %I:%M %p') %></p> <br>
     <%= link_to "Edit your booking", edit_booking_path(@booking.id),  class: "btn btn-submit-yellow" %>
     </div>
-  <%# <% end %>

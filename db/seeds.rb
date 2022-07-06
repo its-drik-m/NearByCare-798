@@ -539,18 +539,6 @@ Review.create!(
   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
 
-# Review.create!(
-#   booking_id: 2,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
-# Review.create!(
-#   booking_id: 3,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
 Review.create!(
   booking_id: 4,
   rating: [1, 2, 3, 4, 5].sample,
@@ -562,17 +550,5 @@ Review.create!(
   rating: [1, 2, 3, 4, 5].sample,
   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
-
-# Review.create!(
-#   booking_id: 6,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
-
-# Review.create!(
-#   booking_id: 1,
-#   rating: [1, 2, 3, 4, 5].sample,
-#   comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
-# )
 
 puts "Created #{Review.count} reviews!"

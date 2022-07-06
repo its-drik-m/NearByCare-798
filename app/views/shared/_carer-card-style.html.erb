@@ -1,0 +1,9 @@
+    <% if user_signed_in? %>
+      <% if current_user.role == "carer" %>
+        "carer-card-box-as-carer"
+       <% else current_user.role == "patient" %>
+          "carer-card-box-as-patient"
+    <% end %>
+    <% else %>
+        "carer-card-box-as-patient"
+    <% end %>
