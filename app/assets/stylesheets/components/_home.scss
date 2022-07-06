@@ -1,6 +1,17 @@
 //gradient animation
-body {
+body.gradient-patient-background {
 	background: linear-gradient(80deg, #ffffcc, #e5e9ed, #90ced3);
+	background-size: 400% 900%;
+	animation: gradient 9s ease infinite;
+	width: 100vw;
+}
+
+body.navy-blue-carer-background {
+  background-color: $navy-blue;
+}
+
+div.white-background {
+  background: linear-gradient(80deg, #ffffcc, #e5e9ed, #90ced3);
 	background-size: 400% 900%;
 	animation: gradient 9s ease infinite;
 	width: 100vw;

@@ -1,0 +1,9 @@
+    <% if user_signed_in? %>
+      <% if current_user.role == "carer" %>
+        "navy-blue-carer-background"
+       <% else current_user.role == "patient" %>
+          "gradient-patient-background"
+    <% end %>
+    <% else %>
+        "gradient-patient-background"
+    <% end %>
