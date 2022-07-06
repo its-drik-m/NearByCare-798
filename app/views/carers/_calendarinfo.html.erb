@@ -4,12 +4,12 @@
     <div class="booking">
         <% if booking.carer_confirmed? %>
           <div class = confirmed >
-            <p><% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %></p>
-            <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-submit-blue" %>
+            <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
+            <%= link_to @currpatient, booking_path(booking.id),  class: "btn-submit-yellow" %>
           </div>
           <% else %>
             <div class = notconfirmed >
-              <p><% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %></p>
+              <% @currpatient = User.find((Patient.find(booking.patient_id)).user_id).last_name %>
               <%= link_to @currpatient, booking_path(booking.id),  class: "btn btn-submit-white" %>
             </div>
         <% end %>
