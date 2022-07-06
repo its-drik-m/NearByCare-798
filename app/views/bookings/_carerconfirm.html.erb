@@ -6,7 +6,7 @@
       <%= link_to 'Back', carer_path(@booking.carer_id), class: "btn btn-submit-yellow" %>
       <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn btn-submit-yellow" %>
     <% end %>
-    <%= button_to "Call", booking_call_path(@booking.id), class:"btn btn-submit-yellow" %>
+     <%= button_to "Call", booking_call_path(@booking.id), class:"btn btn-submit-yellow" %>
   </div>
     <%= button_to "Reject", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
 </div>
