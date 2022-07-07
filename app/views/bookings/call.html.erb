@@ -13,7 +13,7 @@
       data-token="<%= @token %>"
       >
 
-      <div class="row justify-content-between">
+      <div class="justify-content-between">
         <div class="col-7">
           <div class="participant">
 
@@ -26,15 +26,15 @@
             </div>
             <div>
               <button id='leave-btn' class='btn'>
-                End Conversation
                 <%= image_tag "button_endcall.svg", class: "endcall-button", alt:"#" %>
+                <p style="opacity:0"> End this Conversation </p>
               </button>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-7">
+        <div class="col-7xs">
         <p class="text-center">
           <%# <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
         </p>
@@ -46,5 +46,5 @@
       <%= link_to '', carer_path(@booking.carer_id), class: 'd-none root-link', data: {turbolinks: false}  %>
       <% end %>
     </div>
-  </div>
+    </div>
 </div>
