@@ -1,7 +1,7 @@
 //yellow button with animation on hover
 .btn-submit-yellow {
   background-color: $vivid-yellow;
-  color: $moderate-cyan;
+  color: $navy-blue;
   border-radius: 40px;
   font-size: 20px;
   padding: 5px 20px;
@@ -15,6 +15,21 @@
   transition: 0.4s;
 }
 
+.btn-submit-yellow-2 {
+  background-color: $vivid-yellow;
+  color: $navy-blue;
+  border-radius: 40px;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  text-decoration: none;
+}
+.btn-submit-yellow-2:hover {
+  color: white;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+}
 
 //blue button with animation on hover
 .btn-submit-blue {
@@ -55,6 +70,23 @@
 }
 
 
+.btn-submit-white-2 {
+  background-color: white;
+  color: $moderate-cyan;
+  text-align: center;
+  border-radius: 40px;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin: 8px;
+}
+
+.btn-submit-white-2:hover {
+  color: $navy-blue;
+  background-color: transparent;
+  transition: 0.4s;
+  border-color: grey;
+}
+
 // button for devise - sign in, log in, etc...
 .btn-submit-desaturated-cyan {
   background-color: $desaturated-cyan;
@@ -73,6 +105,22 @@
   transition: 0.4s;
 }
 
+.btn-submit-desaturated-cyan-2 {
+  background-color: $desaturated-cyan;
+  color: white;
+  border-radius: 40px;
+  text-decoration-style: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 4px;
+  border-width: 0px;
+}
+
+.btn-submit-desaturated-cyan-2:hover {
+  color: $navy-blue;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+}
 
 //carer-card button
 .btn-submit-carer {

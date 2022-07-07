@@ -58,7 +58,7 @@ class BookingsController < ApplicationController
   def map
     @booking = Booking.find(params[:booking_id])
     @patient = Patient.find(@booking.patient_id)
-    @markers = [{lat: @patient.latitude, lng: @patient.longitude}]
+    @markers = [{lat: @patient.latitude, lng: @patient.longitude, image_url: helpers.asset_url("patient-geotag.svg")}]
   end
 
   def destroy

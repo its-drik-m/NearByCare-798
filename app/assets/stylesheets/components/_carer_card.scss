@@ -27,6 +27,72 @@
   margin: 8px;
 }
 
+hr {
+  width: 75vw;
+  background-color:white;
+  border: 2px solid white;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+//this is for the carer's card background when on blue background
+.carer-card-box-as-carer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  // word-wrap: break-word;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.25));
+  background-clip: border-box;
+  border-radius: 24px;
+  align-items: center;
+  margin: 8px;
+  // border: 1px solid white;
+}
+
+.carer-card-box-as-carer>.carer-description {
+  color: $desaturated-cyan;
+  width: 90%;
+  text-align: center;
+}
+
+.carer-card-box-as-carer>.card-body>h2 {
+  color: white;
+}
+
+.carer-card-box-as-carer>.card-body>p {
+  color: white;
+}
+
+//this is for the carer's card background when on gradient background
+.carer-card-box-as-patient {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  // word-wrap: break-word;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.7));
+  background-clip: border-box;
+  border-radius: 24px;
+  align-items: center;
+  margin: 8px;
+  border: 1px solid white;
+}
+
+.carer-card-box-as-patient>.carer-description {
+  color: #58abb7;
+  width: 90%;
+  text-align: center;
+}
+
+.carer-card-box-as-patient>.card-body>h2 {
+  color: $navy-blue;
+}
+
+.carer-card-box-as-patient>.card-body>p {
+  color: $navy-blue;
+}
+
 .card-body {
   color: grey;
   width: 75%;
@@ -36,8 +102,13 @@
   align-items: center;
 }
 
-.carer-description {
-  color: grey;
+.average-rating {
+  background-color: white;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  color: $grayish-blue;
+  text-align: center;
 }
 
 .card-buttons {
@@ -52,7 +123,7 @@
 }
 
 #carer-viewmore-card {
-  width: 90vw;
+  width: 75vw;
 }
 
 .carer-card-border {
@@ -61,11 +132,28 @@
   margin: 16px;
 }
 
+.carer-card-border_2 {
+  border: 0.5px solid white;
+  border-radius: 24px;
+  margin: 16px;
+  width: 90vw;
+}
+
+.carer-card-border_3 {
+  border: 0.5px solid white;
+  border-radius: 24px;
+  margin: 16px;
+  width: 90vw;
+  height: 60vh;
+}
+
 
 // styling for card carer when click on view more
 .carer-viewmore {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
 }
 
 

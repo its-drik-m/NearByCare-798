@@ -32,6 +32,59 @@ width: 97%;
   mix-blend-mode: multiply;
 }
 
+.booking-confirm-title>h4 {
+  text-align: center;
+  color: white;
+  margin-top: 16px;
+}
+
+.booked-patient {
+  color: $desaturated-cyan;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booked-patient>h3 {
+  color: $desaturated-cyan;
+}
+
+.two-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.two-button-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0.9);
+}
+
+.carer-confirm-btn>#edit_booking_1 {
+  transform: scale(1.2);
+}
+
+.carer-confirm-three-btn {
+  width: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+
+}
+
+
+
+.cardx {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (min-width: 700px) {
   .booking-card-outline {
