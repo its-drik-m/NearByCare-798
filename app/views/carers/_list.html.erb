@@ -19,11 +19,12 @@
           </div>
           <br>
           <div class="cards-body">
-            <h2><%= User.find(carer.user_id).last_name %></h2>
-            <p><%= User.find(carer.user_id).first_name %></p>
+            <h2 style="color:#58abb7;"><%= User.find(carer.user_id).last_name %></h2>
+            <p style="color:#58abb7;"><%= User.find(carer.user_id).first_name %></p>
           </div>
+          <hr class="hr-carer-list">
           <div>
-            <h3>Rating: <%= average_rating(carer) %></h3>
+            <h3 style="color:#58abb7;">Rating: <%= average_rating(carer) %></h3>
           </div>
           <br>
           <div class="card-buttons">

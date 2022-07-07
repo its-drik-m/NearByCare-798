@@ -18,6 +18,11 @@
   margin-right: auto;
 }
 
+.dropdown-item {
+  text-decoration: none;
+  color: $desaturated-cyan;
+}
+
 @media screen and (min-width: 576px) {
     .search-region {
     display: grid;
