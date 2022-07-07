@@ -46,8 +46,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @patient = Patient.find(@booking.patient_id)
     @health_conditions = JSON.parse(@patient.health_conditions)
-    @carer = Carer.find(@booking.carer_id)
-    @specialty = JSON.parse(@carer.specialty)
   end
 
   def call

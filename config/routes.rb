@@ -6,14 +6,15 @@ Rails.application.routes.draw do
   resources :users, only: %i[edit update]
 
   resources :carers, except: :destroy do
-    resources :bookings
+    resources :bookings do
+      resources :reviews, except: %i[index show destroy]
+    end
     resources :reviews, only: %i[index show]
   end
   resources :bookings do
     get 'call', to: 'bookings#call'
     post 'call', to: 'bookings#call'
     get 'map', to: 'bookings#map'
-    resources :reviews, only: %i[new create show]
   end
 
   resources :patients, except: %i[destroy index] do

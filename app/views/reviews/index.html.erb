@@ -1,16 +1,15 @@
 <div class="container">
-  <div data-controller="star-display">
-    <% user = User.find_by_id(@carer.id) %>
-    <h1>All reviews about <%= user.first_name %> <%= user.last_name %></h1>
-    <% if @reviews.empty? %>
-      <p>No reviews yet.</p>
-    <% else %>
-      <ul>
-        <% @reviews.each do |review| %>
-          <li><%= review.comment %>, Rating: <%= review.rating %></li>
-        <% end %>
-      </ul>
-    <% end %>
-    <%= link_to "Back", :back, class: "btn-submit-carer" %>
+  <div>
+    <h1>All reviews about <%= @user.first_name %> <%= @user.last_name %></h1>
+      <% if @reviews.empty? %>
+        <p>No reviews yet.</p>
+      <% else %>
+        <ul>
+          <% @reviews.each do |review| %>
+            <li><%= review.comment %>, Rating: <%= review.rating %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= link_to "Back", :back, class: "btn-submit-carer" %>
   </div>
 </div>
