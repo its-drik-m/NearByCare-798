@@ -13,6 +13,6 @@
       <% if @booking.carer_confirmed? && @booking.patient_confirmed?  %>
         <%= link_to "Leave a review", new_booking_review_path(@booking.id) , class: "btn-submit-carer" %>
       <% else %>
-        <%= link_to "Edit your booking", edit_booking_path(@booking.id),  class: "btn btn-submit-yellow" %>
+        <%= link_to "Edit your booking", edit_booking_review_path(@booking.id),  class: "btn btn-submit-yellow" %>
       <% end %>
     </div>
