@@ -1,4 +1,4 @@
-<h1> Write a review about your booking with <%= @user.first_name %></h1>
+<h1> Write a review about your booking with <%= (User.find((Carer.find((@booking.carer_id))).user_id)).first_name %></h1>
 
 <div class="booking-new">
   <div class="booking-card-outline">
