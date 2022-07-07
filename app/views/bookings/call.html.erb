@@ -38,13 +38,13 @@
         <p class="text-center">
           <%# <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
         </p>
-        </div>
-      </div>
+       </div>
+     </div>
       <% if current_user.carer? %>
       <%= link_to '', booking_path(@booking.id), class: 'd-none root-link', data: {turbolinks: false}  %>
       <% else %>
       <%= link_to '', carer_path(@booking.carer_id), class: 'd-none root-link', data: {turbolinks: false}  %>
       <% end %>
-    </div>
-    </div>
+     </div>
+  </div>
 </div>
