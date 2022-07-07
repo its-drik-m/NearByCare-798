@@ -1,8 +1,9 @@
 <div class="col-4">
   <div class="card">
     <%= simple_form_for([@carer, @booking]) do |f| %>
-      <%= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
-      <%= f.button :submit %>
+      <%#= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :carer_confirmed, as: :button, checked_value: true, unchecked_value: false %>
+      <%#= f.button :submit %>
       <%= link_to 'Back', carer_path(@booking.carer_id), class: "btn btn-submit-yellow" %>
       <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn btn-submit-yellow" %>
     <% end %>
