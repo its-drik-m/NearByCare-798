@@ -1,43 +1,50 @@
-<div class="title-wrapper">
-  <div class="container">
-    <h1 class="title">Your NearbyCarer online</h1>
+<div class="carer-card-border_2">
+  <div class="title-wrapper">
+    <div>
+      <h3 class="title">A first contact with</h3>
+      <h3 class="title">your NearbyCarer</h3>
+    </div>
   </div>
-</div>
-<div class="container">
-  <div
-    class="twilio-video"
-    data-sid="<%= ENV["ACCOUNT_SID"] %>"
-    data-room="<%= @booking.url_room %>"
-    data-token="<%= @token %>"
-    >
+  <div class="carer-card-box-as-carer">
+    <div
+      class="twilio-video"
+      data-sid="<%= ENV["ACCOUNT_SID"] %>"
+      data-room="<%= @booking.url_room %>"
+      data-token="<%= @token %>"
+      >
 
-    <div class="row justify-content-between">
-      <div class="col-7">
-        <div class="participant">
+      <div class="row justify-content-between">
+        <div class="col-7">
+          <div class="participant">
+
+          </div>
         </div>
-      </div>
-      <div class="col-4">
-        <div class="remote-media-div text-center">
-          <video id="userVideo" autoplay muted="true" ></video>
-          <div>
-            <button id='leave-btn' class='btn btn-submit-carer'>
-              End Conversation
-            </button>
+        <div class="col-4x">
+          <div class="remote-media-div text-center">
+            <div>
+              <video id="userVideo" autoplay muted="true" ></video>
+            </div>
+            <div>
+              <button id='leave-btn' class='btn'>
+                End Conversation
+                <%= image_tag "button_endcall.svg", class: "endcall-button", alt:"#" %>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-7">
-      <p class="text-center">
-        <%# <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
-      </p>
+      <div class="row">
+        <div class="col-7">
+        <p class="text-center">
+          <%# <%= @booking.patient == current_user ? @booking.carer.email : @booking.patient.email %>
+        </p>
+        </div>
       </div>
+      <% if current_user.carer? %>
+      <%= link_to '', booking_path(@booking.id), class: 'd-none root-link', data: {turbolinks: false}  %>
+      <% else %>
+      <%= link_to '', carer_path(@booking.carer_id), class: 'd-none root-link', data: {turbolinks: false}  %>
+      <% end %>
     </div>
-    <% if current_user.carer? %>
-    <%= link_to '', booking_path(@booking.id), class: 'd-none root-link', data: {turbolinks: false}  %>
-    <% else %>
-    <%= link_to '', carer_path(@booking.carer_id), class: 'd-none root-link', data: {turbolinks: false}  %>
-    <% end %>
   </div>
 </div>

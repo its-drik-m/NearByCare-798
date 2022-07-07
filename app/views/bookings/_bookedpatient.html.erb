@@ -1,10 +1,16 @@
-<% user = User.find((Patient.find(@booking.patient_id)).user_id) %>
-<% patient = Patient.find_by_user_id(user.id) %>
+<div class="booked-patient">
+  <% user = User.find((Patient.find(@booking.patient_id)).user_id) %>
+  <% patient = Patient.find_by_user_id(user.id) %>
+  <hr>
+  <h3><%= user.last_name %> <%= user.first_name %></h3>
+  <h3><%= pluralize @health_conditions.size, "Health condition" %>:</h3>
+  <% @health_conditions.each do |cond| %>
+    <%= cond %> <br>
+  <% end %>
+  <br>
+  <br>
 
-<h3><%= user.last_name %> <%= user.first_name %></h3>
-<h4><%= pluralize @health_conditions.size, "Health condition" %>:</h4>
-<% @health_conditions.each do |cond| %>
-  <%= cond %> <br>
-<% end %>
-<h3> Do you want to confirm your appointment</h3>
+  <h3> Do you want to confirm your appointment</h3>
+
+</div>
   <%= render 'carerconfirm', booking: @booking %>
