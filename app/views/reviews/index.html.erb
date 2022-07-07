@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-  <% user = User.find_by_id(@carer.id) %>
+  <% user = User.find(@carer.user_id) %>
     <h1>All reviews about <%= user.first_name %> <%= user.last_name %></h1>
       <% if @reviews.empty? %>
         <p>No reviews yet.</p>
