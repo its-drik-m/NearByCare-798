@@ -7,12 +7,16 @@
   list-style: none;
 }
 
+.title {
+  color: white;
+}
+
 .participant {
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   video {
-    border-radius: 16px;
-    width: 100%;
+    border-radius: 8px;
+    width: 40%;
   }
 }
 
@@ -20,6 +24,10 @@
 }
 
 #userVideo {
-  width: 100%;
-  border-radius: 16px;
+  width: 40%;
+  border-radius: 8px;
+}
+
+.video-call {
+  width: 75vh;
 }

@@ -1,12 +1,33 @@
-<div class="col-4">
-  <div class="card">
-    <%= simple_form_for([@carer, @booking]) do |f| %>
-      <%= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
-      <%= f.button :submit %>
-      <%= link_to 'Back', carer_path(@booking.carer_id), class: "btn btn-submit-yellow" %>
-      <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn btn-submit-yellow" %>
-    <% end %>
-     <%= button_to "Call", booking_call_path(@booking.id), class:"btn btn-submit-yellow" %>
+<div class="col-4x">
+  <div class="cardx">
+    <div class="two-buttons">
+      <div class="carer-confirm-btn">
+        <%= simple_form_for([@carer, @booking]) do |f| %>
+          <%= f.input :carer_confirmed, as: :boolean, checked_value: true, unchecked_value: false %>
+      </div>
+        <div class="two-button-horizontal">
+          <div>
+          <%= f.button :submit, class:"btn btn-submit-white-2" %>
+          </div>
+
+          <div>
+          <%= button_to "Reject Booking", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class:"btn btn-submit-white-2" %>
+          </div>
+        </div>
+    </div>
+      <hr>
+
+      <div class="carer-confirm-three-btn">
+          <div>
+          <%= link_to 'Back', carer_path(@booking.carer_id), class: "btn btn-submit-yellow-2" %>
+          </div>
+            <div>
+            <%= link_to "Itinerary", booking_map_path(@booking.id),  class: "btn btn-submit-yellow-2" %>
+            </div>
+          <% end %>
+          <div>
+          <%= button_to "Call", booking_call_path(@booking.id), class:"btn btn-submit-yellow-2" %>
+          </div>
+      </div>
   </div>
-    <%= button_to "Reject", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }%>
 </div>
