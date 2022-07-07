@@ -22,7 +22,7 @@
   font-size: 20px;
   padding: 5px 20px;
   margin-bottom: 4px;
-  margin-top: 4pxpx;
+  margin-top: 4px;
   text-decoration: none;
 }
 .btn-submit-yellow-2:hover {
@@ -105,6 +105,22 @@
   transition: 0.4s;
 }
 
+.btn-submit-desaturated-cyan-2 {
+  background-color: $desaturated-cyan;
+  color: white;
+  border-radius: 40px;
+  text-decoration-style: none;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 4px;
+  border-width: 0px;
+}
+
+.btn-submit-desaturated-cyan-2:hover {
+  color: $navy-blue;
+  background-color: $moderate-cyan;
+  transition: 0.4s;
+}
 
 //carer-card button
 .btn-submit-carer {

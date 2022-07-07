@@ -69,15 +69,15 @@ width: 97%;
 }
 
 .carer-confirm-three-btn {
+  width: 90%;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 8px;
+
 }
 
-.carer-confirm-three-btn>.btn-submit-yellow {
-  margin: 4px;
-}
+
 
 .cardx {
   display: flex;

@@ -1,7 +1,7 @@
 <% if current_user.carer? %>
   <div class="booking-card-outline">
 
-    <div class="container_3">
+    <div class="carer-card-box-as-carer">
       <div class="booking-confirm-title">
         <h4>Details on patient <%= User.find((Patient.find(@booking.patient_id)).user_id).last_name %></h4>
       </div>
