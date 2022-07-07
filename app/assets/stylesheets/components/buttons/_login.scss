@@ -8,11 +8,11 @@
   margin-bottom: 20px;
   margin-top: 20px;
   text-decoration: none;
-}
-.btn-submit-yellow:hover {
+  &:hover {
   color: white;
   background-color: $moderate-cyan;
   transition: 0.4s;
+  }
 }
 
 .btn-submit-yellow-2 {
@@ -24,11 +24,11 @@
   margin-bottom: 4px;
   margin-top: 4px;
   text-decoration: none;
-}
-.btn-submit-yellow-2:hover {
-  color: white;
-  background-color: $moderate-cyan;
-  transition: 0.4s;
+  &:hover {
+    color: white;
+    background-color: $moderate-cyan;
+    transition: 0.4s;
+  }
 }
 
 //blue button with animation on hover
@@ -41,12 +41,12 @@
   margin-bottom: 20px;
   margin-top: 20px;
   text-decoration: none;
-}
-.btn-submit-blue:hover {
-  background-color: transparent;
-  transition: 0.4s;
-  border-color: grey;
-  color: white;
+  &:hover {
+    background-color: transparent;
+    transition: 0.4s;
+    border-color: grey;
+    color: white;
+  }
 }
 
 
@@ -60,13 +60,12 @@
   padding: 5px 20px;
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.btn-submit-white:hover {
+  &:hover {
   color: $navy-blue;
   background-color: transparent;
   transition: 0.4s;
   border-color: grey;
+  }
 }
 
 
@@ -78,13 +77,12 @@
   font-size: 20px;
   padding: 5px 20px;
   margin: 8px;
-}
-
-.btn-submit-white-2:hover {
+  &:hover {
   color: $navy-blue;
   background-color: transparent;
   transition: 0.4s;
   border-color: grey;
+  }
 }
 
 // button for devise - sign in, log in, etc...
@@ -97,12 +95,11 @@
   padding: 5px 20px;
   margin: 24px 16px 24px 16px;
   border-width: 0px;
-}
-
-.btn-submit-desaturated-cyan:hover {
+  &:hover {
   color: $navy-blue;
   background-color: $moderate-cyan;
   transition: 0.4s;
+  }
 }
 
 .btn-submit-desaturated-cyan-2 {
@@ -114,14 +111,12 @@
   padding: 5px 20px;
   margin: 4px;
   border-width: 0px;
-}
-
-.btn-submit-desaturated-cyan-2:hover {
+  &:hover {
   color: $navy-blue;
   background-color: $moderate-cyan;
   transition: 0.4s;
+  }
 }
-
 //carer-card button
 .btn-submit-carer {
   background-color: white;
@@ -133,12 +128,11 @@
   text-decoration: none;
   text-align: center;
   border-width: 0px;
-}
-
-.btn-submit-carer:hover {
+  &:hover {
   color: white;
   background-color: $moderate-cyan;
   transition: 0.4s;
+  }
 }
 
 .btn-region-search {
@@ -150,10 +144,9 @@
   margin: 4px;
   text-decoration: none;
   text-align: center;
-}
-
-.btn-region-search:hover {
+  &:hover {
   color: $moderate-cyan;
   background-color: white;
   transition: 0.4s;
+  }
 }

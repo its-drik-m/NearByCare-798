@@ -16,7 +16,6 @@
       <div class="justify-content-between">
         <div class="col-7">
           <div class="participant">
-
           </div>
         </div>
         <div class="col-4x">
@@ -25,10 +24,7 @@
               <video id="userVideo" autoplay muted="true" ></video>
             </div>
             <div>
-              <button id='leave-btn' class='btn'>
-                <%= image_tag "button_endcall.svg", class: "endcall-button", alt:"#" %>
-                <p style="opacity:0"> End this Conversation </p>
-              </button>
+              <%= button_tag image_tag('button_endcall.svg', class: "endcall-button"), id: "leave-btn", class: "btn"%>
             </div>
           </div>
         </div>
