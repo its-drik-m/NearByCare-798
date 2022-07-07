@@ -1,3 +1,4 @@
+
 .user-btn {
   display: flex;
   flex-flow: row wrap;
@@ -8,26 +9,46 @@
 }
 
 .title {
-  color: white;
+  color: $desaturated-cyan;
 }
 
 .participant {
   border-radius: 8px;
+  transform: scale(0.7);
   overflow: hidden;
+  // position: absolute;
+
+  width: 85vw;
+
   video {
     border-radius: 8px;
-    width: 40%;
+
   }
 }
 
-.remote-media-div {
-}
 
 #userVideo {
   width: 40%;
   border-radius: 8px;
+  position: absolute;
+  left: auto;
+  top: auto;
+
 }
 
 .video-call {
   width: 75vh;
+}
+
+
+#leave-btn {
+  color: white;
+  margin: 16px;
+  z-index: 1;
+}
+
+.remote-media-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

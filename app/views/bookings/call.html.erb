@@ -14,16 +14,19 @@
       >
 
       <div class="row justify-content-between">
-        <div class="col-7x">
+        <div class="col-7">
           <div class="participant">
           </div>
         </div>
         <div class="col-4x">
           <div class="remote-media-div text-center">
-            <video id="userVideo" autoplay muted="true" ></video>
             <div>
-              <button id='leave-btn' class='btn btn-submit-carer'>
+              <video id="userVideo" autoplay muted="true" ></video>
+            </div>
+            <div>
+              <button id='leave-btn' class='btn'>
                 End Conversation
+                <%= image_tag "button_endcall.svg", class: "endcall-button", alt:"#" %>
               </button>
             </div>
           </div>
