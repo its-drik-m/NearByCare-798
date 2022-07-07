@@ -1,5 +1,6 @@
-<h1> Write a review about your booking with <%= @user.first_name %></h1>
-
+<div>
+  <h4> Write a review about your booking with <%= (User.find((Carer.find((@booking.carer_id))).user_id)).first_name %></h4>
+</div>
 <div class="booking-new">
   <div class="booking-card-outline">
       <div class="container_3">
@@ -8,7 +9,9 @@
           <div class="row">
             <div class="col">
               <div class="form p-3">
-                <%= render 'review-form', review: @review %>
+                <div data-controller="star">
+                  <%= render 'review-form', review: @review %>
+                </div>
               </div>
             </div>
           </div>
