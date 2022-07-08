@@ -16,7 +16,8 @@
         </div>
     </div>
   <% else %>
-    <div class="container_2">
+    <div class="container">
+    <%= image_tag "icon-your-booking.svg", class:"logo-sm" %>
     <h3>Details on carer <%= User.find((Carer.find(@booking.carer_id)).user_id).last_name %></h3>
         <div class="patient-new-form">
           <div class="row">
