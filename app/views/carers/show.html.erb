@@ -11,12 +11,16 @@
                     <h2> <%= User.find(@carer.user_id).last_name %> </h2>
                     <p> <%= User.find(@carer.user_id).first_name %> </p>
                   </div>
-                <div class="average-rating">
-                  Carer Rating: <%= average_rating(@carer) %>
+                <%# <div class="average-rating"> %>
+                  <%# Carer Rating: <%= average_rating(@carer) %>
+                <%# </div> %>
+                <div class="stars">
+                  <% stars = average_rating(@carer).to_i %>
+                  <% stars.times do  %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
                 </div>
               <hr>
-
-
                   <div class="carer-description">
                     <h4> <strong> <%= pluralize @specialty.size, "specialty" %>: </strong> </h4>
                       <% @specialty.each do |spec| %>

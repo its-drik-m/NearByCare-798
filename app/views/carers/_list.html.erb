@@ -22,13 +22,13 @@
             <h2 style="color:#58abb7;"><%= User.find(carer.user_id).last_name %></h2>
             <p style="color:#58abb7;"><%= User.find(carer.user_id).first_name %></p>
           </div>
-          <hr class="hr-carer-list">
           <div class="stars">
             <% stars = average_rating(carer).to_i %>
               <% stars.times do  %>
                 <i class="fas fa-star"></i>
               <% end %>
           </div>
+          <hr class="hr-carer-list">
           <br>
           <div class="card-buttons">
             <% if user_signed_in? %>

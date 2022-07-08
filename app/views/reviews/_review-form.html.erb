@@ -1,5 +1,6 @@
 <%= simple_form_for [@booking, @review] do |f| %>
   <%= f.input :rating, collection: Review::RATING %>
+  <%# <%= f.collection_radio_buttons :rating, [[ 1, 'Very Bad'], [ 2, 'Bad'], [ 3, 'Neutral'], [ 4, 'Good'], [ 5, 'Very Good']], :first, :last %>
   <%= f.input :comment, as: :text, placeholder: "Write a comment" %>
   <%= f.submit class: "btn-submit-carer" %>
 <% end %>
