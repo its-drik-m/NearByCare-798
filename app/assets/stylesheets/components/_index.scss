@@ -1,19 +1,20 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
-@import "form_legend_clear";
+@import "./forms/form_legend_clear";
 @import "navbar";
 @import "home";
 @import "footer";
 @import "./cards/login";
 @import "./buttons/login";
 @import "user-edit";
-@import "simple_form";
+@import "./forms/simple_form";
 @import "carers_background";
-@import "carer_form";
-@import "patient_form";
-@import "carer_card";
+@import "./forms/carer_form";
+@import "./forms/patient_form";
+@import "./cards/carer_card";
 @import "carer_search";
 @import "booking";
 @import "calendar_style";
 @import "twilio";
+@import "_stars";

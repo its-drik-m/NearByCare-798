@@ -22,8 +22,11 @@
             <h2><%= User.find(carer.user_id).last_name %></h2>
             <p><%= User.find(carer.user_id).first_name %></p>
           </div>
-          <div>
-            <h3>Rating: <%= average_rating(carer) %></h3>
+          <div class="stars">
+            <% stars = average_rating(carer).to_i %>
+              <% stars.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
           </div>
           <br>
           <div class="card-buttons">
