@@ -18,7 +18,6 @@ class BookingsController < ApplicationController
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
-    @booking.carer_confirmed = false
     if @booking.save
       flash[:notice] = "Booking request successfully created."
       redirect_to booking_call_path(@booking.id)

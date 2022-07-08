@@ -6,7 +6,6 @@ class Booking < ApplicationRecord
 
   validates :start_date, :end_date, presence: true
 
-  validates :carer_confirmed, presence: true
   CARER_CONFIRMED = ["Confirmed", "Not confirmed"]
 
   # All bookings will be ordered by their start_time by default
