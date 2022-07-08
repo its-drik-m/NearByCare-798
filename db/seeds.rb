@@ -23,17 +23,17 @@ puts "Database cleaned !"
 pw = 123456
 #1
 User.create!(
-  first_name: "Ajaghen",
-  last_name: "Smith",
-  email: "designer@test.com",
+  first_name: "Model",
+  last_name: "Vanesse",
+  email: "vanesse@test.com",
   password: pw,
   phone_number: 57234567,
   role: 1
 )
 #2
 User.create!(
-  first_name: "Cédric",
-  last_name: "Duval",
+  first_name: "View",
+  last_name: "Cédric",
   email: "cedric@test.com",
   password: pw,
   phone_number: 55237858,
@@ -42,7 +42,7 @@ User.create!(
 #3
 User.create!(
   first_name: "Karishma",
-  last_name: "Jolie",
+  last_name: "Champ",
   email: "karishma@test.com",
   password: pw,
   phone_number: 53234529,
@@ -60,7 +60,7 @@ User.create!(
 #5
 User.create!(
   first_name: "Sajjaad",
-  last_name: "Wagon",
+  last_name: "Smith",
   email: "sajjaad@test.com",
   password: pw,
   phone_number: 53834589,
@@ -69,7 +69,7 @@ User.create!(
 #6
 User.create!(
   first_name: "Neelesh",
-  last_name: "Angry-Bird",
+  last_name: "Buddy",
   email: "neelesh@test.com",
   password: pw,
   phone_number: 53234579,
@@ -78,7 +78,7 @@ User.create!(
 #7
 User.create!(
   first_name: "Mubeen",
-  last_name: "FrontEnd-Master",
+  last_name: "Bankur",
   email: "mubeen@test.com",
   password: pw,
   phone_number: 53134589,
@@ -95,8 +95,8 @@ User.create!(
 )
 #9
 User.create!(
-  first_name: "Cedric",
-  last_name: "Thonney",
+  first_name: "Coder",
+  last_name: "Vanessa",
   email: "perefoura@test.com",
   password: pw,
   phone_number: 53232589,
@@ -114,7 +114,7 @@ User.create!(
 #11
 User.create!(
   first_name: "Will",
-  last_name: "Smith",
+  last_name: "Coder",
   email: "will@test.com",
   password: pw,
   phone_number: 53236589,
@@ -122,8 +122,8 @@ User.create!(
 )
 #12
 User.create!(
-  first_name: "Chris",
-  last_name: "Rock",
+  first_name: "Nicolas",
+  last_name: "Twilio",
   email: "chris@test.com",
   password: pw,
   phone_number: 53234589,
@@ -140,8 +140,8 @@ User.create!(
 )
 #14
 User.create!(
-  first_name: "Dushyant",
-  last_name: "Teacher",
+  first_name: "Twilio",
+  last_name: "Nicolas",
   email: "dush@test.com",
   password: pw,
   phone_number: 53234989,
@@ -149,8 +149,8 @@ User.create!(
 )
 #15
 User.create!(
-  first_name: "Billy",
-  last_name: "Perle",
+  first_name: "Room",
+  last_name: "Billy",
   email: "fabrice@test.com",
   password: pw,
   phone_number: 53234389,
@@ -158,8 +158,8 @@ User.create!(
 )
 #16
 User.create!(
-  first_name: "Vanesse",
-  last_name: "Coder",
+  first_name: "Guillaume",
+  last_name: "Juste",
   email: "geek3@test.com",
   password: pw,
   phone_number: 53234589,
@@ -167,8 +167,8 @@ User.create!(
 )
 #17
 User.create!(
-  first_name: "Vanessa",
-  last_name: "Sunset-Coder",
+  first_name: "Juste",
+  last_name: "Guillaume",
   email: "sunset@test.com",
   password: pw,
   phone_number: 53234789,
@@ -176,8 +176,8 @@ User.create!(
 )
 #18
 User.create!(
-  first_name: "Stephanie",
-  last_name: "Coowar",
+  first_name: "Zoom",
+  last_name: "Stephanie",
   email: "coowar@test.com",
   password: pw,
   phone_number: 53234289,
@@ -185,8 +185,8 @@ User.create!(
 )
 #19
 User.create!(
-  first_name: "Vanessa",
-  last_name: "Geeky",
+  first_name: "Vianney",
+  last_name: "Pala",
   email: "geeky@test.com",
   password: pw,
   phone_number: 53234919,
@@ -194,8 +194,8 @@ User.create!(
 )
 #20
 User.create!(
-  first_name: "Lizzy",
-  last_name: "Joe",
+  first_name: "Yeshna",
+  last_name: "Seeds",
   email: "geek2@test.com",
   password: pw,
   phone_number: 53734986,
@@ -221,7 +221,7 @@ User.create!(
 )
 #23
 User.create!(
-  first_name: "Yeshna",
+  first_name: "Wajjiha",
   last_name: "Unicorn",
   email: "unicorn@test.com",
   password: pw,
@@ -230,8 +230,8 @@ User.create!(
 )
 #24
 User.create!(
-  first_name: "Rihanna",
-  last_name: "Drake",
+  first_name: "Python",
+  last_name: "Vanessa",
   email: "drake@test.com",
   password: pw,
   phone_number: 53234929,
@@ -239,8 +239,8 @@ User.create!(
 )
 #25
 User.create!(
-  first_name: "Jane",
-  last_name: "Doe",
+  first_name: "Slimane",
+  last_name: "Vitaa",
   email: "doe@test.com",
   password: pw,
   phone_number: 53234999,
@@ -248,8 +248,8 @@ User.create!(
 )
 #26
 User.create!(
-  first_name: "Ella",
-  last_name: "Elle-la",
+  first_name: "Voice",
+  last_name: "Louane",
   email: "ella@test.com",
   password: pw,
   phone_number: 53214999,
@@ -257,8 +257,8 @@ User.create!(
 )
 #27
 User.create!(
-  first_name: "Jena",
-  last_name: "Dont",
+  first_name: "Julie",
+  last_name: "Doré",
   email: "dont@test.com",
   password: pw,
   phone_number: 53234929,
@@ -266,8 +266,8 @@ User.create!(
 )
 #28
 User.create!(
-  first_name: "Cindy",
-  last_name: "Developer",
+  first_name: "Karishma",
+  last_name: "Nurse",
   email: "cin@test.com",
   password: pw,
   phone_number: 53231999,
@@ -299,7 +299,7 @@ carer1 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[0], Carer::SPECIALTY[3], Carer::SPECIALTY[4], Carer::SPECIALTY[5]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/vanessa.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer2 = Carer.create!(
@@ -307,7 +307,7 @@ carer2 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/woman_17.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/cedric.jpg')
 carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer3 = Carer.create!(
@@ -315,7 +315,7 @@ carer3 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/man_03.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/woman_17.jpg')
 carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer4 = Carer.create!(
