@@ -137,7 +137,7 @@
 
 .btn-region-search {
   background-color: $moderate-cyan;
-  color: white;
+  color: white !important;
   border-radius: 40px;
   font-size: 16px;
   padding: 5px 20px;
@@ -150,3 +150,4 @@
   transition: 0.4s;
   }
 }
+

@@ -14,7 +14,7 @@
           <%= link_to "Back", carers_path, class: "btn btn-submit-yellow" %>
           <% if current_user.id == @patient.user_id %>
             <%= link_to "Edit my profile", edit_patient_path(@patient.id),  class: "btn btn-submit-yellow" %>
-            <%= link_to "Your bookings", booking_path(@patient.id),  class: "btn btn-submit-yellow" %>
+            <%= link_to "Your bookings", booking_path(Booking.find_by_patient_id(@patient.id)),  class: "btn btn-submit-yellow" %>
           <% end %>
         </div>
       </div>
