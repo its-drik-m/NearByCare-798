@@ -3,15 +3,19 @@
   <div class="carer-card-box-as-carer">
     <div class="cards-body">
       <% user = User.find(@carer.user_id) %>
-        <h3>All reviews about <%= user.first_name %> <%= user.last_name %></h3>
+        <h3 style="color:#90ced3;">All reviews on <%= user.first_name %> <%= user.last_name %></h3>
           <% if @reviews.empty? %>
             <p>No reviews yet.</p>
-          <% else %>
-            <ul>
-              <% @reviews.each do |review| %>
-                <li><%= review.comment %>, Rating: <%= review.rating %></li>
+          <% else %> <br>
+            <% @reviews.each do |review| %>
+            <h3 style="color:#90ced3; text-align:left;"><%= review.comment %></h3>
+                <div class="stars">
+                  <% stars = (review.rating).to_i %>
+                    <% stars.times do  %>
+                      <i class="fas fa-star"></i>
+                    <% end %>
               <% end %>
-            </ul>
+                </div>
           <% end %>
           <div class="patient-new-form">
             <%= link_to "Back", carer_path(@carer.id), class: "btn-submit-carer" %>
