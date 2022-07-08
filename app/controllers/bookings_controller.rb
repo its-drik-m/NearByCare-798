@@ -12,6 +12,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update_status
+    @booking = Booking.find(params[:id])
+    @booking.update(carer_confirmed: params[:carer_confirmed])
+    redirect_to carer_path(@booking.carer_id)
+    flash[:notice] = "Booking confirmed!"
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @patient = Patient.where(user_id: current_user.id)[0]
