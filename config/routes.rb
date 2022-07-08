@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
       patch :update_status
-      put :update_status
     end
     get 'call', to: 'bookings#call'
     post 'call', to: 'bookings#call'

@@ -12,12 +12,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def update_status
-    @booking = Booking.find(params[:id])
-    @booking.update(carer_confirmed: params[:carer_confirmed])
-    redirect_to carer_path(@booking.carer_id)
-    flash[:notice] = "Booking confirmed!"
-  end
 
   def create
     @booking = Booking.new(booking_params)
@@ -25,6 +19,8 @@ class BookingsController < ApplicationController
     @booking.patient_id = @patient.id
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
+    @booking.carer_confirmed = false
+    raise
     if @booking.save
       flash[:notice] = "Booking request successfully created."
       redirect_to booking_call_path(@booking.id)
@@ -42,6 +38,13 @@ class BookingsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def update_status
+    @booking = Booking.find(params[:id])
+    @booking.update(carer_confirmed: params[:carer_confirmed])
+    redirect_to carer_path(@booking.carer_id)
+    flash[:notice] = "Booking confirmed!"
   end
 
   def index
