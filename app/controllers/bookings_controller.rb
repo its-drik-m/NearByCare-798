@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
     end
   end
 
-
   def create
     @booking = Booking.new(booking_params)
     @patient = Patient.where(user_id: current_user.id)[0]
@@ -20,7 +19,6 @@ class BookingsController < ApplicationController
     @booking.carer_id = @carer.id
     @booking.patient_confirmed = true
     @booking.carer_confirmed = false
-    raise
     if @booking.save
       flash[:notice] = "Booking request successfully created."
       redirect_to booking_call_path(@booking.id)
