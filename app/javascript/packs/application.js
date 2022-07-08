@@ -15,9 +15,9 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import twilioInit from "../plugins/twilio.js";
 
 document.addEventListener('turbolinks:load', ()=>{
-   initFlatpickr();
+  initFlatpickr();
 
   if (document.querySelector('.twilio-video')) {
-     twilioInit();
+    twilioInit();
   }
 });
