@@ -1,9 +1,10 @@
-<h1> Write a review about your booking with <%= (User.find((Carer.find((@booking.carer_id))).user_id)).first_name %></h1>
 
 <div class="booking-new">
   <div class="booking-card-outline">
       <div class="container_3">
-        <%= image_tag "icon-book-carer.svg", class:"new-booking-gif", alt:"booking-image" %>
+      <br>
+        <h3> Write a review about your booking with <%= (User.find((Carer.find((@booking.carer_id))).user_id)).first_name %></h3>
+        <%= image_tag "review.gif", id:"review-icon", class:"logo-sm" %>
         <div class="patient-new-form">
           <div class="row">
             <div class="col">

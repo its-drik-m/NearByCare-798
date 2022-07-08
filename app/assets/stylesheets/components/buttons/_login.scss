@@ -31,6 +31,21 @@
   }
 }
 
+.btn-transparent-blue {
+  background-color: white;
+  color: $moderate-cyan;
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 5px 20px;
+  margin: 0px 4px 0px 4px;
+  text-decoration: none;
+}
+.btn-transparent-blue:hover {
+  color: $navy-blue;
+  background-color: $grayish-blue;
+  transition: 0.1s;
+}
+
 //blue button with animation on hover
 .btn-submit-blue {
   background-color: $navy-blue;
@@ -150,4 +165,3 @@
   transition: 0.4s;
   }
 }
-
