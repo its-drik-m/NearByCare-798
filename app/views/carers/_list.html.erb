@@ -23,7 +23,6 @@
             <p style="color:#58abb7;"><%= User.find(carer.user_id).first_name %></p>
           </div>
           <hr class="hr-carer-list">
-          <div>
             <div class="stars">
               <% stars = average_rating(carer).to_i %>
               <% stars.times do  %>

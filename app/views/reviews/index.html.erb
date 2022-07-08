@@ -1,15 +1,17 @@
 
 <div class="carer-card-border_4">
-  <div class="carer-card-box-as-carer">
+  <div class=<%= render 'shared/carer-card-style' %> >
     <div class="cards-body">
       <% user = User.find(@carer.user_id) %>
+      <br>
         <h3 style="color:#90ced3;">All reviews on <%= user.first_name %> <%= user.last_name %></h3>
+        <hr>
           <% if @reviews.empty? %>
             <p>No reviews yet.</p>
           <% else %> <br>
             <% @reviews.each do |review| %>
-            <h3 style="color:#90ced3; text-align:left;"><%= review.comment %></h3>
-                <div class="stars">
+            <h3 style="color:#90ced3; text-align:center;"><%= review.comment %></h3>
+                <div style="text-align:center;" class="stars">
                   <% stars = (review.rating).to_i %>
                     <% stars.times do  %>
                       <i class="fas fa-star"></i>
@@ -17,8 +19,10 @@
               <% end %>
                 </div>
           <% end %>
-          <div class="patient-new-form">
+          <div class="review-back">
+
             <%= link_to "Back", carer_path(@carer.id), class: "btn-submit-carer" %>
+
           </div>
     </div>
 
