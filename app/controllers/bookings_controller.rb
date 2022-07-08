@@ -37,6 +37,13 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update_status
+    @booking = Booking.find(params[:id])
+    @booking.update(carer_confirmed: params[:carer_confirmed])
+    redirect_to carer_path(@booking.carer_id)
+    flash[:notice] = "Booking confirmed!"
+  end
+
   def index
     start_date = params.fetch(:start_date, Date.today).to_date
     @bookings = Booking.where(starts_at: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week, carer_id: current_user)
