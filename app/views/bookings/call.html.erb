@@ -1,11 +1,15 @@
 <div class="carer-card-border_2">
-  <div class="title-wrapper">
-    <div>
-      <h3 class="title">A first contact with</h3>
-      <h3 class="title">your NearbyCarer</h3>
-    </div>
-  </div>
   <div class="carer-card-box-as-carer">
+      <div class="title-wrapper">
+        <div>
+          <%= image_tag "video-call.gif", class:"video-icon-loading" %>
+        </div>
+        <hr>
+        <div>
+          <h3 class="title">A first contact with</h3>
+          <h3 class="title">your NearbyCarer</h3>
+        </div>
+      </div>
     <div
       class="twilio-video"
       data-sid="<%= ENV["ACCOUNT_SID"] %>"
