@@ -6,7 +6,7 @@
           <%#= link_to confirm, update_status_booking_path(@booking, carer_confirmed: :carer_confirmed), method: :patch,remote: true, class:"btn btn-submit-white-2" %>
           <%# end %>
           <% if ! @booking.carer_confirmed? %>
-            <%= link_to 'Confirm Booking', update_status_booking_path(@booking, carer_confirmed: :carer_confirmed), method: :patch,remote: true, class:"btn btn-submit-white-2" %>
+            <%= link_to 'Confirm Booking', update_status_booking_path(@booking, carer_confirmed: :carer_confirmed), method: :patch, remote: true, class:"btn btn-submit-white-2" %>
           <% end %>
 
           <%= button_to "Reject Booking", @booking, method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class:"btn btn-submit-white-2" %>
