@@ -4,9 +4,11 @@
       <%= f.input :address,
           input_html: { data: { geocoder_target: "address" }, class: "d-none" },
           wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'], action: "load@window->geocoder#geocode" } } %>
-      <%= f.input :health_conditions, as: :check_boxes, collection: Patient::CONDITIONS, input_html: { multiple: true }  %>
-          <%= link_to 'Back', :back %>
-      <%= f.submit 'Save my profile', class: "btn-submit-yellow" %>
+        <%= f.input :health_conditions, as: :check_boxes, collection: Patient::CONDITIONS, input_html: { multiple: true }  %>
+      <div class="patient-new-form">
+        <%= f.submit 'Save my profile', class: "btn btn-transparent-blue" %>
+            <%= link_to 'Back', :back, class: "btn btn-transparent-blue" %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -28,6 +28,10 @@
   color: white;
 }
 
+.nav-icon-mobile {
+  display: flex;
+}
+
 @media screen and (min-width: 700px) {
   .container-fluid{
     width: 78vw;
