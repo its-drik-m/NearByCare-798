@@ -13,6 +13,7 @@ import "bootstrap"
 
 import { initFlatpickr } from "../plugins/flatpickr";
 import twilioInit from "../plugins/twilio.js";
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', ()=>{
   initFlatpickr();
@@ -21,3 +22,6 @@ document.addEventListener('turbolinks:load', ()=>{
     twilioInit();
   }
 });
+
+initStarRating();
+

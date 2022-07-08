@@ -1,5 +1,7 @@
-  <%= simple_form_for [@booking, @review], data: { controller: "jquery-bar-rating" } do |f| %>
-    <%= f.input :rating, as: :select, collection: Review::RATING, input_html: { data: { controller: "jquery-bar-rating", action: "click->jquery-bar-rating#barrating" } }  %>
+<div data-controller = "star-rating" >
+  <%= simple_form_for [@booking, @review], data: { controller: "star-rating" } do |f| %>
+    <%= f.input :rating, as: :select, collection: Review::RATING, input_html: { data: { controller: "star-rating", action: "click->star-rating#review_rating" } }  %>
     <%= f.input :comment, as: :text, placeholder: "Write a comment" %>
     <%= f.submit class: "btn-submit-carer" %>
   <% end %>
+</div>
