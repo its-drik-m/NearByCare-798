@@ -5,8 +5,8 @@ class Booking < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   validates :start_date, :end_date, presence: true
-  # validate :date_cannot_be_in_the_past
-  # validate :start_must_be_before_end_time
+
+  CARER_CONFIRMED = ["Confirmed", "Not confirmed"]
 
   # All bookings will be ordered by their start_time by default
   default_scope -> { order(:start_date) }
