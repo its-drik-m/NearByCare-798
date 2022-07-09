@@ -23,17 +23,17 @@ puts "Database cleaned !"
 pw = 123456
 #1
 User.create!(
-  first_name: "Model",
-  last_name: "Karishma",
-  email: "karishma@test.com",
+  first_name: "Ajaghen",
+  last_name: "Smith",
+  email: "designer@test.com",
   password: pw,
   phone_number: 57234567,
   role: 1
 )
 #2
 User.create!(
-  first_name: "View",
-  last_name: "Cédric",
+  first_name: "Cédric",
+  last_name: "Duval",
   email: "cedric@test.com",
   password: pw,
   phone_number: 55237858,
@@ -41,9 +41,9 @@ User.create!(
 )
 #3
 User.create!(
-  first_name: "Vanessa",
-  last_name: "Champ",
-  email: "vanessa@test.com",
+  first_name: "Karishma",
+  last_name: "Jolie",
+  email: "karishma@test.com",
   password: pw,
   phone_number: 53234529,
   role: 1
@@ -60,7 +60,7 @@ User.create!(
 #5
 User.create!(
   first_name: "Sajjaad",
-  last_name: "Smith",
+  last_name: "Wagon",
   email: "sajjaad@test.com",
   password: pw,
   phone_number: 53834589,
@@ -69,7 +69,7 @@ User.create!(
 #6
 User.create!(
   first_name: "Neelesh",
-  last_name: "Buddy",
+  last_name: "Angry-Bird",
   email: "neelesh@test.com",
   password: pw,
   phone_number: 53234579,
@@ -78,7 +78,7 @@ User.create!(
 #7
 User.create!(
   first_name: "Mubeen",
-  last_name: "Bankur",
+  last_name: "FrontEnd-Master",
   email: "mubeen@test.com",
   password: pw,
   phone_number: 53134589,
@@ -95,8 +95,8 @@ User.create!(
 )
 #9
 User.create!(
-  first_name: "Coder",
-  last_name: "Vanessa",
+  first_name: "Cedric",
+  last_name: "Thonney",
   email: "perefoura@test.com",
   password: pw,
   phone_number: 53232589,
@@ -114,7 +114,7 @@ User.create!(
 #11
 User.create!(
   first_name: "Will",
-  last_name: "Coder",
+  last_name: "Smith",
   email: "will@test.com",
   password: pw,
   phone_number: 53236589,
@@ -122,8 +122,8 @@ User.create!(
 )
 #12
 User.create!(
-  first_name: "Nicolas",
-  last_name: "Twilio",
+  first_name: "Chris",
+  last_name: "Rock",
   email: "chris@test.com",
   password: pw,
   phone_number: 53234589,
@@ -140,8 +140,8 @@ User.create!(
 )
 #14
 User.create!(
-  first_name: "Twilio",
-  last_name: "Nicolas",
+  first_name: "Dushyant",
+  last_name: "Teacher",
   email: "dush@test.com",
   password: pw,
   phone_number: 53234989,
@@ -149,8 +149,8 @@ User.create!(
 )
 #15
 User.create!(
-  first_name: "Room",
-  last_name: "Billy",
+  first_name: "Billy",
+  last_name: "Perle",
   email: "fabrice@test.com",
   password: pw,
   phone_number: 53234389,
@@ -158,8 +158,8 @@ User.create!(
 )
 #16
 User.create!(
-  first_name: "Guillaume",
-  last_name: "Juste",
+  first_name: "Vanesse",
+  last_name: "Coder",
   email: "geek3@test.com",
   password: pw,
   phone_number: 53234589,
@@ -167,8 +167,8 @@ User.create!(
 )
 #17
 User.create!(
-  first_name: "Juste",
-  last_name: "Guillaume",
+  first_name: "Vanessa",
+  last_name: "Sunset-Coder",
   email: "sunset@test.com",
   password: pw,
   phone_number: 53234789,
@@ -176,8 +176,8 @@ User.create!(
 )
 #18
 User.create!(
-  first_name: "Zoom",
-  last_name: "Stephanie",
+  first_name: "Stephanie",
+  last_name: "Coowar",
   email: "coowar@test.com",
   password: pw,
   phone_number: 53234289,
@@ -185,8 +185,8 @@ User.create!(
 )
 #19
 User.create!(
-  first_name: "Vianney",
-  last_name: "Pala",
+  first_name: "Vanessa",
+  last_name: "Geeky",
   email: "geeky@test.com",
   password: pw,
   phone_number: 53234919,
@@ -194,8 +194,8 @@ User.create!(
 )
 #20
 User.create!(
-  first_name: "Yeshna",
-  last_name: "Seeds",
+  first_name: "Lizzy",
+  last_name: "Joe",
   email: "geek2@test.com",
   password: pw,
   phone_number: 53734986,
@@ -221,7 +221,7 @@ User.create!(
 )
 #23
 User.create!(
-  first_name: "Wajjiha",
+  first_name: "Yeshna",
   last_name: "Unicorn",
   email: "unicorn@test.com",
   password: pw,
@@ -230,8 +230,8 @@ User.create!(
 )
 #24
 User.create!(
-  first_name: "Python",
-  last_name: "Vanessa",
+  first_name: "Rihanna",
+  last_name: "Drake",
   email: "drake@test.com",
   password: pw,
   phone_number: 53234929,
@@ -239,8 +239,8 @@ User.create!(
 )
 #25
 User.create!(
-  first_name: "Slimane",
-  last_name: "Vitaa",
+  first_name: "Jane",
+  last_name: "Doe",
   email: "doe@test.com",
   password: pw,
   phone_number: 53234999,
@@ -248,8 +248,8 @@ User.create!(
 )
 #26
 User.create!(
-  first_name: "Voice",
-  last_name: "Louane",
+  first_name: "Ella",
+  last_name: "Elle-la",
   email: "ella@test.com",
   password: pw,
   phone_number: 53214999,
@@ -257,8 +257,8 @@ User.create!(
 )
 #27
 User.create!(
-  first_name: "Julie",
-  last_name: "Doré",
+  first_name: "Jena",
+  last_name: "Dont",
   email: "dont@test.com",
   password: pw,
   phone_number: 53234929,
@@ -266,8 +266,8 @@ User.create!(
 )
 #28
 User.create!(
-  first_name: "Karishma",
-  last_name: "Nurse",
+  first_name: "Cindy",
+  last_name: "Developer",
   email: "cin@test.com",
   password: pw,
   phone_number: 53231999,
@@ -299,7 +299,7 @@ carer1 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[0], Carer::SPECIALTY[3], Carer::SPECIALTY[4], Carer::SPECIALTY[5]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/karishma.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/man_01.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer2 = Carer.create!(
@@ -307,7 +307,7 @@ carer2 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/cedric.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/woman_17.jpg')
 carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer3 = Carer.create!(
@@ -315,7 +315,7 @@ carer3 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/vanessa.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/man_03.jpg')
 carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer4 = Carer.create!(
@@ -323,7 +323,7 @@ carer4 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797870/Nearbycare/ibrahim.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797870/Nearbycare/man_04.jpg')
 carer4.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer5 = Carer.create!(
@@ -331,7 +331,7 @@ carer5 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803871/Nearbycare/sajjaad.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803871/Nearbycare/woman_18.jpg')
 carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer7 = Carer.create!(
@@ -339,7 +339,7 @@ carer7 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797849/Nearbycare/neelesh.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797849/Nearbycare/man_06.jpg')
 carer7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer8 = Carer.create!(
@@ -347,7 +347,7 @@ carer8 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655798003/Nearbycare/mubeen.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655798003/Nearbycare/woman_01.jpg')
 carer8.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer9 = Carer.create!(
@@ -355,7 +355,7 @@ carer9 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[4]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797827/Nearbycare/basile.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797827/Nearbycare/man_08.jpg')
 carer9.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer10 = Carer.create!(
@@ -363,7 +363,7 @@ carer10 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797820/Nearbycare/man_01.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797820/Nearbycare/man_09.jpg')
 carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer11 = Carer.create!(
@@ -371,7 +371,7 @@ carer11 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[0]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797997/Nearbycare/man_02.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797997/Nearbycare/woman_02.jpg')
 carer11.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer12 = Carer.create!(
@@ -379,7 +379,7 @@ carer12 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797990/Nearbycare/adel.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797990/Nearbycare/woman_03.jpg')
 carer12.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer13 = Carer.create!(
@@ -387,7 +387,7 @@ carer13 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/nicolas.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_10.jpg')
 carer13.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer14 = Carer.create!(
@@ -395,7 +395,7 @@ carer14 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/billy.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/man_13.jpg')
 carer14.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer15 = Carer.create!(
@@ -480,8 +480,8 @@ puts "Created #{Patient.count} patients!"
 Booking.create!(
   carer_id: 1,
   patient_id: 1,
-  start_date: (Time.now + 3.day).to_datetime,
-  end_date: (Time.now + 3.day).to_datetime,
+  start_date: (Time.now + 1.day).to_datetime,
+  end_date: (Time.now + 2.day).to_datetime,
   patient_confirmed: true,
   carer_confirmed: true
 )
@@ -492,16 +492,16 @@ Booking.create!(
   start_date: (Time.now + 1.day).to_datetime,
   end_date: (Time.now + 2.day).to_datetime,
   patient_confirmed: true,
-  carer_confirmed: true
+  carer_confirmed: false
 )
 #3
 Booking.create!(
   carer_id: 1,
   patient_id: 3,
-  start_date: (Time.now + 4.day).to_datetime,
-  end_date: (Time.now + 4.day + 1.hour).to_datetime,
+  start_date: (Time.now + 2.day).to_datetime,
+  end_date: (Time.now + 2.day + 1.hour).to_datetime,
   patient_confirmed: true,
-  carer_confirmed: true
+  carer_confirmed: false
 )
 #4
 Booking.create!(
@@ -516,101 +516,39 @@ Booking.create!(
 Booking.create!(
   carer_id: 1,
   patient_id: 5,
-  start_date: (Time.now + 3.day + 3.hour).to_datetime,
-  end_date: (Time.now + 3.day + 4.hour).to_datetime,
+  start_date: (Time.now + 2.day + 3.hour).to_datetime,
+  end_date: (Time.now + 2.day + 4.hour).to_datetime,
   patient_confirmed: true,
   carer_confirmed: true
 )
 #6
 Booking.create!(
   carer_id: 1,
-  patient_id: 3,
-  start_date: (Time.now + 2.day + 3.hour).to_datetime,
-  end_date: (Time.now + 2.day + 4.hour).to_datetime,
-  patient_confirmed: true,
-  carer_confirmed: true
-)
-#7
-Booking.create!(
-  carer_id: 4,
-  patient_id: 4,
-  start_date: (Time.now + 22.day + 3.hour).to_datetime,
-  end_date: (Time.now + 12.day + 4.hour).to_datetime,
-  patient_confirmed: true,
-  carer_confirmed: true
-)
-#8
-Booking.create!(
-  carer_id: 5,
   patient_id: 5,
-  start_date: (Time.now + 2.day + 3.hour).to_datetime,
-  end_date: (Time.now + 2.day + 4.hour).to_datetime,
+  start_date: (Time.now + 4.day + 3.hour).to_datetime,
+  end_date: (Time.now + 4.day + 4.hour).to_datetime,
   patient_confirmed: true,
-  carer_confirmed: true
-)
-#9
-Booking.create!(
-  carer_id: 6,
-  patient_id: 5,
-  start_date: (Time.now + 2.day + 3.hour).to_datetime,
-  end_date: (Time.now + 2.day + 4.hour).to_datetime,
-  patient_confirmed: true,
-  carer_confirmed: true
+  carer_confirmed: false
 )
 puts "Created #{Booking.count} bookings!"
 puts 'Finished!'
-#1
+
 Review.create!(
   booking_id: 1,
-  rating: 5,
-  comment: "Great Caring"
+  rating: [1, 2, 3, 4, 5].sample,
+  comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
-#2
-Review.create!(
-  booking_id: 2,
-  rating: 3,
-  comment: "Good Caring"
-)
-#3
-Review.create!(
-  booking_id: 3,
-  rating: 3,
-  comment: "Bad Caring"
-)
-#4
+
 Review.create!(
   booking_id: 4,
-  rating: 3,
-  comment: "Was Ok, Caring"
+  rating: [1, 2, 3, 4, 5].sample,
+  comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
-#5
+
 Review.create!(
   booking_id: 5,
-  rating: 4,
-  comment: "Good Caring"
+  rating: [1, 2, 3, 4, 5].sample,
+  comment: ["Great Caring", "Good Caring", "Bad Caring", "Terrible Caring", "Awful Caring"].sample
 )
-#6
-Review.create!(
-  booking_id: 6,
-  rating: 4,
-  comment: "Great Caring"
-)
-#7
-Review.create!(
-  booking_id: 7,
-  rating: 3,
-  comment: "Was Ok, Caring"
-)
-#8
-Review.create!(
-  booking_id: 8,
-  rating: 4,
-  comment: "Good Caring"
-)
-#9
-Review.create!(
-  booking_id: 9,
-  rating: 4,
-  comment: "Great Caring"
-)
+
 puts "Created #{Review.count} reviews!"
