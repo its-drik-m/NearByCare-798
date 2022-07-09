@@ -22,8 +22,8 @@ const twilioInit = () => {
 
   createLocalTracks({
     audio: true,
-    video: { width: 640 }
-  }).then(localTracks => {
+    video: { frameRate: 24, width: 720, height: 1440, facingMode: { exact: 'user' } }
+    }).then(localTracks => {
     return connect(twilioContainer.dataset.token, {
       name: twilioContainer.dataset.room,
       tracks: localTracks
