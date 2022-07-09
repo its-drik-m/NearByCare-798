@@ -18,7 +18,7 @@
   margin-right: auto;
 }
 
-.dropdown-item {
+.dropdown-item > a {
   text-decoration: none;
   color: $desaturated-cyan;
 }
