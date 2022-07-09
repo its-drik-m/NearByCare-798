@@ -299,7 +299,7 @@ carer1 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[0], Carer::SPECIALTY[3], Carer::SPECIALTY[4], Carer::SPECIALTY[5]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/karishjo')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797899/Nearbycare/karishma.jpg')
 carer1.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer2 = Carer.create!(
@@ -307,7 +307,7 @@ carer2 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/vfigaro22')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803880/Nearbycare/cedric.jpg')
 carer2.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer3 = Carer.create!(
@@ -315,7 +315,7 @@ carer3 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/ipeer28')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797876/Nearbycare/vanessa.jpg')
 carer3.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer4 = Carer.create!(
@@ -323,7 +323,7 @@ carer4 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/Sajjaad1509')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797870/Nearbycare/ibrahim.jpg')
 carer4.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer5 = Carer.create!(
@@ -331,7 +331,7 @@ carer5 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/man_05.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655803871/Nearbycare/sajjaad.jpg')
 carer5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer7 = Carer.create!(
@@ -339,7 +339,7 @@ carer7 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/Mobee33')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797849/Nearbycare/neelesh.jpg')
 carer7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer8 = Carer.create!(
@@ -347,7 +347,7 @@ carer8 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/woman_10.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655798003/Nearbycare/mubeen.jpg')
 carer8.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer9 = Carer.create!(
@@ -355,7 +355,7 @@ carer9 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[4]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/adelnarod')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797827/Nearbycare/basile.jpg')
 carer9.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer10 = Carer.create!(
@@ -363,7 +363,7 @@ carer10 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://kitt.lewagon.com/placeholder/users/Salocin1979')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797820/Nearbycare/man_01.jpg')
 carer10.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer11 = Carer.create!(
@@ -371,7 +371,7 @@ carer11 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[0]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/woman_01.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797997/Nearbycare/man_02.jpg')
 carer11.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer12 = Carer.create!(
@@ -379,7 +379,7 @@ carer12 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[3], Carer::SPECIALTY[2]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797976/Nearbycare/woman_08.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797990/Nearbycare/adel.jpg')
 carer12.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer13 = Carer.create!(
@@ -387,7 +387,7 @@ carer13 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[6]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/man_10.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/nicolas.jpg')
 carer13.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer14 = Carer.create!(
@@ -395,7 +395,7 @@ carer14 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/man_11.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797889/Nearbycare/billy.jpg')
 carer14.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer15 = Carer.create!(
@@ -403,7 +403,7 @@ carer15 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[1], Carer::SPECIALTY[2]]# could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797864/Nearbycare/man_12.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797864/Nearbycare/man_05.jpg')
 carer15.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer16 = Carer.create!(
@@ -411,7 +411,7 @@ carer16 = Carer.create!(
   region: Carer::REGION.sample, # could also have used region.shuffle.first
   specialty: [Carer::SPECIALTY[2], Carer::SPECIALTY[7]] # could also have used specialty.shuffle.first
 )
-file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_01.jpg')
+file = URI.open('https://res.cloudinary.com/djfn5ptcp/image/upload/v1655797960/Nearbycare/woman_06.jpg')
 carer16.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
 
 carer17 = Carer.create!(
