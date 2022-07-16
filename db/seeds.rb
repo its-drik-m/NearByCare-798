@@ -50,7 +50,7 @@ User.create!(
 #5
 User.create!(
   first_name: "Ibrahim",
-  last_name: "Captain",
+  last_name: "Capitaine",
   email: "ibrahim@test.com",
   password: pw,
   phone_number: 53234289,
@@ -122,7 +122,7 @@ User.create!(
 #13
 User.create!(
   first_name: "Divisen",
-  last_name: "News",
+  last_name: "France24",
   email: "divisen@test.com",
   password: pw,
   phone_number: 53234989,
