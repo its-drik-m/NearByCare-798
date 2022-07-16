@@ -8,6 +8,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     @patient.user_id = current_user.id
+    @patient.health_conditions.gsub!("\"\",", "")
     if @patient.save
       redirect_to carers_path
     else

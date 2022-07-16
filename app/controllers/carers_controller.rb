@@ -29,6 +29,7 @@ class CarersController < ApplicationController
     @carer = Carer.new(carer_params)
     @carer.user_id = current_user.id
     User.find(@carer.user_id).role = 1
+    @carer.specialty.gsub!("\"\",", "")
     if @carer.save
       redirect_to carer_path(@carer)
     else
