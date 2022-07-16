@@ -381,7 +381,7 @@ Booking.create!(
 #2
 Booking.create!(
   carer_id: 2,
-  patient_id: 3,
+  patient_id: 2,
   start_date: (Time.now + 2.day).to_datetime,
   end_date: (Time.now + 2.day).to_datetime,
   patient_confirmed: true,
@@ -389,7 +389,7 @@ Booking.create!(
 )
 #3
 Booking.create!(
-  carer_id: 1,
+  carer_id: 3,
   patient_id: 3,
   start_date: (Time.now + 3.day).to_datetime,
   end_date: (Time.now + 3.day).to_datetime,
@@ -398,7 +398,7 @@ Booking.create!(
 )
 #4
 Booking.create!(
-  carer_id: 3,
+  carer_id: 4,
   patient_id: 4,
   start_date: (Time.now + 6.day).to_datetime,
   end_date: (Time.now + 6.day).to_datetime,
@@ -407,7 +407,7 @@ Booking.create!(
 )
 #5
 Booking.create!(
-  carer_id: 1,
+  carer_id: 5,
   patient_id: 5,
   start_date: (Time.now + 10.day).to_datetime,
   end_date: (Time.now + 10.day).to_datetime,
@@ -426,7 +426,7 @@ Booking.create!(
 #7
 Booking.create!(
   carer_id: 4,
-  patient_id: 4,
+  patient_id: 5,
   start_date: (Time.now + 12.day).to_datetime,
   end_date: (Time.now + 12.day).to_datetime,
   patient_confirmed: true,
@@ -434,7 +434,7 @@ Booking.create!(
 )
 #8
 Booking.create!(
-  carer_id: 5,
+  carer_id: 6,
   patient_id: 5,
   start_date: (Time.now + 13.day).to_datetime,
   end_date: (Time.now + 13.day).to_datetime,
@@ -443,8 +443,8 @@ Booking.create!(
 )
 #9
 Booking.create!(
-  carer_id: 6,
-  patient_id: 5,
+  carer_id: 1,
+  patient_id: 2,
   start_date: (Time.now + 6.day).to_datetime,
   end_date: (Time.now + 6.day + 4.hour).to_datetime,
   patient_confirmed: true,
